@@ -1,3 +1,4 @@
+/* General */
 body, .jumbotron {
 background-color: #ffffff;
 font-family: "Lora", serif;
@@ -17,6 +18,7 @@ a:active {
   color: #7e7e7e;
 }
 
+/* header images */
 .bg-overlay {
     background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://github.com/liz-muehlmann/liz-muehlmann.github.io/blob/main/images/Sequoias%200254.jpg?raw=true");
     background-repeat: no-repeat;
@@ -28,17 +30,15 @@ a:active {
 }
 
 .header-border {
-  padding: 20px;
+
   border-width: 5px !important;
-}
+  }
 
 .uci-logo {
 margin-right: 10px;
 }
 
-.fc-text {
-  padding: 10px;
-}
+/* Content */
 .content-column-text {
   padding-top: 45px;
   font-size: 18px;
@@ -46,6 +46,10 @@ margin-right: 10px;
 
 .content-column {
   padding-top: 20px;
+}
+/* Footer */
+.fc-text {
+  padding: 10px;
 }
 
 .footer {
@@ -56,3 +60,11 @@ margin-right: 10px;
     color: white;
     text-align: center;
   }
+
+.cv-button:hover {
+  color: #000;
+}
+
+.cv-button {
+  color: #e7e7e7;
+}
