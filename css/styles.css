@@ -47,7 +47,11 @@ margin-right: 10px;
   padding-right: 10px;
 }
 
-.content-column {
-  padding-top: 50px;
+.content-column-text {
+  padding-top: 45px;
   font-size: 18px;
+}
+
+.content-column {
+  padding-top: 20px;
 }
