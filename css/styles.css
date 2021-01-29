@@ -30,7 +30,7 @@ a:active {
 }
 
 .header-border {
-
+  padding: 20px;
   border-width: 5px !important;
   }
 
