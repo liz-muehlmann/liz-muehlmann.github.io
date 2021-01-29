@@ -38,3 +38,16 @@ a:active {
   padding: 20px;
   border-width: 5px !important;
 }
+
+.uci-logo {
+margin-right: 10px;
+}
+
+.text-footer {
+  padding-right: 10px;
+}
+
+.content-column {
+  padding-top: 50px;
+  font-size: 18px;
+}
