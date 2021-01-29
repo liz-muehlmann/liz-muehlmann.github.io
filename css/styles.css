@@ -23,3 +23,18 @@ a:active {
 .footer {
   padding: 10px;
 }
+
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://github.com/liz-muehlmann/liz-muehlmann.github.io/blob/main/images/Sequoias%200254.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 450px;
+    padding-top: 50px;
+}
+
+.header-border {
+  padding: 20px;
+  border-width: 5px !important;
+}
