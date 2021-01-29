@@ -1,6 +1,7 @@
 body, .jumbotron {
 background-color: #ffffff;
 font-family: "Lora", serif;
+margin-bottom: 100px;
 }
 
 a {
@@ -14,14 +15,6 @@ a:hover {
 
 a:active {
   color: #7e7e7e;
-}
-
-.contact {
-  padding-top: 10px;
-}
-
-.footer {
-  padding: 10px;
 }
 
 .bg-overlay {
@@ -43,10 +36,9 @@ a:active {
 margin-right: 10px;
 }
 
-.text-footer {
-  padding-right: 10px;
+.fc-text {
+  padding: 10px;
 }
-
 .content-column-text {
   padding-top: 45px;
   font-size: 18px;
@@ -55,3 +47,13 @@ margin-right: 10px;
 .content-column {
   padding-top: 20px;
 }
+
+.footer {
+    position: fixed !important;
+    left: 0;
+    bottom: 0 !important;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top:5px;
+  }
