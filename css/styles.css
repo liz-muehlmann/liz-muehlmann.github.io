@@ -38,7 +38,7 @@ a:active {
 margin-right: 10px;
 }
 
-/* Content */
+/* index */
 .content-column-text {
   padding-top: 45px;
   font-size: 18px;
@@ -61,10 +61,43 @@ margin-right: 10px;
     text-align: center;
   }
 
+/* CV */
 .cv-button:hover {
   color: #000;
 }
 
 .cv-button {
   color: #e7e7e7;
+}
+
+.cv-bullets {
+  line-height: 90%;
+}
+
+.h-line {
+  background-color: #000;
+}
+
+.panel-title {
+  padding: 5px;
+}
+
+.rotate {
+    -moz-transition: all 1s linear;
+    -webkit-transition: all 1s linear;
+    transition: all .25s linear;
+}
+
+.rotate.down {
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+
+.fas {
+  float: right;
+}
+
+.panel-body {
+  margin-bottom: 10px;
 }
