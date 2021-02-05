@@ -83,6 +83,12 @@ a:active {
   padding: 5px;
 }
 
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
+}
+
 .rotate {
     -moz-transition: all 1s linear;
     -webkit-transition: all 1s linear;

@@ -1,9 +1,4 @@
----
-title: Liz Muehlmann
-layout: default
-headname: Curriculum Vitae
----
-<!-- Content Accordion -->
+I"0<!-- Content Accordion -->
 <div class="container">
   <div class="row">
     <div class="content-column-text col-lg">
@@ -16,7 +11,7 @@ headname: Curriculum Vitae
               <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                 Education <i class="fas fa-angle-down rotate"></i>
               </a>
-              <hr class = "h-line">
+              <hr class="h-line" />
             </h3>
           </div>
         </div>
@@ -24,18 +19,18 @@ headname: Curriculum Vitae
       <!-- Education Body -->
         <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body card card-body">
-            <p><b> Doctor of Philosophy - Political Science </b><br>
+            <p><b> Doctor of Philosophy - Political Science </b><br />
             <i>University of California - Irvine, California </i>| 2019-2025 (expected) </p>
 
-            <p><b>Master of Arts - Communications, Specialization: Research & Theory</b><br>
-            <i>California State University - Fullerton, California </i> | May 2017 <br>
+            <p><b>Master of Arts - Communications, Specialization: Research &amp; Theory</b><br />
+            <i>California State University - Fullerton, California </i> | May 2017 <br />
             Thesis:<i> Friedrichs v. California Teachers Association: Union Security Agreements, Campaign Finance, and the First Amendment </i></p>
 
-            <p><b>Bachelor of Arts - Philosophy, Specialization: Law & Society</b> <br>
-            <i>California State Polytechnic University - Pomona, California </i> | May 2012 <br>
+            <p><b>Bachelor of Arts - Philosophy, Specialization: Law &amp; Society</b> <br />
+            <i>California State Polytechnic University - Pomona, California </i> | May 2012 <br />
             Capstone Paper: Deliberative Democracy and the Media it Requires </p>
 
-            <p><b>Associate of Science - Behavioral Science</b><br>
+            <p><b>Associate of Science - Behavioral Science</b><br />
             <i>Citrus Community College - Glendora, California</i> | May 2009</p>
           </div>
         </div>
@@ -46,27 +41,27 @@ headname: Curriculum Vitae
             <h3 class="panel-title">
               <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
               Presentations <i class="fas fa-angle-down rotate"></i></a>
-            <hr class = "h-line">
+            <hr class="h-line" />
           </h3>
         </div>
 
       <!-- Presentation Body -->
         <div id="collapseTwo" class="panel-collapse collapse in">
           <div class="panel-body card card-body">
-            <p> <i>"Corporate Citizenship and the Threat to Democracy: Unions as a Counterbalance" </i><br>
-              Western Political Science Association <br>
-              Forthcoming | April 2021<br>
-              <br>
-              <i>Featured Alumni Panel</i><br>
-              World Philosophy Day<br>
-              Fall 2018, California State Polytechnic University - Pomona<br>
-              <br>
-              <i>“Union Security Fees, Campaign Finance, and the First Amendment" </i><br>
-              Colloquium Speakers Series: Labor, Justice, and the Future of Work <br>
-              February 2018, California State Polytechnic University - Pomona<br>
-              <br>
-              <i>“Speech Rights in the Public Sector”</i><br>
-              California Teachers Association, Union Meeting<br>
+            <p> <i>"Corporate Citizenship and the Threat to Democracy: Unions as a Counterbalance" </i><br />
+              Western Political Science Association <br />
+              Forthcoming | April 2021<br />
+              <br />
+              <i>Featured Alumni Panel</i><br />
+              World Philosophy Day<br />
+              Fall 2018, California State Polytechnic University - Pomona<br />
+              <br />
+              <i>“Union Security Fees, Campaign Finance, and the First Amendment" </i><br />
+              Colloquium Speakers Series: Labor, Justice, and the Future of Work <br />
+              February 2018, California State Polytechnic University - Pomona<br />
+              <br />
+              <i>“Speech Rights in the Public Sector”</i><br />
+              California Teachers Association, Union Meeting<br />
               September 2016, California State University - Fullerton</p>
             </div>
           </div>
@@ -79,7 +74,7 @@ headname: Curriculum Vitae
               <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
               Academic Awards <i class="fas fa-angle-down rotate"></i></a>
 
-            <hr class = "h-line"></h3>
+            <hr class="h-line" /></h3>
 
           </div>
         </div>
@@ -87,18 +82,18 @@ headname: Curriculum Vitae
       <!-- Academic Awards Body -->
         <div id="collapseThree" class="panel-collapse collapse in">
           <div class="panel-body card card-body">
-            <p><i> Outstanding Graduate Student, Research & Theory</i><br>
-            California State University – Fullerton<br>
-            May 2017<br>
-            <br>
+            <p><i> Outstanding Graduate Student, Research &amp; Theory</i><br />
+            California State University – Fullerton<br />
+            May 2017<br />
+            <br />
 
-            <i>Pai Award for Outstanding Contributions to the Philosophy Department </i><br>
-            California State Polytechnic University – Pomona<br>
-            May 2012<br>
-            <br>
+            <i>Pai Award for Outstanding Contributions to the Philosophy Department </i><br />
+            California State Polytechnic University – Pomona<br />
+            May 2012<br />
+            <br />
 
-            <i>Valedictorian</i><br>
-            Arroyo Pacific Academy<br>
+            <i>Valedictorian</i><br />
+            Arroyo Pacific Academy<br />
             May 2005</p>
           </div>
         </div>
@@ -108,9 +103,9 @@ headname: Curriculum Vitae
           <div class="panel-heading">
             <h3 class="panel-title">
               <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-              Scholarships & Funding <i class="fas fa-angle-down rotate"></i></a></h3>
+              Scholarships &amp; Funding <i class="fas fa-angle-down rotate"></i></a></h3>
 
-              <hr class = "h-line">
+              <hr class="h-line" />
 
           </div>
         </div>
@@ -118,10 +113,10 @@ headname: Curriculum Vitae
       <!-- Scholarships & Funding Body -->
         <div id="collapseFour" class="panel-collapse collapse in">
           <div class="panel-body card card-body">
-            <p> <i>Diversity Recruitment Fellowship </i>| $7,500 <br/>
-            University of California - Irvine <br/> <br/>
+            <p> <i>Diversity Recruitment Fellowship </i>| $7,500 <br />
+            University of California - Irvine <br /> <br />
 
-            <i> Minority Serving Institution Enhancement </i>| $7,500 <br/>
+            <i> Minority Serving Institution Enhancement </i>| $7,500 <br />
             University of California - Irvine </p>
           </div>
         </div>
@@ -138,3 +133,5 @@ headname: Curriculum Vitae
     $(this).toggleClass("down")  ;
     })
   </script>
+</div>
+:ET

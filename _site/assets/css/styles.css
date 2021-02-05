@@ -21,7 +21,7 @@ a:active {
 
 /* Header Images */
 .bg-overlay {
-    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://github.com/liz-muehlmann/liz-muehlmann.github.io/blob/main/images/Sequoias%200254.jpg?raw=true");
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -81,6 +81,12 @@ a:active {
 
 .panel-title {
   padding: 5px;
+}
+
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
 }
 
 .rotate {
