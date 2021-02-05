@@ -8,7 +8,7 @@ headname: Other
 <div class="container">
   <div class="row">
     <div class="content-column col-sm-5">
-      <img class = "img-fluid" src = "/assets/images/octo-cat-liz-coffee.png" alt="Photo of Liz Muehlmann as Octocat">
+      <img class = "img-fluid" src = "/assets/images/octocat-liz-coffee.png" alt="Photo of Liz Muehlmann as Octocat">
     </div>
 
     <div class="content-column-text col-sm-7">
