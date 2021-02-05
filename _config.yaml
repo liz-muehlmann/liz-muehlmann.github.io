@@ -1,0 +1,27 @@
+# basics
+lang: en-US
+title: Liz Muehlmann
+email: liz.muehlmann@uci.edu
+baseurl: "/notes.html"
+url: "https://liz-muehlmann.github.io"
+
+# authorship
+author: Liz
+  twitter: @hello_iamliz
+
+# social
+twitter_username: @hello_iamliz
+github_username: liz-muehlmann
+logo: "https://brand.uci.edu/wp-content/uploads/BCeater-right-768x416.png"
+
+# pagination
+paginate: 10
+paginate_path: /notes/page:num/
+
+# build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
