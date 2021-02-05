@@ -7,7 +7,7 @@ header: Ph.D. Student in Political Science</br>
                         Supreme Court. First Amendment. Political Communications.
 ---
 <div class="content-column col-sm-5">
- <img class = "img-fluid" src = "/assets/images/Liz-Muehlmann.jpg" alt="Photo of Liz Muehlmann">
+ <img class = "img-fluid" src = "/blob/main/assets/images/Liz-Muehlmann.jpg" alt="Photo of Liz Muehlmann">
  <br><br> <img class = "img-fluid" src = "/assets/images/Dognado.jpg" alt="Photo of Dognado: Two German Shepherd Dog Mixes">
 </div>
 
