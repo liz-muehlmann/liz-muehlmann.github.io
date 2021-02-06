@@ -1,0 +1,19 @@
+lang: en-US
+title: Liz Muehlmann
+email: liz.muehlmann@uci.edu
+description:
+baseurl: # the optional subpath of your site, e.g. "/blog"
+url: https://liz-muehlmann.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+author: Liz
+name: liz
+twitter: https://twitter.com/hello_iamliz
+picture:
+twitter_username: hello_iamliz
+github_username: liz-muehlmann
+logo: # path of site logo, e.g. "/assets/images/logo.png"
+search: # true, false (default)
+search_full_content: false # true, false (default)
+search_provider: # lunr (default), algolia
+
+# Notes
+excerpt_separator: <!-- more -->

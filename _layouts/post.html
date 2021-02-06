@@ -1,22 +1,44 @@
 ---
 layout: default
 headname: Notes
-tag: welcome
 ---
-<div class = "container notes-content">
-  <div class="row justify-content-center content-column-text">
+<div class = "container justify-content-center">
+  <div class="row">
+    <div class= "col-2">
+    </div>
+
     <div class="col-8">
       <h1>{{ page.title }}</h1>
-      <hr class = "h-line">
+        <hr class = "h-line">
+          {{ content }}
 
-      {{ content }}
-
-    <div class = "float-right">
-      <p>{{ page.date | date_to_string }} - {{ page.author }} </p>
+      <div class = "float-right">
+        <p>{{ page.date | date_to_string }} - {{ page.author }} <br>
+        {{ page.tag }}</p>
+      </div>
     </div>
 
-    <div class = "row float-left">
-      <a href = "/notes.html"><button type="button" class="btn btn-outline-secondary">Back to all posts</button></a>
+    <div class= "col-2">
     </div>
+
   </div>
+
+
+  <div class = "row">
+
+    <div class= "col-2">
+    </div>
+
+<!-- Buttons -->
+    <div class = "col-8">
+      <hr class = "h-line">
+      <a href = "/notes/notes.html"><button type="button" class="btn btn-outline-secondary">Back to all posts</button></a>
+      <a href = "/notes/tag-forest.html" class = "float-right"><button type="button" class="btn btn-outline-secondary">See all tags</button></a>
+    </div>
+
+  </div>
+
+  <div class= "col-2">
+  </div>
+
 </div>

@@ -39,6 +39,11 @@ a:active {
     margin-right: 15px;
 }
 
+.header-margin {
+  margin-bottom: 20px;
+}
+
+
 /* index */
 .content-column-text {
   padding-top: 45px;

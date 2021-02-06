@@ -3,7 +3,7 @@
 
 <!-- Head -->
 <head>
-  <title>Hello</title>
+  <title>Notes</title>
 
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,7 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
    <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript" ></script>
    <script src="https://kit.fontawesome.com/197280fa17.js" crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/lunr/lunr.js"></script>
 
 </head>
 
@@ -47,7 +48,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link text-white" href="/notes.html">NOTES</a>
+        <a class="nav-link text-white" href="/notes/notes.html">NOTES</a>
       </li>
 
     </ul>
@@ -55,11 +56,11 @@
 </nav>
 
      <!-- Header Image -->
-<div class=".container bg-overlay justify-content-center align-items-center">
+<div class=".container bg-overlay justify-content-center align-items-center header-margin">
   <div class="d-flex justify-content-center align-items-center h-100">
     <span class = "header-border border border-white">
       <div class="text-white justify-content-center">
-	      <h1 class="mb-3 text-center font-weight-bold">Notes</h1>
+	      <h1 class="mb-3 text-center font-weight-bold">Notes <h4> Click on the links to read the latest updates</h4></h1>
           <h4 class="mb-3 text-center">
              
       </div>
@@ -71,25 +72,52 @@
   <!-- Actual Content -->
   <div class="container">
         <div class="row">
-          <div class = "container notes-content">
-  <div class="row justify-content-center content-column-text">
-    <div class="col-8">
-      <h1>Hello</h1>
-      <hr class = "h-line">
-
-      <p>This area will not be a real blog, in the sense that it will probably not have regular updates. Instead, this space is for various notes on things that catch my interest.
-<br /><br />
-As a first generation PhD student there are a lot of things I wish I knew. Additionally, it’s also a place where I can share my process as I go through the projects I’m working on.</p>
-
-
-    <div class = "float-right">
-      <p>05 Feb 2021 - Liz </p>
+          <div class = "container justify-content-center">
+  <div class="row">
+    <div class= "col-2">
     </div>
 
-    <div class = "row float-left">
-      <a href = "/notes.html"><button type="button" class="btn btn-outline-secondary">Back to all posts</button></a>
+    <div class="col-8">
+
+      
+
+          <h3><a href="/notes/test/">Test</a></h3>
+          <hr class = "h-line">
+          <p>
+This is just a test. there is no emergency
+</p>
+
+      
+
+          <h3><a href="/notes/hello/">Hello</a></h3>
+          <hr class = "h-line">
+          <p>
+This area will not be a real blog, in the sense that it will probably not have regular updates.
+</p>
+
+      
+
     </div>
   </div>
+
+  <div class = "row">
+    <div class= "col-2">
+    </div>
+
+<!-- See all tags button -->
+    <div class = "col-8">
+        <hr class = "h-line">
+
+      <a href = "/notes/tag-forest.html" class = "float-right"><button type="button" class="btn btn-outline-secondary">See all tags</button></a>
+    </div>
+  </div>
+
+  <div class= "col-2">
+  </div>
+
+  <div class= "col-2">
+  </div>
+
 </div>
 
         </div>
