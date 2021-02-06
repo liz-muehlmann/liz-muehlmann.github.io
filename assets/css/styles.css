@@ -108,3 +108,8 @@ a:active {
 .panel-body {
   margin-bottom: 10px;
 }
+
+/* Notes */
+.notes-content {
+  margin-bottom: 50px;
+}
