@@ -1,10 +1,17 @@
 /* General */
-body, .jumbotron {
-  background-color: #ffffff;
-  font-family: "Lora", serif;
-  margin-bottom: 50px;
+html {
+  position:relative;
+  min-height: 100%;
 }
 
+body {
+  background-color: #ffffff;
+  font-family: "Lora", serif;
+  margin-bottom: 100px;
+  font-size: 18px;
+}
+
+/* Links */
 a {
   color: #000;
   }
@@ -14,12 +21,7 @@ a:hover {
   text-decoration: none;
 }
 
-a:active {
-  color: #7e7e7e;
-}
-
-
-/* Header Images */
+/* Header Image */
 .bg-overlay {
     background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
     background-repeat: no-repeat;
@@ -30,42 +32,38 @@ a:active {
     padding-top: 50px;
 }
 
+.header {
+  margin-bottom: 50px;
+}
+
+.head-text {
+  text-align: center;
+}
+
 .header-border {
-  padding: 20px;
+  padding: 10px;
   border-width: 5px !important;
+  width: 644px;
+  height: 200px;
   }
 
-.uci-logo {
-    margin-right: 15px;
-}
-
-.header-margin {
-  margin-bottom: 20px;
-}
-
-
-/* index */
-.content-column-text {
-  padding-top: 45px;
-  font-size: 18px;
-}
-
-.content-column {
-  padding-top: 20px;
-}
-
-/* Footer */
+  /* Footer */
 .fc-text {
   padding: 10px;
 }
 
-.footer {
-    position: fixed !important;
+.foot {
+    position: absolute !important;
     left: 0;
     bottom: 0 !important;
     width: 100%;
     text-align: center;
   }
+
+/* Navigation Bar */
+.uci-logo {
+    margin-right: 15px;
+}
 
 /* CV */
 .cv-button:hover {
@@ -114,7 +112,22 @@ a:active {
   margin-bottom: 10px;
 }
 
-/* Notes */
-.notes-content {
-  margin-bottom: 50px;
+/* tag forest */
+.tf-name {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.tf-line {
+  border: none;
+   height: 1px;
+   /* Set the hr color */
+   color: #333; /* old IE */
+   background-color: #333; /* Modern Browsers */
+}
+
+.taxonomy-index {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
 }

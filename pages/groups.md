@@ -7,11 +7,11 @@ headname: Groups
 <!-- Under Construction -->
 <div class="container">
   <div class="row">
-    <div class="content-column col-sm-5">
+    <div class="col-sm-5">
       <img class = "img-fluid" src = "/assets/images/octocat-liz-coffee.png" alt="Photo of Liz Muehlmann as Octocat">
     </div>
 
-    <div class="content-column-text col-sm-7">
+    <div class="col-sm-7">
       <h2>Oh no!</h2>
       <br> <p>I must have run out of coffee before I finished updating this page. I'm sure it'll be up and running in no time. Check back soon!</p>
     </div>

@@ -12,11 +12,21 @@ headname: Notes
         <hr class = "h-line">
           {{ content }}
 
-      <div class = "float-right">
-        <p>{{ page.date | date_to_string }} - {{ page.author }} <br>
-        {{ page.tag }}</p>
+      <div class = "float-right text-right">
+        <p>{{ page.author }} | {{ page.date | date_to_string }}
+          <div class="post-categories">
+            {% if post %}
+              {% assign categories = post.categories %}
+            {% else %}
+              {% assign categories = page.categories %}
+            {% endif %}
+            {% for category in categories %}
+            Categories: <a href="{{site.baseurl}}/notes/tag-forest/#{{category|slugize}}">{{category}}</a>
+            {% unless forloop.last %}&nbsp;{% endunless %}
+            {% endfor %}
+          </div>
+        </div>
       </div>
-    </div>
 
     <div class= "col-2">
     </div>

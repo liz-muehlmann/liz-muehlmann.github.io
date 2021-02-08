@@ -6,7 +6,7 @@ headname: Curriculum Vitae
 <!-- Content Accordion -->
 <div class="container">
   <div class="row">
-    <div class="content-column-text col-lg">
+    <div class="col-lg">
       <div class="panel-group" id="accordion">
 
       <!-- Education Title -->
