@@ -123,10 +123,15 @@ a:hover {
   list-style: none;
 }
 
+.taxonomy-index::marker {
+  list-style: none;
+}
+
 .taxonomy-index a {
   display: flex;
   padding: .25em 0;
   -webkit-box-pack: justify;
   justify-content: space-between;
   border-bottom: 1px solid #e7e7e7;
+  list-style: none;
 }
