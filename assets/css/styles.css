@@ -21,31 +21,38 @@ a:hover {
   text-decoration: none;
 }
 
-/* Header Image */
-.bg-overlay {
-    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: #fff;
-    height: 450px;
-    padding-top: 50px;
-}
-
-.header {
-  margin-bottom: 50px;
-}
-
-.head-text {
+.jumbotron {
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  word-break: break-all;
 }
 
-.header-border {
-  padding: 10px;
-  border-width: 5px !important;
-  width: 644px;
-  height: 200px;
+/* add margin on small screens */
+@media (max-width: 767px) {
+    .jumbotron > .container{
+        margin-top:100px;
+    }
+}
+
+.minborder {
+  min-height: 190px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
+
+.border {
+  border-width: thick !important;
+}
 
   /* Footer */
 .fc-text {
@@ -123,15 +130,23 @@ a:hover {
   list-style: none;
 }
 
-.taxonomy-index::marker {
-  list-style: none;
-}
-
 .taxonomy-index a {
   display: flex;
   padding: .25em 0;
   -webkit-box-pack: justify;
   justify-content: space-between;
   border-bottom: 1px solid #e7e7e7;
-  list-style: none;
 }
+
+/* Basically basic*/
+.entry-image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.entry-meta {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  margin-bottom: 1em;
+  font-size: 0.75em;
