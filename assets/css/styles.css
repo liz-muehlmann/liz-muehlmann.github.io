@@ -140,6 +140,10 @@ a:hover {
   border-bottom: 1px solid #e7e7e7;
 }
 
-.taxonomy-title > .h-line {
-  background: #e7e7e7;
+.taxonomy-list {
+  list-style: none;
+}
+
+.entry-time {
+  font-size: 14px;
 }

@@ -80,6 +80,45 @@ headname: Tag Forest
     <div class = "col-8">
       <hr class = "h-line">
 
+      {% for tag_names in tag_names_array %}
+        {% assign tag_names_list = tag_names | split: "," %}
+        {% for tag_name in tag_names_list %}
+          <section id="{{ tag_name | slugify | downcase }}" class="taxonomy-section">
+            <h2>{{ tag_name }}</h2>
+            {% for tag in site.tags %}
+              {% if tag[0] == tag_name %}
+                <div>
+                  {% for entry in tag.last %}
+                  <ul class = "taxonomy-list">
+
+                    <li>
+                      {% for post in site.posts %}
+                        <h5 class = "post-title"><strong><a href="{{ post.url }}">{{ post.title }}</a></strong></h5>
+                        {{ post.excerpt }}
+
+                        {% if post.date %}
+                          <img src = "/assets/resources/calendar.png" height = "25px" width = "25px">
+                          <time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time> |
+                        {% endif %}
+
+
+                        <strong><a href="{{ post.url }}">read more <img src = "/assets/resources/Arrow-right.png" height = "15px" width = "15px"></a></strong>
+                        <hr class = "taxonomy-box">
+                    {% endfor %}
+                    </li>
+                  </ul>
+
+
+
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </section>
+        {% endfor %}
+      {% endfor %}
+
+      <hr class = "h-line">
       <a href = "/notes/notes.html"><button type="button" class="btn btn-outline-secondary">Back to all posts</button></a>
     </div>
   </div>
