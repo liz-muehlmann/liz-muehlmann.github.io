@@ -4,16 +4,65 @@ layout: default
 headname: Groups
 ---
 
-<!-- Under Construction -->
-<div class="container">
+<div class = "container justify-content-center">
   <div class="row">
-    <div class="col-sm-5">
-      <img class = "img-fluid" src = "/assets/images/octocat-liz-coffee.png" alt="Photo of Liz Muehlmann as Octocat">
+    <div class= "col-1">
     </div>
 
-    <div class="col-sm-7">
-      <h2>Oh no!</h2>
-      <br> <p>I must have run out of coffee before I finished updating this page. I'm sure it'll be up and running in no time. Check back soon!</p>
+
+    <div class="col-10">
+
+      <blockquote class = "blockquote">It made a difference to that one.
+      <footer class="blockquote-footer">The Star Thrower | <cite title="Source Title"><a href = "https://mrjakeparker.tumblr.com/post/87041680432/star-thrower-is-based-off-of-this-story-which-was">Mr. Jake Parker</a></cite> (my favorite version)</footer>
+      </blockquote>
+
+      <p>I have a simple motto in life: Do what you can, where you are, with what you have. As a result, I believe strongly in doing whatever is in my means to make the world a better place. Below are some groups that I have either founded or joined in order to help those around me.</p>
+
+      <h1>Current Groups</h1>
+      <hr class = "h-line">
+      <ul>
+        <li><i>Political Science Methodology Group</i> | Co-organizer with Melina Much <br/>
+        University of California, Irvine </li><br/>
+
+        <li><i>Center for Democracy: Writing Workshop</i> | Member <br/>
+        University of California, Irvine</li><br/>
+
+        <li><i>UCI Humanities: Writing Workshop</i> | Member <br/>
+        University of California, Irvine</li><br/>
+      </ul>    
+
+
+
+
+      <h1>Previous Groups</h1>
+      <hr class = "h-line">
+      <ul>
+        <li><i>Friends of the San Dimas Dog Park</i> | Ambassador <br/>
+        San Dimas, California </li><br/>
+
+        <li><i>Prisoner Education Project</i> | Volunteer <br/>
+        Pomona, California</li><br/>
+
+        <li><i>Tails of the City</i> | Volunteer Photographer <br/>
+        Los Angeles, California</li><br/>
+
+        <li><i>Philosophy Club</i> | President, Graphic Designer, and Banquet Chair <br/>
+        California State Polytechnic University, Pomona</li><br/>
+
+        <li><i><a href = "https://www.voteamerica.com/">Long Distance Voter</a></i> | Intern <br/>
+        Digital</li><br/>
+
+        <li><i><a href = "https://www.freepress.net/">Free Press</a></i> | Intern <br/>
+        Digital</li>
+
+
+      </ul>    
+
+
     </div>
+
+  <div class= "col-1">
   </div>
+
+</div>
 </div>

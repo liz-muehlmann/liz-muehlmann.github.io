@@ -1,4 +1,4 @@
-/* General */
+/* general */
 html {
   position:relative;
   min-height: 100%;
@@ -11,9 +11,15 @@ body {
   font-size: 18px;
 }
 
-/* Links */
+/* lists */
+
+ul {
+  list-style: none;
+}
+
+/* links */
 a {
-  color: #000;
+  color: green;
   }
 
 a:hover {
@@ -21,6 +27,7 @@ a:hover {
   text-decoration: none;
 }
 
+/* masthead */
 .jumbotron {
   background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
   background-repeat: no-repeat;
@@ -56,6 +63,11 @@ a:hover {
   border-width: thick !important;
 }
 
+/* Navigation Bar */
+.uci-logo {
+    margin-right: 15px;
+}
+
   /* Footer */
 .fc-text {
   padding: 10px;
@@ -69,10 +81,6 @@ a:hover {
     text-align: center;
   }
 
-/* Navigation Bar */
-.uci-logo {
-    margin-right: 15px;
-}
 
 /* CV */
 .cv-button:hover {
@@ -146,4 +154,9 @@ a:hover {
 
 .entry-time {
   font-size: 14px;
+}
+
+/* Groups */
+.blockquote {
+  font-size: 25px;
 }

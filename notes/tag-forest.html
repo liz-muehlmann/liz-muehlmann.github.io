@@ -96,14 +96,8 @@ headname: Tag Forest
                         <h5 class = "post-title"><strong><a href="{{ post.url }}">{{ post.title }}</a></strong></h5>
                         {{ post.excerpt }}
 
-                        {% if post.date %}
-                          <img src = "/assets/resources/calendar.png" height = "25px" width = "25px">
-                          <time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time> |
-                        {% endif %}
+                        {% include readmore.html %}
 
-
-                        <strong><a href="{{ post.url }}">read more <img src = "/assets/resources/Arrow-right.png" height = "15px" width = "15px"></a></strong>
-                        <hr class = "taxonomy-box">
                     {% endfor %}
                     </li>
                   </ul>
