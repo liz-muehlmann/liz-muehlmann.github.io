@@ -13,7 +13,7 @@ headname: Curriculum Vitae
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                 Education <i class="fas fa-angle-down rotate"></i>
               </a>
               <hr class = "h-line">
@@ -44,7 +44,7 @@ headname: Curriculum Vitae
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
               Presentations <i class="fas fa-angle-down rotate"></i></a>
             <hr class = "h-line">
           </h3>
@@ -53,9 +53,14 @@ headname: Curriculum Vitae
       <!-- Presentation Body -->
         <div id="collapseTwo" class="panel-collapse collapse in">
           <div class="panel-body card card-body">
-            <p> <i>"Corporate Citizenship and the Threat to Democracy: Unions as a Counterbalance" </i><br>
+            <p> <i>"Corporate Citizenship and the Threat to Democracy:
+            Unions as a Counterbalance" </i><br>
+              Midwest Political Science Association <br>
+              Spring 2021, Tensions Between Law and Democracy<br>
+              <br>
+              <i>"Corporate Citizenship and the Threat to Democracy: Unions as a Counterbalance" </i><br>
               Western Political Science Association <br>
-              Forthcoming | April 2021<br>
+              Spring 2021, Judicial Review, Litigation Reform, and Political Speech<br>
               <br>
               <i>Featured Alumni Panel</i><br>
               World Philosophy Day<br>
@@ -76,7 +81,7 @@ headname: Curriculum Vitae
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
               Academic Awards <i class="fas fa-angle-down rotate"></i></a>
 
             <hr class = "h-line"></h3>
@@ -107,7 +112,7 @@ headname: Curriculum Vitae
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <a class="text-dark accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
               Scholarships & Funding <i class="fas fa-angle-down rotate"></i></a></h3>
 
               <hr class = "h-line">

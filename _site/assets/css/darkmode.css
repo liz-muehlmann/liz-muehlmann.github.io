@@ -1,0 +1,19 @@
+:root {
+    --background-color: #212121;
+    --text-color: #eee;
+    --bg-card-body: #303030;
+    --image-dimmer: brightness(.8) contrast(1.2);
+    --storage: #fff;
+    --constant: #90ee90;
+    --string: #add8e6;
+    --keyword: #FFC0CB;
+    --variable: #fed8b1;
+
+  }
+:root img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+:root img:hover {
+    opacity: 1;
+  }

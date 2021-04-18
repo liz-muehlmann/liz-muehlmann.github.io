@@ -1,14 +1,17 @@
+@import "vars.css";
+
 /* general */
 html {
-  position:relative;
+  position:relative;   /* keeps footer at the bottom of the page */
   min-height: 100%;
 }
 
 body {
-  background-color: #ffffff;
   font-family: "Lora", serif;
-  margin-bottom: 100px;
+  margin-bottom: 100px; /* prevents content from being blocked by footer */
   font-size: 18px;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 /* lists */
@@ -27,6 +30,15 @@ a:hover {
   text-decoration: none;
 }
 
+/* Navigation Bar */
+.uci-logo {
+    margin-right: 15px;
+}
+
+.nav-item {
+  margin-top: 6px;
+}
+
 /* masthead */
 .jumbotron {
   background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
@@ -41,15 +53,14 @@ a:hover {
   text-align: center;
 }
 
-/* add margin on small screens */
-@media (max-width: 400px) {
+@media (max-width: 400px) {   /* adds margin to jumbotron small screens */
     .jumbotron > .container {
         margin-top:100px;
         word-break: break-all;
     }
 }
 
-.minborder {
+.minborder {    /* white box in header */
   min-height: 190px;
   display: inline-flex;
   flex-direction: column;
@@ -63,40 +74,19 @@ a:hover {
   border-width: thick !important;
 }
 
-/* Navigation Bar */
-.uci-logo {
-    margin-right: 15px;
-}
-
   /* Footer */
-.fc-text {
+.footer-styles {
   padding: 10px;
+  position: absolute !important;
+  left: 0;
+  bottom: 0 !important;
+  width: 100%;
+  text-align: center;
 }
-
-.foot {
-    position: absolute !important;
-    left: 0;
-    bottom: 0 !important;
-    width: 100%;
-    text-align: center;
-  }
-
 
 /* CV */
-.cv-button:hover {
-  color: #000;
-}
-
-.cv-button {
-  color: #e7e7e7;
-}
-
-.cv-bullets {
-  line-height: 90%;
-}
-
 .h-line {
-  background-color: #000;
+  background-color: #e7e7e7;
 }
 
 .panel-title {
@@ -107,6 +97,10 @@ a:hover {
     display: block;
     padding: 10px 15px;
     margin: -10px -15px;
+}
+
+.card-body {
+  background: var(--bg-card-body);
 }
 
 .rotate {
@@ -127,6 +121,7 @@ a:hover {
 
 .panel-body {
   margin-bottom: 10px;
+  color: var(--text-color)
 }
 
 /* tag forest */
@@ -160,3 +155,46 @@ a:hover {
 .blockquote {
   font-size: 25px;
 }
+
+/* Github Gist */
+body .gist .gist-file {
+  margin-bottom: 0;
+  border: 1px solid #adb5bd;
+}
+
+body .gist .gist-data  {
+  background-color: var(--bg-card-body);
+}
+body .gist .highlight {
+  background-color: transparent;
+}
+
+body .gist .blob-num {
+  color: var(--text-color);
+  background-color: var(--bg-card-body);
+}
+
+.gist .blob-code-inner .pl-s {
+  color: var(--storage);
+}
+.gist .blob-code-inner .pl-s1 {
+  color: var(--string);
+}
+
+.gist .blob-code-inner .pl-c1 {
+  color: var(--constant)
+}
+
+.gist .blob-code-inner .pl-k {
+  color: var(--keyword)
+}
+
+.gist .blob-code-inner .pl-v {
+  color: var(--variable)
+}
+
+body .gist .gist-meta {
+  display: none;
+}
+
+/* dark mode media query */

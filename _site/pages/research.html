@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 
 <!-- Head -->
 <head>
   <title>Liz Muehlmann</title>
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/styles.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript" ></script>
-<script src="https://kit.fontawesome.com/197280fa17.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel= "stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel= "stylesheet" href= "/assets/css/main.css">
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src= "https://kit.fontawesome.com/197280fa17.js" crossorigin="anonymous"></script>
+<script src= "/assets/js/theme-toggle.js"></script>
 
 
 </head>
@@ -50,6 +48,12 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="/notes/notes.html">NOTES</a>
       </li>
+
+      <li>
+        <button type="button" onclick="themeToggle()">Theme Toggle</button>
+          <!-- <div id="theme"></div> -->
+      </li>
+
 
     </ul>
   </div>
@@ -105,7 +109,7 @@
     <!-- Footer -->
     <!-- Footer -->
 
-<div class = ".container-fluid bg-dark fc-text foot text-center">
+<div class = ".container-fluid bg-dark  text-center footer-styles">
     <a href="mailto: liz.muehlmann@uci.edu">
       <img src="/assets/resources/Email-White.png" width="40px" height="40px">
     </a>
@@ -118,5 +122,6 @@
       <img src="/assets/resources/Github-White.png" width="40px" height="40px">
     </a>
   </div>
+
 
 </html>
