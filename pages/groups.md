@@ -24,12 +24,15 @@ headname: Groups
         <li><i>Political Science Methodology Group</i> | Co-organizer with Melina Much <br/>
         University of California, Irvine </li><br/>
 
+        <li><i>Political Science Womxn's Caucus</i> | Student leader <br/>
+        University of California, Irvine </li><br/>
+
         <li><i>Center for Democracy: Writing Workshop</i> | Member <br/>
         University of California, Irvine</li><br/>
 
         <li><i>UCI Humanities: Writing Workshop</i> | Member <br/>
         University of California, Irvine</li><br/>
-      </ul>    
+      </ul>
 
 
 
@@ -56,7 +59,7 @@ headname: Groups
         Digital</li>
 
 
-      </ul>    
+      </ul>
 
 
     </div>
