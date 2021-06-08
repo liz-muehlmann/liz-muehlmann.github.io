@@ -27,6 +27,12 @@ headname: Groups
         <li><i>Political Science Womxn's Caucus</i> | Student leader <br/>
         University of California, Irvine </li><br/>
 
+        <li><i>Political Science Workshop Coordinator</i> <br/>
+        University of California, Irvine </li><br/>
+
+        <li><i>Legal Politics Writing Workshop</i><br/>
+        University of California, Irvine </li><br/>
+
         <li><i>Center for Democracy: Writing Workshop</i> | Member <br/>
         University of California, Irvine</li><br/>
 
