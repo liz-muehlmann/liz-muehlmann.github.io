@@ -1,23 +1,55 @@
 ---
 layout: default
+headname: Notes
 ---
-<article>
+<div class = "container justify-content-center">
+  <div class="row">
+    <div class= "col-2">
+    </div>
 
-  <header>
-    <h1>{{ page.title | escape }}</h1>
-    <p class="text-muted">
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • {{ page.author }}
-      {%- endif -%}
-    </p>
-  </header>
+    <div class="col-8">
+      <h1>{{ page.title }}</h1>
+        <hr class = "h-line">
+          {{ content }}
 
-  <section>
-    {{ content }}
-  </section>
+      <div class = "float-right text-right">
+        <p>{{ page.author }} | {{ page.date | date_to_string }}
+          <div class="post-categories">
+            {% if post %}
+              {% assign categories = post.categories %}
+            {% else %}
+              {% assign categories = page.categories %}
+            {% endif %}
+            {% for category in categories %}
+            Categories: <a href="{{site.baseurl}}/notes/tag-forest/#{{category|slugize}}">{{category}}</a>
+            {% unless forloop.last %}&nbsp;{% endunless %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
 
-</article>
+    <div class= "col-2">
+    </div>
+
+  </div>
+
+
+  <div class = "row">
+
+    <div class= "col-2">
+    </div>
+
+<!-- Buttons -->
+  <div class = "col-8 clearfix">
+      <hr class = "h-line">
+      <a href = "/notes/notes.html"><button type="button" class="btn btn-outline-success float-left">Back to all posts</button></a>
+      <a href = "/notes/tag-forest.html"><button type="button" class="btn btn-outline-success float-right">See all tags</button></a>
+
+    </div>
+
+  </div>
+
+  <div class= "col-2">
+  </div>
+
+</div>
