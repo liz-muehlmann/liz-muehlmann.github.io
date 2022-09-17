@@ -1,0 +1,8 @@
+{% if post.date %}
+  <img src = "/assets/resources/green-calendar.png" height = "25px" width = "25px">
+  <time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time> |
+{% endif %}
+
+
+<strong><a href="{{ post.url }}">read more <img src = "/assets/resources/Green-arrow-right.png" height = "15px" width = "15px"></a></strong>
+<hr class = "h-line">

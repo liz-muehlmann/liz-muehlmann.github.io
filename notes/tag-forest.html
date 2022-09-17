@@ -1,0 +1,126 @@
+---
+layout: default
+headname: Tag Forest
+---
+
+<div class = "container justify-content-center">
+  <div class="row">
+    <div class= "col-2">
+    </div>
+
+    <div class="col-8">
+
+
+      <!--calculates maximum counts of tags -->
+
+      {% assign tags_max = 0 %}                                        <!-- assign creates a variable -->
+      {% for tag in site.tags %}
+        {% if tag[1].size > tags_max %}
+          {% assign tags_max = tag[1].size %}
+        {% endif %}                                                    <!-- ends the if condition -->
+      {% endfor %}                                                     <!-- ends the for loop -->
+
+      {% assign tag_names_array = "" %}                                <!-- create empty array -->
+      {% assign tag_counts = "" %}
+      {% assign first_array_element = true %}
+      {% for i in (1..tags_max) reversed %}                            <!-- iterate tags_max to 1 -->
+        {% assign tag_names = "" %}
+        {% assign first_tag = true %}
+
+        {% for tag in site.tags %}                                      <!-- for loop iterates across all the -->
+          {% if tag[1].size == i %}                                     <!-- site tags to find all the matching tags -->
+            {% if first_tag %}
+              {% assign first_tag = false %}
+            {% else %}
+              {% assign tag_names = tag_names | append: "," %}
+            {% endif %}
+            {% assign tag_names = tag_names | append: tag[0] %}
+          {% endif %}
+        {% endfor %}
+
+        {% if tag_names != "" %}                                        <!-- if tag_names isn't equal to 0-->
+          {% assign tag_names = tag_names | split: "," | sort | join: "," %}  <!-- append tag_names to the array & append i to tag_counts -->
+
+          {% if first_array_element %}
+            {% assign first_array_element = false %}
+          {% else %}
+            {% assign tag_names_array = tag_names_array | append: "|" %}
+            {% assign tag_counts = tag_counts | append: "|" %}
+          {% endif %}
+          {% assign tag_names_array = tag_names_array | append: tag_names %}
+          {% assign tag_counts = tag_counts | append: i %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign tag_names_array = tag_names_array | split: "|" %}      <!-- make two real arrays -->
+      {% assign tag_counts = tag_counts | split: "|" %}
+
+      <ul class="taxonomy-index">                                     <!-- makes list of labels -->
+        {% for tag_names in tag_names_array %}
+          {% assign tag_names_list = tag_names | split: "," %}
+          {% assign tag_count = tag_counts[forloop.index0] %}
+          {% for tag_name in tag_names_list %}
+            <li>
+              <a href="#{{ tag_name | slugify }}">
+              <strong> {{ tag_name }} </strong>
+              <span class = "taxonomy-count">{{ tag_count }} </span>
+              </a>
+             </li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+<div class = "row">
+    <div class= "col-2">
+    </div>
+
+<!-- See all tags button -->
+    <div class = "col-8">
+      <hr class = "h-line">
+
+      {% for tag_names in tag_names_array %}
+        {% assign tag_names_list = tag_names | split: "," %}
+        {% for tag_name in tag_names_list %}
+          <section id="{{ tag_name | slugify | downcase }}" class="taxonomy-section">
+            <h2>{{ tag_name }}</h2>
+            {% for tag in site.tags %}
+              {% if tag[0] == tag_name %}
+                <div>
+                  {% for entry in tag.last %}
+                  <ul class = "taxonomy-list">
+
+                    <li>
+                      {% for post in site.posts %}
+                        <h5 class = "post-title"><strong><a href="{{ post.url }}">{{ post.title }}</a></strong></h5>
+                        {{ post.excerpt }}
+
+                        {% include readmore.html %}
+
+                    {% endfor %}
+                    </li>
+                  </ul>
+
+
+
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </section>
+        {% endfor %}
+      {% endfor %}
+
+      <hr class = "h-line">
+      <a href = "/notes.html"><button type="button" class="btn btn-outline-success">Back to all posts</button></a>
+    </div>
+  </div>
+
+  <div class= "col-2">
+  </div>
+
+  <div class= "col-2">
+  </div>
+
+</div>

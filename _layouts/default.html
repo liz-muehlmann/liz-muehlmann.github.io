@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang = "en">
 
-  {%- include head.html -%}
+<!-- Head -->
+<head>
+  <title>{{ page.title }}</title>
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
 
-  <body>
+  {% include metacontent.html %}
 
-    {%- include header.html -%}
+</head>
 
-    <div class="py-5">
-      <div class="container page-content">
+<body>
+  {% include navbar.html %}
+  {% include header.html %}
+
+  <!-- Actual Content -->
+  <div class="container">
+        <div class="row">
           {{ content }}
+        </div>
       </div>
-    </div>
+</body>
 
-    {%- include footer.html -%}
-
-  </body>
+    <!-- Footer -->
+    {% include footer.html %}
 
 </html>

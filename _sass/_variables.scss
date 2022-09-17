@@ -5,12 +5,12 @@
 
 // Some customization of the container class to have a better display in the guide.
 // Don't hesitate to remove it to have a standard Bootstrap behavior
-$container-max-widths: (
-  sm: 540px,
-  md: 640px,
-  lg: 690px,
-  xl: 720px
-) !default;
+//$container-max-widths: (
+  // sm: 540px,
+  // md: 640px,
+  // lg: 690px,
+  // xl: 720px
+// ) !default;
 
 // Minty 4.3.1
 // Bootswatch
@@ -65,14 +65,14 @@ $border-radius-sm:            .3rem !default;
 
 // Fonts
 
-$headings-font-family:        "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$headings-font-family:        "Lora", serif;
 $headings-color:              $gray-700 !default;
 
 // Tables
 
 $table-border-color:          rgba(0,0,0,0.05) !default;
 
-// Dropdowns
+// Dropdowns  
 
 $dropdown-link-hover-color:         $white !default;
 $dropdown-link-hover-bg:            $secondary !default;

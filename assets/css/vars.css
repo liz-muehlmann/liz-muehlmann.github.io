@@ -1,0 +1,20 @@
+/* This checks for the system state */
+:root {
+  --background-color: #fffafa;
+  --text-color: #222;
+  --storage: #222;
+  --constant: #44ee4e;
+  --string: #3a9fbf;
+  --keyword: #ff748c;
+  --variable: #fdb265;
+}
+
+.light-mode {
+  --background-color: #fffafa;
+  --text-color: #222;
+  --storage: #222;
+  --constant: #44ee4e;
+  --string: #3a9fbf;
+  --keyword: #ff748c;
+  --variable: #fdb265;
+}
