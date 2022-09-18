@@ -70,5 +70,15 @@ At the bottom of the left hand panel you'll see two boxes:<br>
 
 The summary is mandatory. It's a brief message about what changes were made. The description is optional and is a place where you can include more details about whatever changes you made.
 
-Finally, you'll click the button at the bottom that says "commit to main" or "commit to master."
+Next, you'll click the button at the bottom that says "commit to main" or "commit to master."
+
+Finally, you'll want to push the changes. On the top bar, GitHub Desktop has a box that tells you the current actions you can do. It will either say <i>Fetch Origin</i> (the same as pull) and <i>Push Origin</i>. 
+
+![Github Home Screen](/assets/images/notes-images/using-github/using-github-20.jpg){:class="img-fluid"}
+
+<h2><u>Conclusion:</u></h2>
+That's it! GitHub Desktop is very easy to use. It allows you to version control your projects and keep track of any changes that you've made. Whether you use the Desktop version, <a href="https://liz-muehlmann.github.io/notes/github-website"> the website,</a> or <a href="https://liz-muehlmann.github.io/notes/git-github">command line</a> I implore you to start using version control. It saves eons of time. 
+
+
+
 

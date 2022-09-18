@@ -149,35 +149,36 @@ These are basic workflows that you can use.
 
 Initializing a repo:
 <pre>
-<code>
-git init [repo-name]
-// do the work you need to
-git add -A
-git commit -m "a useful message"
-git push origin main
-</code>
+    <code>
+    git init [repo-name]
+    // do the work you need to
+    git add -A
+    git commit -m "a useful message"
+    git push origin main
+    </code>
 </pre>
 
 Cloning an existing repo:
 <pre>
-<code>
-git clone https://github.com/liz-muehlmann/Election_Guides.git
-// do the work you need to
-git add -A
-git commit -m "a useful message"
-git push origin main
+    <code>
+    git clone https://github.com/liz-muehlmann/Election_Guides.git
+    // do the work you need to
+    git add -A
+    git commit -m "a useful message"
+    git push origin main
+    </code>
 </pre>
-</code>
 
 Create a branch and merge it with main:
 <pre>
-<code>
-git branch [branch-name]
-// work on the branch until you're happy
-git checkout main
-git merge [branch-name]
+    <code>
+    git branch [branch-name]
+    // work on the branch until you're happy
+    git checkout main
+    git merge [branch-name]
+
+    </code>
 </pre>
-</code>
 
 <h2><u>Conclusion</u></h2>
 Those are really the only commands you need to know to use Git & GitHub. I can't stress enough how important version control is when programming - especially when working on cartography projects. One problem you'll inevitably run into is file size. GitHub will warn you if your file is over 50MB and it will reject your push if any of your files are over 100MB. 
