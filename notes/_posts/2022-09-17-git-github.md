@@ -176,7 +176,6 @@ Create a branch and merge it with main:
     // work on the branch until you're happy
     git checkout main
     git merge [branch-name]
-
     </code>
 </pre>
 
