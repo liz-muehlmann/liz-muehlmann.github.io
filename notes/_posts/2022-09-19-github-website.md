@@ -9,7 +9,7 @@ title: github website
 excerpt_separator: <!--more-->
 ---
 
-Building of my post about using <a href="https://liz-muehlmann.github.io/notes/git-github">Git & GitHub</a>, this post is about using the GitHub website to initialize repos and get URLs from existing repos to clone them. 
+Building off my post about using <a href="https://liz-muehlmann.github.io/notes/git-github">Git & GitHub</a>, this post is about using the GitHub website to initialize repos and get URLs from existing repos to clone them. 
 
 <!--more-->
 
