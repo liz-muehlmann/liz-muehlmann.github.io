@@ -1,4 +1,4 @@
-@import "vars.css";
+@import "monokai.css";
 
 /* general */
 html {
@@ -216,17 +216,15 @@ body .gist .gist-meta {
   margin-left: 80px;
 }
 
-code{
-  background-color: #E6E6E6;
-  color: #26453E;
-  border: 1px #000;
-  padding: 1px;
-  font-family: Consolas, "courier new";
+.highlight {
+  background: var(--bg-code);
+  border: 1px #C1C1C1;
+  border-radius: 3px;
 }
 
-pre code {
-  background-color: #eee;
-  border: 1px solid #999;
-  display: block;
-  padding: 5px;
+code {
+    /* background-color: var(--bg-code); */
+    border-radius: 3px;
+    padding: 2px;
+    color:#61afef;
 }

@@ -53,14 +53,15 @@ One of the benefits of the desktop app is that it's inclusive. You don't have to
 Before you start working on your project, you should pull any changes. This is less important if you're only using one computer when working on the project and you're the only one that's making changes to the repo.
 
 <h5>Before working</h5>
-![Github Home Screen](/assets/images/notes-images/using-github/using-github-18.jpeg){:class="img-fluid"}
+
+![Github Home Screen](/assets/images/notes-images/using-github/using-github-18.jpg){:class="img-fluid"}
 
 To pull changes, just click on <i>repository</i> and select pull.
 
 <h5>After working</h5>
 When you're done doing work on your project, just open GitHub Desktop, enter a commit message, and hit "commit to main."
 
-![Github Home Screen](/assets/images/notes-images/using-github/using-github-19.jpeg){:class="img-fluid"}
+![Github commit](/assets/images/notes-images/using-github/using-github-19.jpg){:class="img-fluid"}
 
 On the left hand side you'll see a list of files you modified. All the files selected are ones you'll be committing. If you don't want to commit a file, just deselect it. 
 

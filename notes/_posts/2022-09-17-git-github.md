@@ -70,28 +70,22 @@ Before getting into the important commands, the first thing you'll want to do is
 1) Either right click in the folder and select <i>Git BASH here</i>. If you're on Windows 11 it will be under "see more options." Also, if you're on Windows, you can type <code>cmd</code> in the navigation bar and hit enter and it will open a command prompt in that folder. <br>
 2) Or you can just open a console / terminal from the start menu or app folder and then navigate to where you are storing your repos using console. <br>
 
-<pre>
- <code>
+{% highlight powershell%}
  cd Documents\GitHub
- </code>
-</pre>
+ {% endhighlight %}
 
 <code>cd</code> stands for change directory. It's followed by the path to the folder you want to open. <br> 
 
 Your computer should allow tab complete. This just means you can start typing <i>Doc</i>, hit the tab key on your keyboard and it should autocomplete. Sometimes you'll need to go up a directory or two. Say, for example, I'm in the GitHub folder, but I want to go to the Documents folder using the command line. To do so, I would put
 
-<pre>
- <code>
+{% highlight powershell%}
  cd ..
- </code>
-</pre>
+ {% endhighlight %}
 
 If I were to put only one dot:
-<pre>
- <code>
+{% highlight powershell%}
  cd .\
- </code>
-</pre>
+{% endhighlight %}
 
 I could navigate to another folder inside the <i>Documents</i> folder.
 
@@ -132,52 +126,46 @@ There are four steps you'll always follow when working with a repo:
 
 One of the best things about Git & GitHub is that it allows branching and forking. Branching is the most useful because it creates a temporary space for you to work without threatening the integrity of the main project. 
 
-<li><code>checkout -b [branch-name]</code> will allow you to create and switch to a new branch</li>
-<li class = "tab1"><code>git branch [branch-name]</code> is how you create a branch without switching to it. </li>
-<li class = "tab1"><code>git checkout [branch-name]</code> allows you to switch to an existing branch. </li>
+<li><code>checkout -b [branch name]</code> will allow you to create and switch to a new branch</li>
+<li class = "tab1"><code>git branch [branch name]</code> is how you create a branch without switching to it. </li>
+<li class = "tab1"><code>git checkout [branch name]</code> allows you to switch to an existing branch. </li>
 
 If you like what you did in a branch and want to merge it with main so that you can keep the updated version of the project you'll need to switch to the main branch and then merge.
-<pre>
- <code>
+
+{% highlight powershell linenos %}
  git checkout main
- git merge [branch-name]
- </code>
-</pre>
+ git merge [branch name]
+{% endhighlight %}
 
 <h2><u>Workflows</u></h2>
 These are basic workflows that you can use.
 
 Initializing a repo:
-<pre>
-    <code>
-    git init [repo-name]
+{% highlight powershell linenos %}
+    git init [repo name]
     // do the work you need to
     git add -A
     git commit -m "a useful message"
     git push origin main
-    </code>
-</pre>
+{% endhighlight %}
 
 Cloning an existing repo:
-<pre>
-    <code>
+{% highlight powershell linenos %}
     git clone https://github.com/liz-muehlmann/Election_Guides.git
     // do the work you need to
     git add -A
     git commit -m "a useful message"
     git push origin main
-    </code>
-</pre>
+{% endhighlight %}
 
 Create a branch and merge it with main:
-<pre>
-    <code>
-    git branch [branch-name]
-    // work on the branch until you're happy
+
+{% highlight powershell linenos %}
+    git branch [branch name]
+    // work on the branch until you are happy
     git checkout main
-    git merge [branch-name]
-    </code>
-</pre>
+    git merge [branch name]
+{% endhighlight %}
 
 <h2><u>Conclusion</u></h2>
 Those are really the only commands you need to know to use Git & GitHub. I can't stress enough how important version control is when programming - especially when working on cartography projects. One problem you'll inevitably run into is file size. GitHub will warn you if your file is over 50MB and it will reject your push if any of your files are over 100MB. 

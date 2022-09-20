@@ -8,8 +8,9 @@
     --string: #add8e6;
     --keyword: #FFC0CB;
     --variable: #fed8b1;
-
+    --bg-code: #454545;
   }
+
 :root img {
     opacity: .75;
     transition: opacity .5s ease-in-out;
