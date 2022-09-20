@@ -164,7 +164,7 @@ a:hover {
 }
 
 /* Github Gist */
-body .gist .gist-file {
+/* body .gist .gist-file {
   margin-bottom: 0;
   border: 1px solid #adb5bd;
 }
@@ -202,7 +202,7 @@ body .gist .blob-num {
 
 body .gist .gist-meta {
   display: none;
-}
+} */
 
 .tab1 {
   margin-left: 40px;
@@ -217,14 +217,19 @@ body .gist .gist-meta {
 }
 
 .highlight {
-  background: var(--bg-code);
+  background: rgb(230, 230, 230);
   border: 1px #C1C1C1;
   border-radius: 3px;
 }
 
 code {
-    /* background-color: var(--bg-code); */
+    background-color: rgb(230, 230, 230);
     border-radius: 3px;
     padding: 2px;
     color:#61afef;
+}
+
+pre {
+  background-color: rgb(230, 230, 230);
+  color: var(--text-color);
 }

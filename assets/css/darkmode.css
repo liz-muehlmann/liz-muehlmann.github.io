@@ -18,3 +18,21 @@
 :root img:hover {
     opacity: 1;
   }
+
+  :root .highlight {
+    background: #454545;
+    border: 1px #C1C1C1;
+    border-radius: 3px;
+  }
+  
+ :root code {
+      background-color: #454545;
+      border-radius: 3px;
+      padding: 2px;
+      color:#61afef;
+  }
+  
+  :root   pre {
+    background-color: #454545;
+    color: var(--text-color);
+  }
