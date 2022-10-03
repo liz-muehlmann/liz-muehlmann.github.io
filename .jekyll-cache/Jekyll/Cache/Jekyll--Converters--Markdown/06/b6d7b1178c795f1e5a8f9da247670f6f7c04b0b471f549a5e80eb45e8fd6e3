@@ -1,0 +1,3 @@
+I"<p>Version control is helpful when you want to track your project’s changes. However, GitHub has one major (yet, understandable) shortcoming: file size. The free version of GitHub will warn you if your file is over 50MB and completely reject your push if the file is over 100MB. This is a huge problem when you’re working with shapefiles (.shp) which contain the geographic coordinates necessary for cartography. “Officially” there are three ways around GitHub’s file size limits, but I have a clear favorite.</p>
+
+:ET

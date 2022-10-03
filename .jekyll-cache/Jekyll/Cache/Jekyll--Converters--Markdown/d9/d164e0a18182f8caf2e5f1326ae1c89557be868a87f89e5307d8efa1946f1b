@@ -1,0 +1,46 @@
+I" <div class="container justify-content-center">
+  <div class="row">
+    <div class="col-1">
+    </div>
+
+
+    <div class="col-10">
+      <h1>Coding</h1>
+      <hr class="h-line" />
+      <p>Although my interest in programming started by playing on my aunt's DOS machine, I never really pursued it. As an adult, I'm attempting to learn to be more proficient and build the various tools I need to do my work more effectively. In the space below I'll posts Gists from my recent projects in web development, R, and Python. The source code for this website and a complete collection of what I'm working on can be found on <a href="https://github.com/liz-muehlmann">GitHub</a>.</p>
+      <script src="https://gist.github.com/liz-muehlmann/5d0d5b2a2e921e5e0a6a220bdfedf004.js"></script>
+
+
+
+      <h1>Photography</h1>
+      <hr class="h-line" />
+      <p>Photography has been an interest of mine since I was little. Whenever my dad put on a horror movie, I would escape and pour over his <i>National Geographic</i> magazines.
+        I was too young to understand the articles, but I was gripped by the power of the images. I believe images can change the world, bring people together, and be a light in a dark world. While I don't
+        shoot as often as I'd like, below is a collection of some of my latest work.</p>
+      <style>
+    #instafeed {overflow: auto; margin: 0 0 0 -1%;}
+    #instafeed li {float: left; display: block; margin: 0 0 1% 1%; width: 19%; padding-bottom: 19%; position: relative;}
+    #instafeed li img {width: 100%; height: 100%; object-fit: cover; position: absolute;}
+</style>
+<ul id="instafeed">
+    <li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/0.jpg" alt="Instagram picture 1" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/1.jpg" alt="Instagram picture 2" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/2.jpg" alt="Instagram picture 3" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/3.jpg" alt="Instagram picture 4" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/4.jpg" alt="Instagram picture 5" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/5.jpg" alt="Instagram picture 6" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/6.jpg" alt="Instagram picture 7" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/7.jpg" alt="Instagram picture 8" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/8.jpg" alt="Instagram picture 9" /></a></li><li><a href="https://www.instagram.com/starthrowerliz/">
+    <img src="https://profilepageimages.usecue.com/images/starthrowerliz/small/9.jpg" alt="Instagram picture 10" /></a></li>
+</ul>
+
+    </div>
+
+  <div class="col-1">
+  </div>
+
+</div>
+</div>
+:ET

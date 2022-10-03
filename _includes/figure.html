@@ -1,0 +1,26 @@
+{% if include.caption %}
+<figure>
+    {% if include.href %}
+    <a href="{{ include.src }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ include.src }}" alt="Image: {{ include.caption }}" class="img-fluid mx-auto d-block">
+    </a>
+    {% else %}
+    <a href="{{ include.src }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ include.src }}" alt="Image: {{ include.caption }}" class="img-fluid mx-auto d-block">
+    </a>
+    {% endif %}
+    <figcaption><span>{{ include.caption }}</span></figcaption>
+</figure>
+{% else %}
+<figure>
+    {% if include.href %}
+    <a href="{{ include.src }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ include.src }}" alt="Image without caption" class="img-fluid mx-auto d-block">
+    </a>
+    {% else %}
+    <a href="{{ include.src }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ include.src }}" alt="Image without caption" class="img-fluid mx-auto d-block">
+    </a>
+    {% endif %}
+</figure>
+{% endif %}

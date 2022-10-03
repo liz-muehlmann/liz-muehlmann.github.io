@@ -1,0 +1,116 @@
+I"�<div class="container justify-content-center">
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-11">
+            <ul class="m-d expand-list">
+                <li data-md-content="400">
+                    <label name="tab" for="tab1" tabindex="-1" class="tab_lab" role="tab">
+                        <h3>Education</h3>
+                    </label>
+                    <input type="checkbox" checked="" class="tab" id="tab1" tabindex="0" />
+                    <span class="open-close-icon">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    <div class="content">
+                        <p><b> Doctor of Philosophy - Political Science </b><br />
+                        <i>University of California - Irvine, California </i>| 2019-2025 (expected)<br /><br />
+                        <b>Master of Arts - Communications, Specialization: Research &amp; Theory</b><br />
+                        <i>California State University - Fullerton, California </i> | May 2017 <br />
+                        Thesis:<i> Friedrichs v. California Teachers Association: Union Security Agreements, Campaign Finance, and the First Amendment </i><br /><br />
+                        <b>Bachelor of Arts - Philosophy, Specialization: Law &amp; Society</b> <br />
+                        <i>California State Polytechnic University - Pomona, California </i> | May 2<br />
+                        Capstone Paper: Deliberative Democracy and the Media it Requires<br /><br />
+                        <b>Associate of Science - Behavioral Science</b><br />
+                        <i>Citrus Community College - Glendora, California</i> | May 2009</p>
+                    </div>
+                </li>
+                <li data-md-content="600"> 
+                    <label name="tab" for="tab2" tabindex="-1" class="tab_lab" role="tab">
+                    <h3>Presentations</h3>
+                    </label>
+                    <input type="checkbox" class="tab" id="tab2" tabindex="0" />
+                    <span class="open-close-icon">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    <div class="content">
+                        <p> <i>"Unions as a Counterbalance to Corporate Citizenship" </i><br />
+                            Midwest Political Science Association <br />
+                            Spring 2021, Tensions Between Law and Democracy<br /><br />
+                            <i>"Corporate Citizenship and the Threat to Democracy: Unions aCounterbalance" </i><br />
+                            Western Political Science Association <br />
+                            Spring 2021, Judicial Review, Litigation Reform, and Political Speech<br /><br />
+                            <i>Featured Alumni Panel</i><br />
+                            World Philosophy Day<br />
+                            Fall 2018, California State Polytechnic University - Pomona<br /><br />
+                            <i>“Union Security Fees, Campaign Finance, and the First Amendment" </i><br />
+                            Colloquium Speakers Series: Labor, Justice, and the Future of Work <br />
+                            February 2018, California State Polytechnic University - Pomona<br /><br />
+                            <i>“Speech Rights in the Public Sector”</i><br />
+                            California Teachers Association, Union Meeting<br />
+                            September 2016, California State University - Fullerton</p>
+                    </div>
+                </li>
+                <li data-md-content="600">
+                    <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
+                        <h3>Academic Awards</h3>
+                    </label>
+                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <span class="open-close-icon">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    <div class="content">
+                        <p><i> Outstanding Graduate Student, Research &amp; Theory</i><br />
+                        California State University – Fullerton<br />
+                        May 2017<br /><br />
+                        <i>Pai Award for Outstanding Contributions to the Philosophy Department </i><br />
+                        California State Polytechnic University – Pomona<br />
+                        May 2012<br /><br />
+                        <i>Valedictorian</i><br />
+                        Arroyo Pacific Academy<br />
+                        May 2005</p>
+                    </div>
+                </li>
+                <li data-md-content="700">
+                    <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
+                        <h3>Scholarships &amp; Funding</h3>
+                    </label>
+                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <span class="open-close-icon">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    <div class="content">
+                        <p> <i>Undergraduate Research Opportunities Program </i>| $11,000<br />
+                        University of California - Irvine <br /><br />
+                        <i>Diversity Recruitment Fellowship </i>| $7,500 <br />
+                        University of California - Irvine <br /> <br />
+                        <i> Minority Serving Institution Enhancement </i>| $7,500 <br />
+                        University of California - Irvine </p>
+                    </div>
+                </li>
+                <li data-md-content="800">
+                    <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
+                        <h3>Professional Memberships</h3>
+                    </label>
+                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <span class="open-close-icon">
+                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    <div class="content">
+                        <p> <i>American Political Science Association</i>
+                        <br /> 2020 - Current
+                        <br /> <br />
+                        <i>The Society for Political Methodology</i>
+                        <br />2019 - Current</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+:ET

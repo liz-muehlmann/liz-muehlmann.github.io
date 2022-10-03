@@ -1,0 +1,184 @@
+I"?O<p>Arguably one of the best things you can do before starting a PhD is invest time in learning how to properly use version control. With version control, you can track, save, and revert changes to any kind of project. There are several options available, but I’m partial to <a href="https://git-scm.com/downloads">Git</a> &amp; <a href="https://desktop.github.com/">GitHub.</a> Even if you never touch a piece of code, version control is very helpful.</p>
+
+<!--more-->
+
+<p>I found a lot of information about Git &amp; GitHub confusing. The documentation is written for software engineers and people that are immersed in writing code. I am not that person and a lot of the information isn’t relevant to my situation. This guide is written specifically for PhDs. I doubt I am leveraging these tools’ full functionality, but this is a good place to start if you’ve never heard of version control before or were overwhelmed by the documentation.</p>
+
+<h2><u>Why Use Version Control?</u></h2>
+<p>Version control is important because projects never work in a linear format. Regardless of whether you’re writing a paper or writing code, things change. Version control allows you to track those changes and keep notes on the logic behind why you did the things you did.</p>
+
+<p>If you’re writing a paper, you might sometimes find yourself deleting paragraphs that you later need. With version control, you can save these paragraphs and revert to earlier writing if necessary.</p>
+
+<p>With code, you can add or remove features without worrying about damaging existing, working code. I did not understand the full functionality of version control until I started working on cartography. A lot of cartography is trial and error (or at least it has been for me) and I got tired of having files named “Code_final” and “Code_final_final” or worse: “Really_final_version.” Version control lets me branch off sections of my code, add or remove functionality, without damaging my main code.</p>
+
+<h2><u>Definitions:</u></h2>
+<p><b>Repo/Repository:</b> These are like directories or folders on your computer. It’s where all the information about a project is stored.</p>
+
+<p><b>Git:</b> is a version control system that allows you to track and revert changes incrementally. This means that as you make changes on a project, you can describe the changes and save them. If you make a change that you don’t like or that broke something, you can revert to a previous version. Git also allows you create branches or forks which are helpful for trying out changes without affecting the main code.</p>
+
+<li class="tab1"><b>Branches:</b> These are like tree branches, it allows you to test out features and code without worrying about affecting the overall stability of your repo. The <i>main</i> branch (sometimes called <i>master</i>) is where you push all your final edits. Let’s say you want to try creating a map with an info box using Leaflet &amp; Shiny. You may not want to mess up your entire leaflet map while you work with Shiny. Branching will allow you to safely work with Shiny and if you like the changes, you can merge the branch with <i>main</i>. If you don’t, you can continue working on the branch until you’re happy or you can discard it.</li>
+<li class="tab1"><b>Forks:</b> are similar to branches but are mostly used for copying other people’s repos and making changes. Say you find a cool project repo, but you want to modify it for your own use. You would fork the repo. It would show up in your Git and you can make the changes you want without affecting the original repo. </li>
+<p><br />
+<b>GitHub:</b> is a cloud-based Git service. It allows you to access your Git repositories from anywhere. You can use Git without GitHub, but you can’t use GitHub without Git.</p>
+
+<p>I might use Git &amp; GitHub interchangeably which drives software engineers bonkers.</p>
+
+<h2><u>Accessing Repositories</u></h2>
+<p>There are three main ways of using Git and Github: <br />
+1) GitHub Website <br />
+2) GitHub Desktop <br />
+3) Command line <br /></p>
+
+<p>Purists will tell you that you should always use the command line while others will tell you it doesn’t matter. Honestly, I use all three ways based solely on whatever I’m feeling in the moment. I’m going to focus on command line usage because it will help illuminate what’s happening behind the scenes when you use either the website or the Desktop app.</p>
+
+<p>I’ve also written about using <a href="./notes/_posts/2022-09-18-github-desktop">GitHub Desktop</a> and the <a href="./notes/_posts/2022-09-19-github-website">GitHub website</a>. The information across all three is the same. My suggestion is to choose whichever one you’re most comfortable with and ignore anyone who makes you feel bad because you prefer to use an app over using command line. There’s more important things to worry about.</p>
+
+<h2><u>Keeping Organized</u></h2>
+<p>Repos are just directories. If you’re even mildly organized, you probably create a new folder on your hard drive for each project. If you don’t, I highly recommend it because it does help keep things neat and orderly. When you use either Git or GitHub, your repos will be stored in their own folders. This can get unwieldy very quickly. I like to store all my repos in one folder located in My Documents on my hard drive. I just created a folder called <i>GitHub</i> and anytime I initialize or clone a repo, I make sure I do so from this folder. Here is what my GitHub folder looks like:</p>
+
+<p><a href="/assets/notes-images/using-github/using-github-11.jpg">
+<img src="/assets/notes-images/using-github/using-github-11.jpg" alt="Repo Options" class="img-fluid mx-auto d-block" /></a></p>
+
+<p>As you can see, it’s located in the Documents folder on my PC. Each folder you see listed here is a repo in my GitHub and I don’t save anything else to this folder except initialized or cloned repos.</p>
+
+<h2><u>Consoles &amp; Terminals</u></h2>
+<p>To use GitHub from command line you can either use the command prompt or powershell on Windows, terminal on Mac, or a console emulator like <a href="https://cmder.app/">cmdr</a> or <a href="https://cygwin.com/">cygwin</a>. When you download <a href="https://git-scm.com/downloads">Git</a> it will also install Git CMD which does the same thing as any other console or terminal app. They all operate in the same way and do the same things, so pick whichever makes you happy.</p>
+
+<p>Before getting into the important commands, the first thing you’ll want to do is navigate to the folder you’re keeping your repos in. For me it’s the <i>GitHub</i> folder I created in my <i>Documents</i> above. There’s two ways you can do this. <br /></p>
+<ol>
+1) Either right click in the folder and select <i>Git BASH here</i>. If you're on Windows 11 it will be under "see more options." Also, if you're on Windows, you can type <code>cmd</code> in the navigation bar and hit enter and it will open a command prompt in that folder.<br /><br />
+2) Or you can just open a console / terminal from the start menu or app folder and then navigate to where you are storing your repos using console.</ol>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="nx">Documents\GitHub</span><span class="w">
+ </span></code></pre></figure>
+
+<p><code>cd</code> stands for change directory. It’s followed by the path to the folder you want to open. <br /></p>
+
+<p>Your computer should allow tab complete. This just means you can start typing <i>Doc</i>, hit the tab key on your keyboard and it should autocomplete. Sometimes you’ll need to go up a directory or two. Say, for example, I’m in the GitHub folder, but I want to go to the Documents folder using the command line. To do so, I would put</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">..</span><span class="w">
+ </span></code></pre></figure>
+
+<p>If I were to put only one dot:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">.</span><span class="nx">\</span></code></pre></figure>
+
+<p>I could navigate to another folder inside the <i>Documents</i> folder.</p>
+
+<p>These are just helpful navigation options so you don’t always have to put the entire path to a folder.</p>
+
+<p>Once you’re in the folder where you want to keep the repo, you’re ready to use Git for version control.</p>
+
+<h2><u>Important Commands</u></h2>
+<p>The Git documentation is full of commands, options, flags, and various other usage information. I’d say a solid 99% of it, I’ve never used. I’m only going to go over the commands I use on a daily basis because they’re all you really need to get started. I’m going to cover what each term means, then add basic workflows at the end.</p>
+
+<p><i>Note:</i> Anything in [brackets] is where you would enter in information. You would omit the brackets. For example, <code>git init using-github</code> would initialize an new repo called <i>using-github</i>.</p>
+
+<li><code>git init [project-directory-name]</code>: You only need to initialize a repo once. Each repo in your GitHub has to have a unique-to-you name. That is, you can't have two repos named <i>Project</i>. Good repo names are short and descriptive. If I were to initialize a Git for this project I would name it <i>using-github</i> because that is what this guide is about. </li>
+<p><br /></p>
+
+<li><code> git clone [project-url]</code>: If you have previously initialized a repo (either on the website or through GitHub Desktop) and want to add it to your current hard drive you will need to clone (copy) it. This is useful if you use a desktop and a laptop. I often initialize repos on my desktop using <code>git init</code> and then clone them to my laptop using <code>git clone</code>. You can also use <code>git clone</code> to clone repos created by other people. If you find a cool project on GitHub.com that you want to modify for your own use, you can clone it to your hard drive using <code>git clone project-url]</code>. 
+<br />
+The [project-url] can be found on the repo website. For example, if you wanted to clone my election guide repo, you would navigate to the repo's page <a href="https://github.com/liz-muehlmann/Election_Guides">here</a>. On the right hand side is a green button that says <i>Code</i>. You'd select it then copy the URL from the drop down. The URL you copied would go in place of <i>[project-url] above.</i></li>
+<p><br />
+After you initialize or clone a repo, you can work on your project. You would do work like any other time. Just navigate to the folder where your repo is located and create or modify any files you need to. When you’re done working for the day, you’re ready to stage and commit your changes.</p>
+
+<p>There are four steps you’ll always follow when working with a repo:</p>
+<ol><li>Adding</li>
+<li>Staging</li>
+<li>Committing</li>
+<li>Pushing</li></ol>
+<!-- HERE -->
+
+<p><a href="https://www.youtube.com/watch?v=7hPX_SresUM">First you have to add a file, then stage it, commit it, and push it.</a></p>
+
+<li><code>git add [filename or directory name]</code> You'll use <code> git add</code> to state individual files or directories. You just add the path to the file or directory after <code>git add</code> then hit enter. Once staged, you'll add a message, then commit.</li>
+<li class="tab1"><code>git add -A</code> will stage <i>all</i> modified files.</li>
+
+<li><code>git commit -m "A useful message here"</code> before you can push your files, you have to commit them. Committing just records a change on the local hard drive. It's like taking a snapshot of a project in its current state. Messages allow you to describe the change and its justification. Git won't let you commit without adding a message so here is a good guide on <a href="https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/">writing good commit messages.</a></li>
+
+<li><code>git push origin [branch-name]</code> usually, <i>[branch-name]</i> will be <i>main</i>. Sometimes it will be a different branch. <i>Origin</i> is a way of referencing a specific repo. This way you don't have to constantly refer to its url. Pushing sends your commits to GitHub. You can then access those changes on the website or on another computer by pulling the changes to the machine. </li>
+
+<li><code>git pull origin [branch name]</code> again, <i>[branch-name]</i> will usually be <i>main</i>. Pull brings changes you pushed to GitHub onto the local machine. Think of this as syncing changes. It's especially useful when using more than one computer.</li>
+<li class="tab1">If you do work from multiple computers, always be sure to pull changes before you start working in the repo. It prevents a lot of headaches.</li>
+<p><br /></p>
+
+<p>One of the best things about Git &amp; GitHub is that it allows branching and forking. Branching is the most useful because it creates a temporary space for you to work without threatening the integrity of the main project.</p>
+
+<li><code>checkout -b [branch name]</code> will allow you to create and switch to a new branch</li>
+<li class="tab1"><code>git branch [branch name]</code> is how you create a branch without switching to it. </li>
+<li class="tab1"><code>git checkout [branch name]</code> allows you to switch to an existing branch. </li>
+
+<p>If you like what you did in a branch and want to merge it with main so that you can keep the updated version of the project you’ll need to switch to the main branch and then merge.</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">checkout</span><span class="w"> </span><span class="nx">main</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="p">[</span><span class="n">branch</span><span class="w"> </span><span class="n">name</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>If you don’t like what you did in a branch and want to delete it entirely, here’s how:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c">## to delete the branch on your local machine</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nt">-d</span><span class="w"> </span><span class="nx">localBranchName</span><span class="w">
+
+    </span><span class="c">## to delete it it from the remote repo</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">push</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="nt">--delete</span><span class="w"> </span><span class="nx">remoteBranchName</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2><u>Workflows</u></h2>
+<p>These are basic workflows that you can use.</p>
+
+<p>Initializing a repo:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">init</span><span class="w"> </span><span class="p">[</span><span class="n">repo</span><span class="w"> </span><span class="n">name</span><span class="p">]</span><span class="w">
+    </span><span class="c">## do the work you need to</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">-A</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">commit</span><span class="w"> </span><span class="nt">-m</span><span class="w"> </span><span class="s2">"a useful message"</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">push</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="nx">main</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Cloning an existing repo:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">clone</span><span class="w"> </span><span class="nx">https://github.com/liz-muehlmann/Election_Guides.git</span><span class="w">
+    </span><span class="c">## do the work you need to</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">-A</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">commit</span><span class="w"> </span><span class="nt">-m</span><span class="w"> </span><span class="s2">"a useful message"</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">push</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="nx">main</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Create a branch and merge it with main:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="p">[</span><span class="n">branch</span><span class="w"> </span><span class="n">name</span><span class="p">]</span><span class="w">
+    </span><span class="c">## work on the branch until you are happy</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">checkout</span><span class="w"> </span><span class="nx">main</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="p">[</span><span class="n">branch</span><span class="w"> </span><span class="n">name</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2><u>Conclusion</u></h2>
+<p>Those are really the only commands you need to know to use Git &amp; GitHub. I can’t stress enough how important version control is when programming - especially when working on cartography projects. One problem you’ll inevitably run into is file size. GitHub will warn you if your file is over 50MB and it will reject your push if any of your files are over 100MB.</p>
+
+<p>There are two ways around GitHub’s file limits which I go over in my post about <a href="https://liz-muehlmann.github.io/notes/dvc">DVC (Data Version Control)</a>. If you’re only using Git &amp; GitHub to version control your writing, you don’t really need to worry about large file sizes. However, once you start working with datasets the file size limit gets in the way quickly.</p>
+
+<p>If you’re uncomfortable with the command line, GitHub has a desktop application that you can use which is very user friendly. You can learn about <a href="https://liz-muehlmann.github.io/notes/github-desktop">GitHub Desktop</a> and the <a href="https://liz-muehlmann.github.io/notes/github-website">GitHub Website</a> through my other posts.</p>
+
+:ET

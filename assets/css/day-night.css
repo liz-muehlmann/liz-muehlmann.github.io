@@ -6,17 +6,17 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.day-night-icon .sun {
+.day-night-icon .sun { 
   transform: translateY(40%); opacity: 0;
 }
-.day-night-icon.day .sun {
+.day-night-icon.day .sun { 
   animation: sun-grow 0.5s forwards;
 }
 @keyframes sun-grow {
   0% { transform: translateY(40%); opacity: 0; fill: #f26522; }
   100% { transform: translateY(0%); opacity: 1; fill: #ffde17; }
 }
-.day-night-icon.day .tent {
+.day-night-icon.day .tent { 
   animation: day-tent-color 0.5s forwards;
 }
 @keyframes day-tent-color {
@@ -30,7 +30,7 @@
   0% { transform: translateY(0%); opacity: 1; fill: #ffde17; }
   100% { transform: translateY(40%); opacity: 0; fill: #f26522; }
 }
-.day-night-icon.day-close .tent {
+.day-night-icon.day-close .tent { 
   animation: day-close-tent-color 0.5s forwards;
 }
 @keyframes day-close-tent-color {
@@ -47,7 +47,7 @@
   0% { transform: translateX(-100%); opacity: 0; }
   100% { transform: translateX(0%); opacity: 1; }
 }
-.day-night-icon.night .tent {
+.day-night-icon.night .tent { 
   fill: #009444;
 }
 .day-night-icon.night-close .moon {
@@ -57,6 +57,6 @@
   0% { transform: translateX(0%); opacity: 1; }
   100% { transform: translateX(-100%); opacity: 0; }
 }
-.day-night-icon.night-close .tent {
+.day-night-icon.night-close .tent { 
   fill: #009444;
 }

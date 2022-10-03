@@ -1,0 +1,4 @@
+I"�<p>This is part three of my <a href="https://liz-muehlmann.github.io/pages/tag-forest.html/#cartography">cartography in R</a> series. The links to <a href="https://liz-muehlmann.github.io/notes/cartography-part-one">part one</a> and <a href="https://liz-muehlmann.github.io/notes/cartography-part-two">part two</a> are here.</p>
+
+<p>In this post, we’ll process the National Park data before adding it to the base map created in <a href="https://liz-muehlmann.github.io/notes/cartography-part-two">part two</a>. I’ll also add in pop up markers with images from the National Parks I’ve visited that link to the blog post where I’ve written about my adventures there.</p>
+:ET

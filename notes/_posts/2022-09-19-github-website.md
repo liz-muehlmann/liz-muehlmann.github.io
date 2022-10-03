@@ -16,8 +16,9 @@ Building off my post about using <a href="https://liz-muehlmann.github.io/notes/
 <h2><u>Web Interface</u></h2>
 Once you sign into <a href="https://github.com">GitHub</a> you're greeted with a page that looks like this:
 
-![Github Home Screen](/assets/images/notes-images/using-github/using-github-1.jpeg){:class="img-fluid"}
-<i>Note:</i> Clicking on an image will open it in a new tab.
+<a href="../assets/notes-images/using-github/using-github-1.jpeg">
+![Github Home Screen](/assets/notes-images/using-github/using-github-1.jpeg){:class="img-fluid mx-auto d-block"}</a>
+<i>Note:</i> Clicking on an image will open it in ths same tab.
 
 On the left-hand side you'll see a list of your repos. Clicking on any of those links will take you to the repos main page. 
 
@@ -26,17 +27,17 @@ In the center are announcements and updates from repos you follow.
 On the right are your latest changes and a list of repos that might be interesting to you. 
 
 <h2><u>Initializing a Repo</u></h2>
-To initialize a repo using the website, you'll click on the green button on the left that says <i>new</i>. (I boxed it in red in the above photo).
+To initialize a repo using the website, you'll click on the green button on the left that says <i>New</i>. (I boxed it in red in the above photo).
 
 When you click <i>new</i> you'll be asked to fill in some information:
-<a href="/assets/images/notes-images/using-github/using-github-2.jpeg">
-![Repo Options](/assets/images/notes-images/using-github/using-github-2.jpeg){:class="img-fluid"}</a>
+<a href="../assets/notes-images/using-github/using-github-2.jpeg">
+![Repo Options](/assets/notes-images/using-github/using-github-2.jpeg){:class="img-fluid"}</a>
 
 <h5>1:</h5>
 In the box that opens, you'll enter a repo name. This should be a descriptive, unique-to-you name for your repo. You can’t have two repos named “project.” Just choose something short and descriptive. Here, I named my repo using-git to store the information related to this post. 
 
 <h5>2:</h5>
-The second part of initializing a repo is to give it a description. As it says, this step is optional, but I suggest giving it a useful description. I like to add an overview of what the project is about and what still needs to be done. Update this in the repo image.
+The second part of initializing a repo is to give it a description. As it says, this step is optional, but I suggest giving it a useful description. I like to add an overview of what the project is about and what still needs to be done.
 
 <h5>3:</h5>
 Next, you can select whether you want the repo to be public or private. If you want people to see your work and your changes, choose public. If you’re working on data for a paper you want to publish or don’t want to share your code, select private. Most of my repos are private because they are projects I’m working on that I hope to publish. 
@@ -45,7 +46,7 @@ Next, you can select whether you want the repo to be public or private. If you w
 The README file operates like the description, but in a file rather than just on GitHub. I basically add a README that gives more information including any citations, where to look for other resources, and any other information that’s useful but not vital to the repo.
  
 <h5>5:</h5> 
-A .gitignore file is a special file. It tells Git to ignore files and directories listed in the .gitignore document. You can tell git to always skip files with a certain extension. So if you want to share your data but not your R code you can select R from the .gitignore template and GitHub will skip any file with the .R extension. Check interpretation
+A .gitignore file is a special file. It tells Git to ignore files and directories listed in the .gitignore document. You can tell git to always skip files with a certain extension. So if you want to share your data but not your R code you can select R from the .gitignore template and GitHub will skip any file with the .R extension.
 
 <h5>6:</h5>
 <a href="https://www.fastcompany.com/3014553/what-coders-should-know-about-copyright-licensing#:~:text=On%20GitHub%20the%20three%20main%20types%20of%20software%20licenses%20are%3A&text=It%20permits%20users%20to%20do,grants%20patent%20rights%20to%20users.">Fast Company</a> has a good write up on what the licenses mean. I usually initialize with no license because my repos are private. I know creative commons is useful if you’re okay with people having full access to your code and modifying it in anyway they want. 
@@ -60,14 +61,15 @@ You'll navigate to the URL of the repo. This will always follow the same format:
 
 https://github.com/[username]/[reponame]. For example, my election guide repo is found at <a href="https://github.com/liz-muehlmann/Election_Guides">https://github.com/liz-muehlmann/Election_Guides</a>.
 
-![Github Home Screen](/assets/images/notes-images/using-github/using-github-10.jpeg){:class="img-fluid"}
+<a href="../assets/notes-images/using-github/using-github-10.jpeg">
+![Github Home Screen](/assets/notes-images/using-github/using-github-10.jpeg){:class="img-fluid mx-auto d-block"}</a>
 
 To clone a repo to your hard drive you'll need the repo URL. Click on the green <i>code</i> button and copy the URL under HTTPS.
 
-That's really all you need. 
+You can either clone it using <a href="./notes/_posts/2022-09-17-git-github.md">command line</a> or <a href="./notes/_posts/2022-09-18-github-desktop.md">Github Desktop</a>
 
 <h2><u>Conclusion</u></h2>
-Those are the two main reasons to use the GitHub Website. I suggest spending some time looking around at repos other people have created. There are a lot of cool projects where people share their code. You can gain a lot of additional functionality in programs by downloading and installing plugins created by other people. 
+The website is useful because you can find cool projects where people share their code and try to get answers for bugs they're encountering. A lot of programs people use on a daily basis have project Repos. Some of my favorite extensions and plug-ins have been found by searching online for repos. 
 
 For example, Leaflet (the package I use for Cartography) has its own <a href="https://rstudio.github.io/leaflet/">website hosted through GitHub Pages</a> and its own <a href="https://github.com/rstudio/leaflet">GitHub repo</a> where you can fork the project or submit an issue.
 

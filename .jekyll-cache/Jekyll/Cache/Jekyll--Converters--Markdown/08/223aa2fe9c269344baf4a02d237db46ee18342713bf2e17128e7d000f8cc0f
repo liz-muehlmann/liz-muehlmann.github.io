@@ -1,0 +1,108 @@
+I"&<p>Version control is helpful when you want to track your project’s changes. However, GitHub has one major (yet, understandable) shortcoming: file size. The free version of GitHub will warn you if your file is over 50MB and completely reject your push if the file is over 100MB. This is a huge problem when you’re working with shapefiles (.shp) which contain the geographic coordinates necessary for cartography. “Officially” there are three ways around GitHub’s file size limits, but I have a clear favorite.</p>
+
+<!--more-->
+<ol><li>Pay for GitHub Premium </li>
+<li>LFS (Large File Storage) </li>
+<li> DVC (Data Version Control) </li></ol>
+
+<p>My favorite is using DVC, so I’m only going to go over #1 and #2 briefly.</p>
+
+<h2><u>GitHub Pro</u></h2>
+<p>GitHub has a paid-version which is available <a href="https://github.com/pricing">here</a>. It starts at $48 a year. Both the free and pro versions have repo limit of 2GB, Team version limits it to 4GB, and enterprise limits files to 5GB.</p>
+
+<p>You still can’t push files larger than 100MB, so unless you’re doing a lot of programming I don’t think the Pro version is worth it. I would suggest checking if your school or employer offers an enterprise account. My school does not.</p>
+
+<h2><u>LFS [Large File Storage]</u></h2>
+<p><a href="https://git-lfs.github.com/">LFS</a> is a way around GitHub’s file size limits when pushing changes. To install LFS just go to the website and download it.</p>
+
+<p>You will need to use the command line to use LFS, but it’s fairly straightforward. Once you’ve downloaded <a href="https://git-lfs.github.com/">LFS</a> and install it you’ll need to open a console or terminal. Powershell on Windows, terminal on Mac, <a href="https://cmder.app">cmder</a> console emulator, or any other command line interface will work.</p>
+
+<p>First you’ll need to navigate to wherever you store your repos and install LFS:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">cd</span><span class="w"> </span><span class="nx">Documents\Github</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">lfs</span><span class="w"> </span><span class="nx">install</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The basic logic of LFS is to track certain file extensions so that Git ignores them, but LFS does not.</p>
+
+<p>For example, I know that .shp files are very large. I would track all .shp files using LFS to get around the file size limit. To track an extension with LFS you use:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">lfs</span><span class="w"> </span><span class="nx">track</span><span class="w"> </span><span class="s2">"*.shp"</span></code></pre></figure>
+
+<p>The <code>*</code> before .shp tells LFS to add any file, regardless of what it’s called, that has the .shp extension.</p>
+
+<p>The final step is to make a .gitattributes file.</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="o">.</span><span class="nf">gitattributes</span></code></pre></figure>
+
+<p>Once you follow those steps, you can use Git and GitHub as you normally would.</p>
+
+<p>The problem with this option is that it does not get around GitHub’s limit on total repos size. You’ll still be limited to repos no larger than 2GB. This is a problem if you’re doing a complex cartography project with multiple .shp files or you’re mapping data from something like the <a href="https://cces.gov.harvard.edu/explore">CES.</a> The only way around this, that I’ve found, is to use DVC [data version control].</p>
+
+<h2><u>DVC [Data Version Control]</u></h2>
+<p>DVC is an open-source version control system for data. It works in parallel with Git.</p>
+
+<p>To start, you need to download and install DVC from <a href="https://dvc.org/">here</a>. Once you do, navigate to the repo that has large files and initialize DVC:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">cd</span><span class="w"> </span><span class="nx">Documents\Github</span><span class="w">
+    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">init</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Once you initialize DVC several files are created. You’ll need to push the new files to GitHub</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">-A</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">commit</span><span class="w"> </span><span class="nt">-m</span><span class="w"> </span><span class="s2">"Initialize DVC"</span><span class="w">
+    </span><span class="n">git</span><span class="w"> </span><span class="nx">push</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="nx">main</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>To actually track data you’ll need to add them to DVC. It’s done in much the same way as using Git in command line.</p>
+
+<p>To add an individual file you’d use:</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">data/filename.ext</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>where [filename.ext] is the name of your file or the directory you want to track.</p>
+
+<p>Before you can push changes to DVC, you’ll need to add a remote storage site. My school gives us a lot of storage through Google and Microsoft, so I connected my DVC to my Google Drive.</p>
+
+<p>If, like me, you want to use Google Drive I suggest making a folder called “DVC” on your Google Drive and using it to store your DVC files.</p>
+
+<p>To use the folder you created, you’ll need to add the remote using the command line.</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">remote</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">-default</span><span class="w"> </span><span class="p">[</span><span class="n">remote</span><span class="nt">-name</span><span class="p">]</span><span class="w"> </span><span class="nx">\</span><span class="w"> </span><span class="nx">gdrive://</span><span class="p">[</span><span class="n">folder</span><span class="nt">-ID</span><span class="p">]</span><span class="w">
+    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">push</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>[remote-name] is whatever you want to save the drive URL to. It’s easiest just to name it “myremote” but it’s up to you.</p>
+
+<p>The [Folder-ID] is the jumble of letters and numbers at the end of the URL. To get it, you’ll need to navigate to the folder you want to use on Google Drive in your browser. At the top you’ll see the URL and you’ll need to copy the bit after the last /.</p>
+
+<p><a href="/assets/notes-images/using-github/using-github-21.jpg">
+<img src="/assets/notes-images/using-github/using-github-21.jpg" alt="Repo Options" class="img-fluid" /></a></p>
+
+<p>You only need to do this step once.</p>
+
+<p>When you’re ready to use DVC all you do is add the file you want and push it.</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="p">[</span><span class="n">filename</span><span class="p">]</span><span class="w">
+    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">push</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2><u>Conclusion</u></h2>
+<p>DVC is feature-rich and useful. It allows you to store your data in the same repo without running into GitHub’s file size limits. The <a href="https://dvc.org/doc/start/data-management"> documentation for DVC </a>is well written, so I suggest looking at it if you want to use another storage site like Microsoft One Drive or Dropbox</p>
+
+<p>With all the data management and version control sorted you can turn, in earnest, to <a href="https://liz-muehlmann.github.io/notes/cartography-part-one">cartography in R!</a></p>
+:ET

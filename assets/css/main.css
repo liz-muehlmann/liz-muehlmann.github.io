@@ -1,4 +1,4 @@
-@import "monokai.css";
+@import "vars.css";
 
 /* general */
 html {
@@ -7,48 +7,80 @@ html {
 }
 
 body {
-  font-family: "Lora", serif;
+  font-family: "Georgia", serif;
   margin-bottom: 100px; /* prevents content from being blocked by footer */
-  font-size: 18px;
+  font-size: 18.5px;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-img-fluid {
-  max-width: 100%; }
+/* horizontal line */
+hr {
+  border: 1px solid #678778;
+}
 
-/* lists */
+/* images */
+figure > figcaption {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
 
-ul {
-  list-style: none;
+
+
+/* spacing */
+.tab0 {
+  margin-left: 25px;
+}
+
+.tab1 {
+  margin-left: 40px;
+}
+
+.tab2 {
+  margin-left: 60px;
+}
+
+.tab4 {
+  margin-left: 80px;
 }
 
 /* links */
 a {
-  color: green;
+  color: var(--link-color);
   }
 
 a:hover {
-  color: #7eda84;
+  color: var(--link-hover);
   text-decoration: none;
 }
 
-/* Navigation Bar */
+/* buttons */
+
+.btn {
+  color:#678778;
+  border-color: #678778;
+}
+
+.btn:hover {
+   background-color: #C5E8C4;
+   color: #000;
+}
+
+/* navigation bar */
 .uci-logo {
     margin-right: 15px;
+    width: 80px;
+    height: 40px;
 }
 
 .nav-item {
   margin-top: 6px;
 }
 
-.switch {
-  top: 30px;
-}
-
 /* masthead */
 .jumbotron {
-  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/images/Sequoias.jpg");
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/resources/Sequoias.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -81,7 +113,7 @@ a:hover {
   border-width: thick !important;
 }
 
-  /* Footer */
+  /* footer */
 .footer-styles {
   padding: 10px;
   position: absolute !important;
@@ -91,114 +123,13 @@ a:hover {
   text-align: center;
 }
 
-/* tag forest */
-.taxonomy-index {
-  display: grid;
-  grid-column-gap: 2em;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0;
-  padding: 0;
-  font-size: 0.9em;
-  list-style: none;
-}
-
-.taxonomy-index a {
-  display: flex;
-  padding: .25em 0;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  border-bottom: 1px solid #e7e7e7;
-}
-
-.taxonomy-list {
-  list-style: none;
-}
-
-.entry-time {
-  font-size: 14px;
-}
-
-/* Groups */
-.blockquote {
-  font-size: 25px;
-}
-
-/* Github Gist */
-/* body .gist .gist-file {
-  margin-bottom: 0;
-  border: 1px solid #adb5bd;
-}
-
-body .gist .gist-data  {
-  background-color: var(--bg-card-body);
-}
-body .gist .highlight {
-  background-color: transparent;
-}
-
-body .gist .blob-num {
-  color: var(--text-color);
-  background-color: var(--bg-card-body);
-}
-
-.gist .blob-code-inner .pl-s {
-  color: var(--storage);
-}
-.gist .blob-code-inner .pl-s1 {
-  color: var(--string);
-}
-
-.gist .blob-code-inner .pl-c1 {
-  color: var(--constant)
-}
-
-.gist .blob-code-inner .pl-k {
-  color: var(--keyword)
-}
-
-.gist .blob-code-inner .pl-v {
-  color: var(--variable)
-}
-
-body .gist .gist-meta {
-  display: none;
-} */
-
-/* Spacing */
-.tab1 {
-  margin-left: 40px;
-}
-
-.tab2 {
-  margin-left: 60px;
-}
-
-.tab4 {
-  margin-left: 80px;
-}
-
-/* Syntax Highlighting */
-.highlight {
-  background: rgb(230, 230, 230);
-  border: 1px #C1C1C1;
-  border-radius: 3px;
-}
-
-code {
-    background-color: rgb(230, 230, 230);
-    border-radius: 3px;
-    padding: 2px;
-    color:#61afef;
-}
-
-pre {
-  background-color: rgb(230, 230, 230);
-  color: var(--text-color);
-}
-
 /* CV */
-.h-line {
-  background-color: #e7e7e7;
+.fas, .fa-regular {
+  color: #678778;
+}
+
+label > h3 {
+  color: #678778;
 }
 
 .m-d.expand-list{
@@ -208,16 +139,10 @@ pre {
 .m-d.expand-list > li{
   list-style-type: none;
   padding: 15px 0;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #212121;
   position: relative;
-/*         max-width: 80%; */
-  color: var(--text-color)
+  max-width: 80%;
 }
-.tab_lab {
-  color:#008000;
-  padding: 10px;
-}
-
 .m-d label[class^="tab"]:hover{
   cursor: pointer;
 }
@@ -231,8 +156,7 @@ pre {
   height: 40px;
   position: absolute;
   left: 0;
-  top: 0;
-  color: var(--constant); 
+  top: 0; 
 }
 .m-d input[class^="tab"]:hover{
 cursor: pointer;
@@ -244,7 +168,6 @@ cursor: pointer;
   height: auto;
   max-height: 0;
   max-width: 100%;
-/*        background: yellow;*/
   overflow: hidden;
   transform: translateY(20px);
   transition: all 180ms ease-in-out 0ms; 
@@ -296,7 +219,6 @@ cursor: pointer;
 .m-d input[class^="tab"]:checked ~ .content{
   margin-bottom: 20px;
 }
-
 .m-d .open-close-icon{
   display: inline-block;
   position: absolute;
@@ -324,4 +246,115 @@ cursor: pointer;
   opacity: 0;
   transform: rotate(0deg);
   transition: opacity 50ms linear 0ms, transform 150ms ease-in-out 0ms; 
+}
+
+/* tag forest */
+.taxonomy-index {
+  display: grid;
+  grid-column-gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  list-style: none;
+}
+
+.taxonomy-index a {
+  display: flex;
+  padding: .25em 0;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.taxonomy-list {
+  list-style: none;
+}
+
+.entry-time {
+  font-size: 14px;
+}
+
+/* groups */
+.blockquote {
+  font-size: 25px;
+}
+
+/* gitbub gist */
+body .gist .gist-file {
+  margin-bottom: 0;
+  border: 1px solid #adb5bd;
+}
+
+body .gist .gist-data  {
+  background-color: var(--bg-card-body);
+}
+body .gist .highlight {
+  background-color: transparent;
+}
+
+body .gist .blob-num {
+  color: var(--text-color);
+  background-color: var(--bg-card-body);
+}
+
+.gist .blob-code-inner .pl-s {
+  color: var(--storage);
+}
+.gist .blob-code-inner .pl-s1 {
+  color: var(--string);
+}
+
+.gist .blob-code-inner .pl-c1 {
+  color: var(--constant)
+}
+
+.gist .blob-code-inner .pl-k {
+  color: var(--keyword)
+}
+
+.gist .blob-code-inner .pl-v {
+  color: var(--variable)
+}
+
+body .gist .gist-meta {
+  display: none;
+}
+
+/* code */
+code, pre, .n {
+  color: var(--code-color);
+  background-color: var(--code-bg);
+}
+
+.nx, .s2 {
+  color: var(--code-nx);
+}
+
+.s1 {
+  color: var(--code-s1);
+}
+
+.nt {
+  color: var(--code-nt);
+}
+
+.kc {
+  color: var(--code-kc);
+}
+
+.o {
+  color: var(--code-o);
+}
+
+.c, .c1 {
+  color: var(--code-c);
+}
+
+.p {
+  color: var(--code-p);
+}
+
+pre .lineno {
+  color: var(--text-color);
 }

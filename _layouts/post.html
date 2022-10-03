@@ -17,13 +17,13 @@ headname: Notes
         <p>{{ page.author }} | {{ page.date | date_to_string }}
           <div class="post-categories">
             {% if post %}
-              {% assign categories = post.categories %}
+              {% assign tags = post.tags %}
             {% else %}
-              {% assign categories = page.categories %}
+              {% assign tags = page.tags %}
             {% endif %}
-            {% for category in categories %}
-            Categories: <a href="{{site.baseurl}}/notes/tag-forest/#{{category|slugize}}">{{category}}</a>
-            {% unless forloop.last %}&nbsp;{% endunless %}
+            tags: {% for tag in tags %}
+            <a href="{{site.url}}/pages/tag-forest/#{{ tag | slugify }}">{{tag}}</a>
+            {% unless forloop.last %},&nbsp;{% endunless %}
             {% endfor %}
           </div>
         </div>
@@ -34,7 +34,6 @@ headname: Notes
 
   </div>
 
-
   <div class = "row">
 
     <div class= "col-2">
@@ -43,8 +42,8 @@ headname: Notes
 <!-- Buttons -->
   <div class = "col-8 clearfix">
       <hr class = "h-line">
-      <a href = "/notes/notes.html"><button type="button" class="btn btn-outline-success float-left">Back to all posts</button></a>
-      <a href = "/notes/tag-forest.html"><button type="button" class="btn btn-outline-success float-right">See all tags</button></a>
+      <a href = "/pages/notes.html"><button type="button" class="btn btn-outline-success float-left">Back to all posts</button></a>
+      <a href = "/pages/tag-forest.html"><button type="button" class="btn btn-outline-success float-right">See all tags</button></a>
 
     </div>
 

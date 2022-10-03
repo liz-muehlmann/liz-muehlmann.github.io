@@ -1,0 +1,36 @@
+/* This checks for the system state */
+:root {
+  --background-color: #fffafa;
+  --text-color: #222;
+  --storage: #222;
+  --constant: #44ee4e;
+  --string: #3a9fbf;
+  --keyword: #ff748c;
+  --variable: #fdb265;
+  --link-hover: #C5E8C4;
+  --link-color: #84a98c;
+  --code-color: #526763;
+  --code-bg: #f2f2f2;
+  --code-nx: #917f52;
+  --code-nt: #C98474;
+  --code-s1: #7B6079;
+  --code-kc: #02475E;
+  --code-o: #D25959;
+  --code-c: #222;
+  --code-p: #bc6b95;
+}
+
+/* .light-mode {
+  --background-color: #f4f6f5;
+  --text-color: #222;
+  --storage: #222;
+  --constant: #44ee4e;
+  --string: #3a9fbf;
+  --keyword: #ff748c;
+  --variable: #fdb265;
+  --code-color: #678778;
+  --code-bg: #e6e6e6;
+  --code-n: #776743;
+  --code-nx: #647e7a;
+  --code-s2: #7d7d7c;
+} */
