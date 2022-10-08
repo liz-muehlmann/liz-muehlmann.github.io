@@ -14,10 +14,24 @@ body {
   color: var(--text-color);
 }
 
+.boxed {
+  border: 1px solid #678778;
+  padding: 5px;
+  box-shadow: -10px -10px #678778;
+  margin: 30px;
+}
+
 /* horizontal line */
 hr {
   border: 1px solid #678778;
 }
+
+.dashed {
+  border: 1px #678778;
+  border-bottom-style: dashed;
+  
+}
+
 
 /* images */
 figure > figcaption {
@@ -54,7 +68,6 @@ a:hover {
 }
 
 /* buttons */
-
 .btn {
   color:#678778;
   border-color: #678778;
@@ -121,9 +134,17 @@ a:hover {
   text-align: center;
 }
 
-/* CV */
-.fas, .fa-regular {
+/* icons */
+.fas, .fa-regular, .fa-solid {
   color: #678778;
+}
+
+.fa-solid {
+  margin-bottom: 15px;
+}
+
+.fa-solid + .fa-solid{
+  padding-left: 50px;
 }
 
 label > h3 {
@@ -285,7 +306,7 @@ body .gist .gist-file {
 }
 
 body .gist .gist-data  {
-  background-color: var(--bg-card-body);
+  background-color: var(--code-bg);
 }
 body .gist .highlight {
   background-color: transparent;
@@ -297,22 +318,22 @@ body .gist .blob-num {
 }
 
 .gist .blob-code-inner .pl-s {
-  color: var(--storage);
+  color: var(--code-kc);
 }
 .gist .blob-code-inner .pl-s1 {
-  color: var(--string);
+  color: var(--code-nx);
 }
 
 .gist .blob-code-inner .pl-c1 {
-  color: var(--constant)
+  color: var(--code-o)
 }
 
-.gist .blob-code-inner .pl-k {
-  color: var(--keyword)
+.gist .blob-code-inner .pl-k, .gist .blob-code-inner .pl-en {
+  color: var(--code-color)
 }
 
 .gist .blob-code-inner .pl-v {
-  color: var(--variable)
+  color: var(--code-n)
 }
 
 body .gist .gist-meta {
@@ -353,6 +374,6 @@ code, pre, .n {
   color: var(--code-p);
 }
 
-pre .lineno {
+pre .lineno, .m {
   color: var(--text-color);
 }

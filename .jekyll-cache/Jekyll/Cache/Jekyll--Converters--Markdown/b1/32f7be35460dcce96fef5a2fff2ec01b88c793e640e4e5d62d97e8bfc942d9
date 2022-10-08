@@ -1,0 +1,111 @@
+I"�<p>Welcome to part four of my <a href="http://localhost:4000/pages/tag-forest.html/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. In this post, we’ll download and process the state park data before adding it to the base map created in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a>.</p>
+
+<!--more-->
+
+<h3 id="project-outline">project outline</h3>
+<hr />
+
+<p>I had to break the tutorial into different parts because it became unwieldy. I list the component parts below. The annotated version of the code can be found in this project’s repository in the folder called <a href="https://github.com/liz-muehlmann/nps" target="_blank" rel="noopener noreferrer">r files</a></p>
+
+<p><a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">I. cartography in r part one</a></p>
+<ul>
+  <li>install packages</li>
+  <li>download usa shapefile</li>
+  <li>shift alaska and hawaii</li>
+  <li>save shapefile</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">II. cartography in r part two</a></p>
+<ul>
+  <li>create usa base map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">III. cartography in r part three</a></p>
+<ul>
+  <li>download national park data</li>
+  <li>process national park data</li>
+  <li>shift alaska and hawaii national parks</li>
+  <li>save shapefile</li>
+  <li>add national parks to map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-four" target="_blank" rel="noopener noreferrer">IV. cartography in r part four [this post]</a></p>
+<ul>
+  <li>download state park data</li>
+  <li>process state park data</li>
+  <li>shift alaska and hawaii state parks</li>
+  <li>save shapefile</li>
+  <li>add state parks to map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-five" target="_blank" rel="noopener noreferrer">V. cartography in r part five</a></p>
+<ul>
+  <li>add in shiny functionality</li>
+  <li>add markers to visited parks</li>
+  <li>save and embed map</li>
+</ul>
+
+<h3 id="1-load-libraries">1. load libraries</h3>
+<hr />
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## load libraries</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"tidyverse"</span><span class="p">)</span><span class="w">        </span><span class="c1"># data manipulation &amp; map creation</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"sf"</span><span class="p">)</span><span class="w">               </span><span class="c1"># loads shapefile</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"leaflet"</span><span class="p">)</span><span class="w">          </span><span class="c1"># creates the map</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"operator.tools"</span><span class="p">)</span><span class="w">   </span><span class="c1"># not-in function</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I am not going to explain in detail what each of these packages do because I already covered it in <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part one</a>.</p>
+
+<h3 id="2-load-data">2. load data</h3>
+<hr />
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## load data</span><span class="w">
+    </span><span class="n">usa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_sf</span><span class="p">(</span><span class="s2">"~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp"</span><span class="p">)</span><span class="w">
+    </span><span class="n">nps</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_sf</span><span class="p">(</span><span class="s2">"~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Be sure to change <code>~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp</code> and <code>~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp</code> to reflect where you saved the shifted shapefiles.</p>
+
+<p>If your data processing and base map creation are in the same file, you can skip these lines. When you make the Leaflet call below, you’ll use the name of the variable where the shape data is stored.</p>
+
+<h3 id="3-download-state-park-data">3. download state park data</h3>
+<hr />
+
+<p>Unlike the National Park data, the state data is harder to come by. After quite a bit of searching I found the <a href="https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview" target="_blank" rel="noopener noreferrer">PAD-US</a> data created by the United States Geological Survey. The data they collect is <em>amazing</em>. It is a “national inventory of U.S. terrestrial and marine protected areas.”</p>
+
+<p>When they say <em>national inventory</em>, they mean it. It includes a detailed accounting of nearly every piece of public land “preserved through legal or other effective means” in the United States. For my project, it’s overkill and it will take some investigating to determine what information I want to keep and what to discard.</p>
+
+<p>The first step is to navigate to the <a href="https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview" target="_blank" rel="noopener noreferrer">PAD-US</a> website and download the data. On the PAD-US website, click <em>View Data Download</em>.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-23.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-23.jpg" alt="Image: PAD-US download" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>PAD-US download</span></figcaption>
+</figure>
+
+<p>On the next page, you can download the National PAD-US data, the data by Census region, and by state. Click on <em>National Geopackage</em>. Make sure you select the geopackage one rather than the geodatabase version. On the next page, you’ll confirm you’re not a robot before the download link appears.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-24.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-24.jpg" alt="Image: National data download - PAD-US" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>National data download - PAD-US</span></figcaption>
+</figure>
+
+<p>When it downloads, unzip it somewhere on your hard drive. The zip folder contains 35 files, so I suggest you create a folder before unzipping it so they stay together.</p>
+
+:ET
