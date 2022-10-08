@@ -1,4 +1,4 @@
-I"&<p>Version control is helpful when you want to track your project’s changes. However, GitHub has one major (yet, understandable) shortcoming: file size. The free version of GitHub will warn you if your file is over 50MB and completely reject your push if the file is over 100MB. This is a huge problem when you’re working with shapefiles (.shp) which contain the geographic coordinates necessary for cartography. “Officially” there are three ways around GitHub’s file size limits, but I have a clear favorite.</p>
+I"�%<p>Version control is helpful when you want to track your project’s changes. However, GitHub has one major (yet, understandable) shortcoming: file size. The free version of GitHub will warn you if your file is over 50MB and completely reject your push if the file is over 100MB. This is a huge problem when you’re working with shapefiles (.shp) which contain the geographic coordinates necessary for cartography. “Officially” there are three ways around GitHub’s file size limits, but I have a clear favorite.</p>
 
 <!--more-->
 <ol><li>Pay for GitHub Premium </li>
@@ -80,7 +80,7 @@
 
 <figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="code"><pre><span class="w">    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">remote</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">-default</span><span class="w"> </span><span class="p">[</span><span class="n">remote</span><span class="nt">-name</span><span class="p">]</span><span class="w"> </span><span class="nx">\</span><span class="w"> </span><span class="nx">gdrive://</span><span class="p">[</span><span class="n">folder</span><span class="nt">-ID</span><span class="p">]</span><span class="w">
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">dvc</span><span class="w"> </span><span class="nx">remote</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">-d</span><span class="w"> </span><span class="p">[</span><span class="n">remote</span><span class="nt">-name</span><span class="p">]</span><span class="w"> </span><span class="nx">gdrive://</span><span class="p">[</span><span class="n">folder</span><span class="nt">-ID</span><span class="p">]</span><span class="w">
     </span><span class="n">dvc</span><span class="w"> </span><span class="nx">push</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
