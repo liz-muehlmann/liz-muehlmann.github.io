@@ -132,9 +132,28 @@ Instead, I go to the [PAD-US Viewer](https://maps.usgs.gov/padus/){:target="_bla
     caption="PAD-US Viewer"
 %}
 
-In the search bar on the left, type in *Valley of Fire*
+In the search bar on the left, type in *Valley of Fire* (1) and select it from under the *Official Place Names* (2) panel that appears after you start typing. The map will adjust to show the park and you can click *Done* (3).
 
-The default view on the PAD-US Viewer includes the first layer's information, *Fee Managers* in the viewer and *PADUS3_0Fee* in the geopackage. 
+{%
+    include figure.html
+    src="/assets/notes-images/nps/nps-27.jpg"
+    caption="Search for Valley of Fire State Park"
+%}
 
+The default view on the PAD-US Viewer includes the first layer's information, *Fee Managers* in the viewer and *PADUS3_0Fee* in the geopackage. According to the documentation, most public land is "owned in fee" though some land is held in "long-term easements, leases, agreements" or by Congressional designation. The Fee Layer documents what type of land it is. 
 
+I don't actually care whether it's in fee or easement, my interest is solely in whether the Park's polygon is visible when this layer is selected in the viewer. 
 
+{%
+    include figure.html
+    src="/assets/notes-images/nps/nps-28.jpg"
+    caption="Valley of Fire State Park Polygon"
+%}
+
+The purple-ish polygon on the map shows the geographic boundaries of the Valley of Fire State Park. Great. You can check whether other layers have the same information by checking or unchecking the box next to the layer name. As you can see below, if I uncheck the Fee Manager layer and select the *Federal Fee Managers (Authoritative Data)* layer the polygon for the *Valley of Fire* disappears. This is because it is not federal land - it's state land. Be careful when choosing the layers because not all of them contain the correct information. 
+
+I am going to select the Fee Layer and load it into R using the following code.
+
+{% highlight r linenos %}
+    
+{% endhighlight %}

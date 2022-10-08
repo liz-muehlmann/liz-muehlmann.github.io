@@ -1,0 +1,5 @@
+I"�<p>This is part three of my <a href="https://liz-muehlmann.github.io/pages/tag-forest/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. If you are just finding this, I suggest taking a look at <a href="https://liz-muehlmann.github.io/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part I</a> and <a href="https://liz-muehlmann.github.io/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> first.</p>
+
+<p>In this post, I will download and process the National Park data. Once that’s done, I’ll add it to the base map I created in <a href="https://liz-muehlmann.github.io/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a>.</p>
+
+:ET
