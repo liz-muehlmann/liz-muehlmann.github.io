@@ -50,38 +50,7 @@ I make interactive maps with [Leaflet](https://rstudio.github.io/leaflet){:targe
 
 When I make static maps (like the US map pictured above), I use [ggplot](https://ggplot2.tidyverse.org/reference/ggplot.html){:target="_blank" rel="noopener noreferrer"}
 
-### project outline
-<hr>
-
-I had to break the tutorial into different parts because it became unwieldy. I list the component parts below. The annotated version of the code can be found in this project's repository in the folder called [r files](https://github.com/liz-muehlmann/nps){:target="_blank" rel="noopener noreferrer"}
-
-[I. cartography in r part one [this post]]( {{site.url}}/notes/cartography-part-one ){:target="_blank" rel="noopener noreferrer"}  
-* install packages  
-* download usa shapefile  
-* shift alaska and hawaii
-* save shapefile  
-
-[II. cartography in r part two]( {{site.url}}/notes/cartography-part-two ){:target="_blank" rel="noopener noreferrer"}  
-* create usa base map  
-
-[III. cartography in r part three]( {{site.url}}/notes/cartography-part-three ){:target="_blank" rel="noopener noreferrer"}  
-* download national park data
-* process national park data
-* shift alaska and hawaii national parks
-* save shapefile
-* add national parks to map
-
-[IV. cartography in r part four]( {{site.url}}/notes/cartography-part-four ){:target="_blank" rel="noopener noreferrer"}  
-* download state park data
-* process state park data
-* shift alaska and hawaii state parks
-* save shapefile
-* add state parks to map
-
-[V. cartography in r part five]( {{site.url}}/notes/cartography-part-five ){:target="_blank" rel="noopener noreferrer"}  
-* add in shiny functionality
-* add markers to visited parks
-* save and embed map
+{% include cartography.html %}
 
 ### 1. install packages
 <hr>
@@ -392,6 +361,6 @@ This line is very similar to the one above. I changed the name of the variable t
 
 <code>read_sf</code> is part of the sf() package. It's used to load shapefiles into R. The path to the file is enclosed in quotation marks and parentheses. Simply navigate to wherever you unzipped the *cb_2021_us_state_500k* file and choose the file with the <code>.shp</code> extension.
 
-### 4. Conclusion
+### 4. conclusion
 <hr>
 Once the shapefiles are downloaded - either using tigris() or by loading the shapefiles from the Census website - you can create the base map. I'll tackle making the base map in [part II](https://liz-muehlmann.github.io/notes/cartography-part-two"> part II </a> of this series.){:target="_blank" rel="noopener noreferrer"} of this series.*

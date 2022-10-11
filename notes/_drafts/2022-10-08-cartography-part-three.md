@@ -19,38 +19,7 @@ In this post, I will download and process the National Park data. Once that's do
 <i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> I know that my posts are verbose. I am sorry that I am not more concise but one of the biggest problems I have with code documentation is that it assumes you already know what you're doing. I'm writing these for absolute beginners that want to know what each part of the code does. If you want more concise explanations, I suggest looking at the annotated <a href="https://github.com/liz-muehlmann/nps" target="_blank" rel = "noopener no referrer">r files</a> in the project's GitHub.
 </div>
 
-### project outline
-<hr>
-
-I had to break the tutorial into different parts because it became unwieldy. I list the component parts below. The annotated version of the code can be found in this project's repository in the folder called [r files](https://github.com/liz-muehlmann/nps){:target="_blank" rel="noopener noreferrer"}
-
-[I. cartography in r part one]( {{site.url}}/notes/cartography-part-one ){:target="_blank" rel="noopener noreferrer"}  
-* install packages  
-* download usa shapefile  
-* shift alaska and hawaii
-* save shapefile  
-
-[II. cartography in r part two ]( {{site.url}}/notes/cartography-part-two ){:target="_blank" rel="noopener noreferrer"}  
-* create usa base map  
-
-[III. cartography in r part three [this post]]( {{site.url}}/notes/cartography-part-three ){:target="_blank" rel="noopener noreferrer"}  
-* download national park data
-* process national park data
-* shift alaska and hawaii national parks
-* save shapefile
-* add national parks to map
-
-[IV. cartography in r part four]( {{site.url}}/notes/cartography-part-four ){:target="_blank" rel="noopener noreferrer"}  
-* download state park data
-* process state park data
-* shift alaska and hawaii state parks
-* save shapefile
-* add state parks to map
-
-[V. cartography in r part five]( {{site.url}}/notes/cartography-part-five ){:target="_blank" rel="noopener noreferrer"}  
-* add in shiny functionality
-* add markers to visited parks
-* save and embed map
+{% include cartography.html %}
 
 ### 1. load libraries
 <hr>
@@ -130,15 +99,15 @@ The code below may look intimidating, but it's fairly straight forward. I'll go 
     nps <- read_sf("./shapefiles/original/nps/NPS_-_Land_Resources_Division_Boundary_and_Tract_Data_Service.shp")  %>% 
     select(STATE, UNIT_TYPE, PARKNAME, Shape__Are, geometry) %>% 
     filter(STATE %!in% territories) %>%  
-    mutate(type = case_when(UNIT_TYPE == "International Historic Site" ~ "International Historic Site", 
-                UNIT_TYPE == "National Battlefield Site" ~ "Military or Battlefield", 
-                UNIT_TYPE == "National Military Park" ~ "Military or Battlefield", 
-                UNIT_TYPE == "National Battlefield" ~ "Military or Battlefield",
-                UNIT_TYPE == "National Historical Park" ~ "Historical Park, Site, Monument, or Memorial",
-                UNIT_TYPE == "National Historic Site" ~ "Historical Park, Site, Monument, or Memorial",
-                UNIT_TYPE == "National Historic Trail" ~ "Historical Park, Site, Monument, or Memorial",
-                UNIT_TYPE == "National Memorial" ~ "Historical Park, Site, Monument, or Memorial",
-                UNIT_TYPE == "National Monument" ~ "Historical Park, Site, Monument, or Memorial",
+    mutate(type = case_when(UNIT_TYPE == "International Historic Site" ~ "International Historic Site", # there's 23 types of national park, I wanted to reduce this number.
+                UNIT_TYPE == "National Battlefield Site" ~ "National Military or Battlefield", # lines 56-77 reduce the number of park types
+                UNIT_TYPE == "National Military Park" ~ "National Military or Battlefield", 
+                UNIT_TYPE == "National Battlefield" ~ "National Military or Battlefield",
+                UNIT_TYPE == "National Historical Park" ~ "National Historical Park, Site, Monument, or Memorial",
+                UNIT_TYPE == "National Historic Site" ~ "National Historical Park, Site, Monument, or Memorial",
+                UNIT_TYPE == "National Historic Trail" ~ "National Historical Park, Site, Monument, or Memorial",
+                UNIT_TYPE == "National Memorial" ~ "National Historical Park, Site, Monument, or Memorial",
+                UNIT_TYPE == "National Monument" ~ "National Historical Park, Site, Monument, or Memorial",
                 UNIT_TYPE == "National Preserve" ~ "National Preserve, Reserve, or Recreation Area",
                 UNIT_TYPE == "National Reserve" ~ "National Preserve, Reserve, or Recreation Area",
                 UNIT_TYPE == "National Recreation Area" ~ "National Preserve, Reserve, or Recreation Area",
@@ -151,7 +120,7 @@ The code below may look intimidating, but it's fairly straight forward. I'll go 
                 UNIT_TYPE == "National Park" ~ "National Park or Parkway",
                 UNIT_TYPE == "Park" ~ "National Park or Parkway",
                 UNIT_TYPE == "Parkway" ~ "National Park or Parkway",
-                UNIT_TYPE == "Other Designation" ~ "Other")) %>% 
+                UNIT_TYPE == "Other Designation" ~ "Other National Land Area"))  %>%  
     mutate(visited = case_when(PARKNAME == "Joshua Tree" ~ "visited", 
                                 PARKNAME == "Redwood" ~ "visited", 
                                 PARKNAME == "Santa Monica Mountains" ~ "visited", 
@@ -311,7 +280,7 @@ As a result, I save the shifted data to my hard drive so it's easier to load lat
 <hr>
 
 {% highlight r linenos %}
-## create usa Base Map using leaflet()
+    ## create usa Base Map using leaflet()
     map <- leaflet() %>%
     addPolygons(data = states,
         smoothFactor = 0.2,
@@ -469,6 +438,7 @@ Finally, on the map I don't want the layers to be collapsed, so I set <code>opti
 %}
 
 ### 6. conclusion
+<hr>
 Hey, look at that! You made a base map *and* you added some National Park data to it. You're a certified cartographer now!
 
 In the next [part IV]({{site.url}}/notes/cartography-part-four){:target="_blank" rel="noopener noreferrer"} post we'll download and process the state park data before adding it to the map. [Part V]({{site.url}}/notes/cartography-part-five){:target="_blank" rel="noopener noreferrer"} of this series we'll add *Shiny* functionality and some additional markers.

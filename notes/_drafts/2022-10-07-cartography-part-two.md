@@ -14,38 +14,7 @@ This is a continuation of my [previous post]({{site.url}}/notes/cartography-part
 
 In this post, I'll go over how to use Leaflet to map the shapefile we made in the previous post. If you've come here from [part one]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"} of the series, you probably have the libraries and data loaded already. However, if you don't, be sure to load the libraries and shapefiles before moving to number two.
 
-### project outline
-<hr>
-
-I had to break the tutorial into different parts because it became unwieldy. I list the component parts below. The annotated version of the code can be found in this project's repository in the folder called [r files](https://github.com/liz-muehlmann/nps){:target="_blank" rel="noopener noreferrer"}
-
-[I. cartography in r part one]( {{site.url}}/notes/cartography-part-one ){:target="_blank" rel="noopener noreferrer"}  
-* install packages  
-* download usa shapefile  
-* shift alaska and hawaii
-* save shapefile  
-
-[II. cartography in r part two [this post]]( {{site.url}}/notes/cartography-part-two ){:target="_blank" rel="noopener noreferrer"}  
-* create usa base map  
-
-[III. cartography in r part three]( {{site.url}}/notes/cartography-part-three ){:target="_blank" rel="noopener noreferrer"}  
-* download national park data
-* process national park data
-* shift alaska and hawaii national parks
-* save shapefile
-* add national parks to map
-
-[IV. cartography in r part four]( {{site.url}}/notes/cartography-part-four ){:target="_blank" rel="noopener noreferrer"}  
-* download state park data
-* process state park data
-* shift alaska and hawaii state parks
-* save shapefile
-* add state parks to map
-
-[V. cartography in r part five]( {{site.url}}/notes/cartography-part-five ){:target="_blank" rel="noopener noreferrer"}  
-* add in shiny functionality
-* add markers to visited parks
-* save and embed map
+{% include cartography.html %}
 
 ### 1. load libraries
 <hr>
@@ -255,7 +224,7 @@ Since the base map has only one layer, this property doesn't affect anything.
 
 <code>group = "Base Map")</code> lets you group multiple layers together. This argument will come in handy as we add more information to the map. The base map is the default layer and is always visible - though, when you use map tiles you can define multiple base layers. All other layers will be on top of the base layer. When using different groups, you can define functionality that allows users to turn off certain layers. 
 
-### 4. Conclusion
+### 4. conclusion
 You've created your first base map! It's a boring flat, grey map, but it's the base we'll use when adding in the national and state park data. In [part III]({{site.url}}/notes/cartography-part-three){:target="_blank" rel="noopener noreferrer"} of this series we'll process and add in the National Parks.
 
 <figure>

@@ -1,0 +1,306 @@
+I"�\<p>This is a continuation of my <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">previous post</a> where I walked through how to download and modify shape data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa. 
+<!--more--></p>
+
+<p>In this post, I’ll go over how to use Leaflet to map the shapefile we made in the previous post. If you’ve come here from <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part one</a> of the series, you probably have the libraries and data loaded already. However, if you don’t, be sure to load the libraries and shapefiles before moving to number two.</p>
+
+<h3 id="project-outline">project outline</h3>
+<hr />
+
+<p>I had to break the tutorial into different parts because it became unwieldy. I list the component parts below. The annotated version of the code can be found in this project’s repository in the folder called <a href="https://github.com/liz-muehlmann/nps" target="_blank" rel="noopener noreferrer">r files</a></p>
+
+<p><a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">I. cartography in r part one</a></p>
+<ul>
+  <li>install packages</li>
+  <li>download usa shapefile</li>
+  <li>shift alaska and hawaii</li>
+  <li>save shapefile</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">II. cartography in r part two</a></p>
+<ul>
+  <li>create usa base map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">III. cartography in r part three</a></p>
+<ul>
+  <li>download national park data</li>
+  <li>process national park data</li>
+  <li>shift alaska and hawaii national parks</li>
+  <li>save shapefile</li>
+  <li>add national parks to map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-four" target="_blank" rel="noopener noreferrer">IV. cartography in r part four </a></p>
+<ul>
+  <li>download state park data</li>
+  <li>process state park data</li>
+  <li>shift alaska and hawaii state parks</li>
+  <li>separate state park data</li>
+  <li>save state park data</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-five" target="_blank" rel="noopener noreferrer">V. cartography in r part five</a></p>
+<ul>
+  <li>add in shiny functionality</li>
+  <li>add markers to visited parks</li>
+  <li>save and embed map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-six" target="_blank" rel="noopener noreferrer">V. cartography in r part six</a></p>
+<ul>
+  <li>create individual state maps</li>
+  <li>add in shiny functionality</li>
+  <li>add markers to visited parks</li>
+  <li>save and embed maps</li>
+</ul>
+
+<h3 id="1-load-libraries">1. load libraries</h3>
+<hr />
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## load libraries</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"tidyverse"</span><span class="p">)</span><span class="w">    </span><span class="c1"># data manipulation &amp; map creation</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"sf"</span><span class="p">)</span><span class="w">           </span><span class="c1"># loads shapefile</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="s2">"leaflet"</span><span class="p">)</span><span class="w">      </span><span class="c1"># creates the map</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I am not going to explain in detail what each of these packages do because I already covered it in <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part one</a>.</p>
+
+<h3 id="2-load-data">2. load data</h3>
+<hr />
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## load data</span><span class="w">
+    </span><span class="n">states</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_sf</span><span class="p">(</span><span class="s2">"~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Be sure to change <code>~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp</code> to reflect wherever you saved the shifted shapefile.</p>
+
+<p>If your data processing and base map creation are in the same file, you can skip this line, and when you make the Leaflet call below, you’ll use the name of the variable where the shape data is stored.</p>
+
+<h3 id="3-create-the-base-map">3. create the base map</h3>
+<hr />
+
+<p>At its most basic, all Leaflet needs to create a map is a base map and data layers. The code below may look intimidating, but it’s mostly style options.</p>
+
+<p>This is the map we’re going to create. It’s a simple grey map and each state darkens in color as you hover over it. I’ll show the same map after each style option is added so you can see what effect it has.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-12.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-12.jpg" alt="Image: Final USA basemap" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>Final USA basemap</span></figcaption>
+</figure>
+
+<div class="boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> I will give the entire codeblock first. I also include the individual line before describing what it does. I find this to be cleaner than including a bunch of comments in the code itself. If you want to copy and paste the code to your own file, you only need to copy the code block and not each individual line.
+</div>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## create usa base map using leaflet()</span><span class="w">
+    </span><span class="n">map</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">leaflet</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">addPolygons</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">states</span><span class="p">,</span><span class="w">
+        </span><span class="n">smoothFactor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="n">fillColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#808080"</span><span class="p">,</span><span class="w">
+        </span><span class="n">fillOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+        </span><span class="n">stroke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w">
+        </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+        </span><span class="n">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+        </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#808080"</span><span class="p">,</span><span class="w">
+        </span><span class="n">highlight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">highlightOptions</span><span class="p">(</span><span class="w">
+            </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+            </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+            </span><span class="n">fillOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w">
+            </span><span class="n">bringToFront</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">),</span><span class="w">
+        </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Base Map"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>line 2:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">2</span><span class="w">    </span><span class="n">map</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">leaflet</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span></code></pre></figure>
+
+<p><code>leaflet()</code> initializes the map widget. I save it to a variable called map (<code>map &lt;-</code>) so I can run other code in the file without recreating the map each time. When you want to see the map, you can type <code>map</code> (or whatever you want to name your map) in the terminal and hit enter. R will display the map in the viewer.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>line 3:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">3</span><span class="w">    </span><span class="n">addPolygons</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">states</span><span class="p">,</span></code></pre></figure>
+
+<p><code>addPolygons()</code> adds a layer to the map widget. Leaflet has different layer options, including <code>addTiles</code> and <code>addMarkers</code> which do different things. You can read about them on the <a href="https://rstudio.github.io/leaflet/" target="_blank" rel="noopener noreferrer">leaflet website</a>. Since we’re using a previously created shapefile, we’ll add the shapefile to the map using <code>addPolygons()</code>.</p>
+
+<p>The first argument you need to specify after calling addPolygons is <code>data = [data-source]</code>. <code>[data-source]</code> is whatever variable your data is stored in. For me, it’s called <code>states</code>. This is either the processed data from part I of this series or the saved shapefile loaded above under the section called <em>load data</em>.</p>
+
+<p>When you run <em>only</em> the first two lines, Leaflet will use its default styling. The base color will be a light blue and the outlines of the states will be dark blue and fairly thick.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-13.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-13.jpg" alt="Image: USA map with default leaflet styling" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>USA map with default leaflet styling</span></figcaption>
+</figure>
+
+<p>You can leave the base map like this if you want, but all additional data will be added as a layer <em>on top</em>&lt;/i&gt;* of this map which can become distracting very quickly. I prefer to make my base maps as basic and unobtrusive as possible so the data I add on top of the base map is more prominent.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>line 4</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">4</span><span class="w">    </span><span class="n">smoothFactor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span></code></pre></figure>
+
+<p><code>smoothFactor</code> controls how much the polygon shape should be smoothed at each zoom level. The lower the number the more accurate your shapes will be. A larger number, on the other hand, will lead to better performance, but can distort the shapes of known areas.</p>
+
+<p>I keep the <code>smoothFactor</code> low because I want the United States to appear as a coherent land mass. The image below shows three different maps, each with a different smoothFactor to illustrate what this argument does. On the left, the map’s <code>smoothFactor=0.2</code>, the center map’s <code>smoothFactor=10</code>, and the right’s <code>smoothFactor=100</code>.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-14.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-14.jpg" alt="Image: SmoothFactor = 0.2 (left), 10 (center), 100 (right)" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>SmoothFactor = 0.2 (left), 10 (center), 100 (right)</span></figcaption>
+</figure>
+
+<p>As you can see, the higher the <code>smoothFactor</code> the less coherent the United States becomes.</p>
+
+<div class="boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> Leaflet - all map programs, really - don't know that continents, countries, states, or any other land mass is a coherent set. It reads the shape data and spits out a map without regard to where things "should" be. It doesn't know California goes on the left or that Alaska is part of the United States. It's important to keep this in mind because each state's shape is rendered individually when using <code>addPolygons()</code>.
+</div>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>lines 5-6:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">5</span><span class="w">    </span><span class="n">fillColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#808080"</span><span class="p">,</span><span class="w">
+</span><span class="m">6</span><span class="w">    </span><span class="n">fillOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span></code></pre></figure>
+
+<p><code>fillColor</code> refers to what color is on the inside of the polygons. Since I want a minimal base map, I usually set this value to be some shade of grey. If you want a different color, you only need to replace <code>#808080</code> with the corresponding hex code for the color you want. <a href="https://htmlcolorcodes.com/color-picker" target="_blank" rel="noopener noreferrer">Here</a> is a useful hex color picker. If you have a hex value and you want the same color in a different shade, <a href="https://javisperez.github.io/tailwindcolorshades/#/" target="_blank" rel="noopener noreferrer">this</a> is a useful site.</p>
+
+<p><code>fillOpacity</code> determines how transparent the color inside the shape should be. I set mine to be <code>0.5</code> because I like the way it looks. The number can be between 0 and 1 with 1 being fully opaque and 0 being fully transparent.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>line 7-10:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">7</span><span class="w">    </span><span class="n">stroke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w">
+</span><span class="m">8</span><span class="w">    </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+</span><span class="m">9</span><span class="w">    </span><span class="n">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+</span><span class="m">10</span><span class="w">   </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#808080"</span><span class="p">,</span></code></pre></figure>
+
+<p>The next four lines define the appearance of the shapes’ outline.</p>
+
+<p>The <code>stroke</code> property can be set to either <code>TRUE</code> or <code>FALSE</code>. When true, Leaflet adds an outline around each polygon. When false, the polygons have no outline. In the image below, the map on the left has the default outlines and on the right <code>stroke = FALSE</code>.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-15.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-15.jpg" alt="Image: Default outlines on the left, no outline on the right" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>Default outlines on the left, no outline on the right</span></figcaption>
+</figure>
+
+<p><code>weight = 0.5</code> sets the thickness of the outlines to be 0.5 pixels. This can be any value you want with higher numbers corresponding to thicker lines. Lower numbers correspond to thinner lines.</p>
+
+<p>The <code>opacity</code> property operates in the same way as fill opacity above, but on the outlines. The number can be between 0 and 1. Lower numbers correspond to the lines being more transparent and 1 means fully opaque.</p>
+
+<p><code>color = "#808080"</code> sets the color of the outline. I typically set it to be the same color as the fill color.</p>
+
+<p>If you want a static base map then lines 2-10 are all you need, as shown in the image below. I like to add some functionality to my base map so that the individual states become darker when they’re hovered over.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-16.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-16.jpg" alt="Image: static base map" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>static base map</span></figcaption>
+</figure>
+
+<p>Lines 11-15 define the map’s behavior when the mouse hovers over the shape. Most of the options are the same as the ones used on the base polygon shapes, so I won’t go into them with much detail.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>line 11:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">11</span><span class="w">    </span><span class="n">highlight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">highlightOptions</span><span class="p">()</span></code></pre></figure>
+
+<p><code>highlight = highlightOptions()</code> contains the mouseover specifications. The word before the equal sign has to be either <code>highlight</code> or <code>highlightOptions</code>. I am not sure why you have to declare <em>highlight</em> twice, but you do.</p>
+
+<p><code>highlightOptions()</code> is the actual function call.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>lines 12-14</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">12</span><span class="w">    </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w">
+</span><span class="m">13</span><span class="w">    </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+</span><span class="m">14</span><span class="w">    </span><span class="n">fillOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span></code></pre></figure>
+
+<p><code>weight</code>, <code>color</code>, and <code>fillOpacity</code> all operate in the same way as before, but whatever values you specify here will only show up when the mouse hovers over.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>line 15</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">15</span><span class="w">    </span><span class="n">bringToFront</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">),</span></code></pre></figure>
+
+<p><code>bringToFront</code> takes one of two values: <code>TRUE</code> or <code>FALSE</code>. It only really matters when you have multiple layers (like we will in later parts of this series). When <code>bringToFront = TRUE</code> hovering over the state will bring it to the front. When <code>bringToFront = FALSE</code> it will stay in the back.</p>
+
+<p>Since the base map has only one layer, this property doesn’t affect anything.</p>
+
+<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+
+<ul>
+  <li>line 16</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">16</span><span class="w">    </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Base Map"</span><span class="p">)</span></code></pre></figure>
+
+<p><code>group = "Base Map")</code> lets you group multiple layers together. This argument will come in handy as we add more information to the map. The base map is the default layer and is always visible - though, when you use map tiles you can define multiple base layers. All other layers will be on top of the base layer. When using different groups, you can define functionality that allows users to turn off certain layers.</p>
+
+<h3 id="4-conclusion">4. Conclusion</h3>
+<p>You’ve created your first base map! It’s a boring flat, grey map, but it’s the base we’ll use when adding in the national and state park data. In <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> of this series we’ll process and add in the National Parks.</p>
+
+<figure>
+<iframe seamless="" src="/assets/notes-images/nps/maps/usa.html" width="100%" height="500"></iframe><figcaption>United States base map made with Leaflet</figcaption></figure>
+:ET
