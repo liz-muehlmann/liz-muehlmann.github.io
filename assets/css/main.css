@@ -21,6 +21,13 @@ body {
   margin: 30px;
 }
 
+.boxed-important {
+  border: 1px solid #B94D46;
+  padding: 5px;
+  box-shadow: -10px -10px #B94D46;
+  margin: 30px;
+}
+
 /* horizontal line */
 hr {
   border: 1px solid #678778;
@@ -55,6 +62,11 @@ figure > figcaption {
 
 .tab4 {
   margin-left: 80px;
+}
+
+/* election guides */
+.guides {
+  font-style: italic;
 }
 
 /* links */

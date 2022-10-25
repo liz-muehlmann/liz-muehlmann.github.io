@@ -1,7 +1,0 @@
-I"`
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## create territories list</span><span class="w">
-    </span><span class="n">territories</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"AS"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GU"</span><span class="p">,</span><span class="w"> </span><span class="s2">"MP"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PR"</span><span class="p">,</span><span class="w"> </span><span class="s2">"VI"</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-:ET
