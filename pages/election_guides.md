@@ -45,9 +45,6 @@ During presidential election years the <b>State</b> guides will also include inf
 Click on a link to download the PDF. <br> <br> organization: filename | last updated  
 </div>
 
-
-
-
 {% assign all_levels = site.data.guides | map: "level" | uniq %}
 {% assign all_types = site.data.guides | map: "election_type" | uniq %}
 

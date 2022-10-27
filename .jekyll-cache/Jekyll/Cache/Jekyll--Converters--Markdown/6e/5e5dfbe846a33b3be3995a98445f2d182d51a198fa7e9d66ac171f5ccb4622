@@ -1,4 +1,4 @@
-I"O<h1>welcome</h1>
+I"s<h1>welcome</h1>
 <hr class="h-line" />
 
 <p>Here you’ll find several non-partisan ballot guides. I try to include as much information as possible without directly recreating the official voter guide. The information is sourced from the ballot guide, calmatters, ballotpedia, LA Times, voter’s edge, and Mercury News. I have included links to the campaign website or wherever most of the information came from.</p>
@@ -42,7 +42,7 @@ During presidential election years the <b>State</b> guides will also include inf
 <div class="boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i>
 <i>Note:</i>
-Click on a link to download the PDF. <br /> <br /> File structure: filename | last updated  
+Click on a link to download the PDF. <br /> <br /> organization: filename | last updated  
 </div>
 
 <div class="row">
@@ -52,6 +52,8 @@ Click on a link to download the PDF. <br /> <br /> File structure: filename | la
         
             <h3 class="guides">State</h3>
              
+                
+                    
                 
                     
                 
@@ -79,6 +81,8 @@ Click on a link to download the PDF. <br /> <br /> File structure: filename | la
                     
                 
                     
+                
+                    
                         <a href="http://localhost:4000/assets/download/2022_Primary_Los Angeles County.pdf" target="_blank" rel="noopener noreferrer">
                         2022 Los Angeles County
                         </a> | <span class="guides">2022-06-21</span><br />
@@ -90,6 +94,8 @@ Click on a link to download the PDF. <br /> <br /> File structure: filename | la
         
             <h3 class="guides">Local</h3>
              
+                
+                    
                 
                     
                 
@@ -129,6 +135,8 @@ Click on a link to download the PDF. <br /> <br /> File structure: filename | la
                     
                         
                     
+                        
+                    
                 
                     <h3 class="guides">County</h3>
                     
@@ -146,11 +154,19 @@ Click on a link to download the PDF. <br /> <br /> File structure: filename | la
                     
                         
                     
+                        
+                    
                 
                     <h3 class="guides">Local</h3>
                     
                         
                     
+                        
+                    
+                        
+                            <a href="http://localhost:4000/assets/download/2022_General_San Dimas.pdf" target="_blank" rel="noopener noreferrer">
+                                2022 San Dimas
+                            </a> | <span class="guides">2022-06-21</span><br />
                         
                     
                         

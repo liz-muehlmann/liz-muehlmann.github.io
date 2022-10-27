@@ -10,6 +10,12 @@
   last_update: "2022-10-26"
   download: "2022_General_Los Angeles County.pdf"
 
+- guide_name: "2022 San Dimas"
+  election_type: "General"
+  level: "Local"
+  last_update: "2022-06-21"
+  download: "2022_General_San Dimas.pdf"
+
 - guide_name: "2022 California"
   election_type: "Primary"
   level: "State"
@@ -22,7 +28,7 @@
   last_update: "2022-06-21"
   download: "2022_Primary_Los Angeles County.pdf"
 
-- guide_name: "2022 California"
+- guide_name: "2022 San Dimas"
   election_type: "Primary"
   level: "Local"
   last_update: "2022-06-21"
