@@ -23,7 +23,59 @@ If you notice any errors, you feel like I’ve missed something, or you found th
 5. Track your ballot: <a href="https://california.ballottrax.net/voter/">https://california.ballottrax.net/voter/</a>
 6. If you are in the Los Angeles, San Bernardino, Orange County area and need help getting to your polling place I will either find you resources or help you get there. I also offer to go with you to vote (and I will bring my two large German Shepherds) if you feel unsafe going to vote alone.
 
+
 <h1>ballot guides</h1>
 <hr class = "h-line">
 
+I have separated the guides into three geographic levels. 
+
+1. **State** guides cover nominees, candidates, and issues that affect either the entire nation or the individual state. During Presidential elections, information about the presidential and vice presidential nominees and candidates will be included at the top of each state's file. 
+2. **County** covers candidates and issues that affect the individual counties. You will need to download the guide corresponding to whatever county you live in.
+3. **Local** guides operate like the County guides and cover candidates and issues contained to one city or local area. I make these on request only. Feel free to email me if you want your city / location.
+
+<div class = "boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i>
+<i>Note:</i>
+During presidential election years the <b>State</b> guides will also include information about the President and Vice Presidential Candidates or Nominees.
+</div>
+
 Click on a link to download the PDF.
+
+{% assign all_levels = site.data.guides | map: "level" | uniq %}
+{% assign all_types = site.data.guides | map: "election_type" | uniq %}
+
+
+<div class="row">
+    <div class="col">
+        <h3><center>primary</center></h3>
+        <hr class = "h-line"> 
+        {% for level in all_levels %}
+            <h3 class = "guides">{{level}}</h3>
+            {% if guide.type == type %} 
+                {% for guide in site.data.guides %}
+                    {% if level == guide.level and guide.election_type == "Primary" %}
+                        <a href="{{site.url}}/assets/download/{{guide.download}}">
+                        {{ guide.guide_name }}
+                        </a> | <span class = "guides">{{guide.last_update}}</span><br>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col">
+        <h3><center>general</center></h3>
+        <hr class = "h-line">
+          {% if type == election_type %}
+                {% for level in all_levels %}
+                    <h3 class="guides">{{level}}</h3>
+                    {% for guide in site.data.guides %}
+                        {% if guide.level == level and guide.election_type == "General" %}
+                            <a href="{{site.url}}/assets/download/{{guide.download}}">
+                                {{ guide.guide_name }}
+                            </a> | <span class = "guides">{{guide.last_update}}</span><br>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+    </div>
+    

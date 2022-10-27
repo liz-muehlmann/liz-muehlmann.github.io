@@ -3,7 +3,6 @@ title: Tag-Forest
 headname: Tag Forest
 layout: default
 ---
-<!-- here! show only post title NOT snippet -->
 <div class="container justify-content-center">
   <div class="row">
     <div class="col-2"></div>

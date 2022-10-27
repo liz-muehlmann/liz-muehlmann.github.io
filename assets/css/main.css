@@ -39,7 +39,6 @@ hr {
   
 }
 
-
 /* images */
 figure > figcaption {
   font-size: 14px;
@@ -69,6 +68,9 @@ figure > figcaption {
   font-style: italic;
 }
 
+.last_update {
+  font-size: 12px;
+}
 /* links */
 a {
   color: var(--link-color);
