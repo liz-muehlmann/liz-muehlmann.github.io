@@ -1,4 +1,4 @@
-I"�<h1>welcome</h1>
+I"0<h1>welcome</h1>
 <hr class="h-line" />
 
 <p>Here you’ll find several non-partisan ballot guides. I try to include as much information as possible without directly recreating the official voter guide. The information is sourced from the ballot guide, calmatters, ballotpedia, LA Times, voter’s edge, and Mercury News. I have included links to the campaign website or wherever most of the information came from.</p>
@@ -38,6 +38,8 @@
 During presidential election years the <b>State</b> guides will also include information about the President and Vice Presidential Candidates or Nominees.
 </div>
 
+<p><strong>File structure:</strong> filename | last updated</p>
+
 <p>Click on a link to download the PDF.</p>
 
 <div class="row">
@@ -55,7 +57,7 @@ During presidential election years the <b>State</b> guides will also include inf
                     
                         <a href="http://localhost:4000/assets/download/2022_Primary_California.pdf" target="_blank" rel="noopener noreferrer">
                         2022 California
-                        </a> | <span class="guides">2022-06-21</span><br />
+                        </a> <br />last update: <span class="guides">2022-06-21</span><br />
                     
                 
                     
@@ -76,7 +78,7 @@ During presidential election years the <b>State</b> guides will also include inf
                     
                         <a href="http://localhost:4000/assets/download/2022_Primary_Los Angeles County.pdf" target="_blank" rel="noopener noreferrer">
                         2022 Los Angeles County
-                        </a> | <span class="guides">2022-06-21</span><br />
+                        </a> <br />last update: <span class="guides">2022-06-21</span><br />
                     
                 
                     
@@ -97,7 +99,7 @@ During presidential election years the <b>State</b> guides will also include inf
                     
                         <a href="http://localhost:4000/assets/download/2022_Primary_San Dimas.pdf" target="_blank" rel="noopener noreferrer">
                         2022 California
-                        </a> | <span class="guides">2022-06-21</span><br />
+                        </a> <br />last update: <span class="guides">2022-06-21</span><br />
                     
                 
             

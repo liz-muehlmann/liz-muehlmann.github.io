@@ -30,16 +30,23 @@ If you notice any errors, you feel like I’ve missed something, or you found th
 I have separated the guides into three geographic levels. 
 
 1. **State** guides cover nominees, candidates, and issues that affect either the entire nation or the individual state. During Presidential elections, information about the presidential and vice presidential nominees and candidates will be included at the top of each state's file. 
-2. **County** covers candidates and issues that affect the individual counties. You will need to download the guide corresponding to whatever county you live in.
-3. **Local** guides operate like the County guides and cover candidates and issues contained to one city or local area. I make these on request only. Feel free to email me if you want your city / location.
-
 <div class = "boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i>
 <i>Note:</i>
 During presidential election years the <b>State</b> guides will also include information about the President and Vice Presidential Candidates or Nominees.
 </div>
+2. **County** covers candidates and issues that affect the individual counties. You will need to download the guide corresponding to whatever county you live in.
+3. **Local** guides operate like the County guides and cover candidates and issues contained to one city or local area. I make these on request only. Feel free to email me if you want your city / location.
 
-Click on a link to download the PDF.
+
+<div class = "boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i>
+<i>Note:</i>
+Click on a link to download the PDF. <br> <br> organization: filename | last updated  
+</div>
+
+
+
 
 {% assign all_levels = site.data.guides | map: "level" | uniq %}
 {% assign all_types = site.data.guides | map: "election_type" | uniq %}
