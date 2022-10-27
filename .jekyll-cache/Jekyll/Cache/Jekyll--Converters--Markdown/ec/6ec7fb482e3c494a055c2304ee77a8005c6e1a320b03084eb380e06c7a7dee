@@ -1,4 +1,4 @@
-I"î<h1>welcome</h1>
+I"¼<h1>welcome</h1>
 <hr class="h-line" />
 
 <p>Here youâ€™ll find several non-partisan ballot guides. I try to include as much information as possible without directly recreating the official voter guide. The information is sourced from the ballot guide, calmatters, ballotpedia, LA Times, voterâ€™s edge, and Mercury News. I have included links to the campaign website or wherever most of the information came from.</p>
@@ -35,7 +35,7 @@
 <div class="boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i>
 <i>Note:</i>
-During presidential election years the <b>State</b> guide will also include information about the President and Vice Presidential Candidates or Nominees.
+During presidential election years the <b>State</b> guides will also include information about the President and Vice Presidential Candidates or Nominees.
 </div>
 
 <p>Click on a link to download the PDF.</p>
@@ -53,7 +53,7 @@ During presidential election years the <b>State</b> guide will also include info
                     
                 
                     
-                        <a href="http://localhost:4000/assets/download/2022_Primary_California.pdf">
+                        <a href="http://localhost:4000/assets/download/2022_Primary_California.pdf" target="_blank" rel="noopener noreferrer">
                         2022 California
                         </a> | <span class="guides">2022-06-21</span><br />
                     
@@ -74,7 +74,7 @@ During presidential election years the <b>State</b> guide will also include info
                     
                 
                     
-                        <a href="http://localhost:4000/assets/download/2022_Primary_Los Angeles County.pdf">
+                        <a href="http://localhost:4000/assets/download/2022_Primary_Los Angeles County.pdf" target="_blank" rel="noopener noreferrer">
                         2022 Los Angeles County
                         </a> | <span class="guides">2022-06-21</span><br />
                     
@@ -95,7 +95,7 @@ During presidential election years the <b>State</b> guide will also include info
                     
                 
                     
-                        <a href="http://localhost:4000/assets/download/2022_Primary_San Dimas.pdf">
+                        <a href="http://localhost:4000/assets/download/2022_Primary_San Dimas.pdf" target="_blank" rel="noopener noreferrer">
                         2022 California
                         </a> | <span class="guides">2022-06-21</span><br />
                     
@@ -111,7 +111,7 @@ During presidential election years the <b>State</b> guide will also include info
                     <h3 class="guides">State</h3>
                     
                         
-                            <a href="http://localhost:4000/assets/download/2022_General_California.pdf">
+                            <a href="http://localhost:4000/assets/download/2022_General_California.pdf" target="_blank" rel="noopener noreferrer">
                                 2022 California
                             </a> | <span class="guides">2022-10-26</span><br />
                         
@@ -130,7 +130,7 @@ During presidential election years the <b>State</b> guide will also include info
                         
                     
                         
-                            <a href="http://localhost:4000/assets/download/2022_General_Los Angeles County.pdf">
+                            <a href="http://localhost:4000/assets/download/2022_General_Los Angeles County.pdf" target="_blank" rel="noopener noreferrer">
                                 2022 Los Angeles County
                             </a> | <span class="guides">2022-10-26</span><br />
                         
@@ -157,6 +157,5 @@ During presidential election years the <b>State</b> guide will also include info
                 
             
     </div>
-    
 </div>
 :ET
