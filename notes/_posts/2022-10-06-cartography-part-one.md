@@ -33,13 +33,15 @@ There was quite a bit of interest in how to do this, so in this [series of posts
 
 First, I'm not an expert. I wanted to make a map, so I learned how. There may be easier ways and, if I learn how to do them, I'll write another post.  
   
-Second, before starting, I **strongly** suggest setting up a [Github](https://github.com){:target="_blank" rel="noopener noreferrer"} and [DVC](https://dvc.org){:target="_blank" rel="noopener noreferrer"}. I wrote about how to use [GitHub]({{site.url}}/notes/git-github){:target="_blank" rel="noopener noreferrer"}, the [Github Website]({{site.url}}/notes/github-website){:target="_blank" rel="noopener noreferrer"}, and [Github Desktop]({{site.url}}/notes/github-desktop){:target="_blank" rel="noopener noreferrer"}. You can use any of these methods to manage your repositories. I use all three based purely on whatever mood I'm in.  
+Second, before starting, I **strongly** suggest setting up a [Github](https://github.com){:target="_blank" rel="noopener noreferrer"} and [DVC](https://dvc.org){:target="_blank" rel="noopener noreferrer"}. I wrote about how to use [GitHub]({{site.url}}/notes/git-github){:target="_blank" rel="noopener noreferrer"}, the [Github Website]({{site.url}}/notes/github-website){:target="_blank" rel="noopener noreferrer"}, and [Github Desktop]({{site.url}}/notes/github-desktop){:target="_blank" rel="noopener noreferrer"} in a different series of posts. You can use any of these methods to manage your repositories. I use all three based purely on whatever mood I'm in.  
   
-If you do use Git or GitHub, then DVC (data version control) is mandatory. GitHub will warn you that your file is too large if it's over 50MB and reject your pushes if the files are over 100MB. The total repository size can't exceed 2GB if you're using the free version (which I am). DVC is useful because cartography files are <i>large</i>. They contain a lot of coordinates which increases with each location you try to map. DVC will store your data outside of GitHub but allows you to track changes with your data. It's super useful.
+If you do use Git or GitHub, then DVC (data version control) is mandatory. GitHub will warn you that your file is too large if it's over 50MB and reject your pushes if the files are over 100MB. The total repository size can't exceed 2GB if you're using the free version (which I am). 
 
-Third, there are several ways to make a map. R is capable of making interactive maps and static maps. Static maps are less computationally expensive and better for publication. Interactive maps are prettier and better for displaying on the web.
+DVC is useful because cartography files are <i>large</i>. They contain a lot of coordinates which increases with each location you try to map. DVC will store your data outside of GitHub but allows you to track changes with your data. It's super useful.
 
-I make interactive maps with [Leaflet](https://rstudio.github.io/leaflet){:target="_blank" rel="noopener noreferrer"} and [Shiny](https://shiny.rstudio.com){:target="_blank" rel="noopener noreferrer"} because they offer a lot of functionality. The most common way is to use map tiles. Map tiles use data from sources like [Open Street Map](https://www.openstreetmap.org){:target="_blank" rel="noopener noreferrer"} and Maps to create map squares (tiles) with custom data on top. A list of available [map tiles](https://openmaptiles.org/styles/){:target="_blank" rel="noopener noreferrer"} is available on the Open Street Maps website.
+Third, there are several ways to make a map. R is capable of making static and interactive maps. Static maps are less computationally expensive and better for publication. Interactive maps are prettier and better for displaying on the web.
+
+I make interactive maps with [Leaflet](https://rstudio.github.io/leaflet){:target="_blank" rel="noopener noreferrer"} and [Shiny](https://shiny.rstudio.com){:target="_blank" rel="noopener noreferrer"} because they offer a lot of functionality. The most common way is to use map tiles. Map tiles use data from sources like [Open Street Map](https://www.openstreetmap.org){:target="_blank" rel="noopener noreferrer"} and Maps to create map squares (tiles) with custom data on top. A list of available [map tiles](https://openmaptiles.org/styles/){:target="_blank" rel="noopener noreferrer"} can be found on the Open Street Maps website.
 
 
 {%
@@ -48,7 +50,7 @@ I make interactive maps with [Leaflet](https://rstudio.github.io/leaflet){:targe
     caption="Earthquakes near Australia, using map tiles"
 %}
 
-When I make static maps (like the US map pictured above), I use [ggplot](https://ggplot2.tidyverse.org/reference/ggplot.html){:target="_blank" rel="noopener noreferrer"}
+When I make static maps (like the US map pictured above), I use [ggplot](https://ggplot2.tidyverse.org/reference/ggplot.html){:target="_blank" rel="noopener noreferrer"}.
 
 {% include cartography.html %}
 
@@ -108,7 +110,7 @@ You only need to install the packages once. You can do so by running each line i
 
 * operator.tools is not required, but it's recommended. 
 
-    For some unknown reason, base R has a <code>%in%</code> function but not a <code>not-in</code> function. Unfortunately, the United States is still an empire with it's associated areas, islands, and pseudo-states. I only want to include the 50 states, so I needed a way to easily filter out the non-states. Operator tool's <code>%!!in%</code> function is perfect for that. 
+    For some unknown reason, base R has a <code>%in%</code> function but not a <code>not-in</code> function. Unfortunately, the United States is still an empire with its associated areas, islands, and pseudo-states. I only want to include the 50 states, so I needed a way to easily filter out the non-states. Operator tool's <code>%!in%</code> function is perfect for that. 
 
 {% highlight r %}
 8    install.packages("sf")
