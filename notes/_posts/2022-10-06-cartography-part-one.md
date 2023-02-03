@@ -365,4 +365,4 @@ This line is very similar to the one above. I changed the name of the variable t
 
 ### 4. conclusion
 <hr>
-Once the shapefiles are downloaded - either using tigris() or by loading the shapefiles from the Census website - you can create the base map. I'll tackle making the base map in [part II]("https://liz-muehlmann.github.io/notes/cartography-part-two"> part II </a> of this series.){:target="_blank" rel="noopener noreferrer"} of this series.
+Once the shapefiles are downloaded - either using tigris() or by loading the shapefiles from the Census website - you can create the base map. I'll tackle making the base map in [Part II]( {{site.url}}/notes/cartography-part-two ){:target="_blank" rel="noopener noreferrer"}   of this series.
