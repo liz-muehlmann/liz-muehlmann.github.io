@@ -180,11 +180,11 @@ R uses the <code><-</code> operator to define new variables. Here, we're naming 
 
 In our <code>us_states</code> variable we're going to store data on the 50 states downloaded using <code>tigris</code>. Within (<code>::</code>) tigris, we're going to use the <code>states()</code> function.
 
-The <code>states()</code> function allows you to pull state-level data from the Census. This function takes [several arguments](https://rdrr.io/cran/tigris/man/states.html){:target="_blank" rel="noopener noreferrer"}
+The <code>states()</code> function allows you to pull state-level data from the Census. This function takes [several arguments](https://rdrr.io/cran/tigris/man/states.html){:target="_blank" rel="noopener noreferrer"}.
 
 The <code>cb</code> argument can either be <code>TRUE</code> or <code>FALSE</code>. If <code>cb = FALSE</code> tells Tigris() to download the most detailed shapefile. If <code>cb = TRUE</code> it will download a generalized (1:5000k) file. After a lot of trial and error, I found that using <code>cb = TRUE</code> prevents the Frankenstate from happening.
 
-If the <code>year</code> argument is omitted it will download the shapefile for the default year (currently 2020). I set out of habit from when I work with county boundaries. When I work with county boundaries I have to set the year because their boundaries change more than states. 
+If the <code>year</code> argument is omitted it will download the shapefile for the default year (currently 2020). I set out of habit because I do work at the county level and county boundaries change more than state boundaries. 
 
 Finally, the <code> %>% </code> operator is part of the Tidyverse. It basically tells R "Hey! I'm not done, keep going to the next line!"
 
@@ -245,7 +245,7 @@ If you want to read more about map projections [this is a good post](https://geo
 6    sf::st_transform("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 {% endhighlight %}
 
-The <code>sf</code> package includes a function called <code>st_transform()</code> which will reproject the data for us. There are <i>a lot</i> of projects. You can read them at the [proj](https://proj.org/index.html){:target="_blank" rel="noopener noreferrer"} website.
+The <code>sf</code> package includes a function called <code>st_transform()</code> which will reproject the data for us. There are <i>a lot</i> of projections. You can read them at the [proj](https://proj.org/index.html){:target="_blank" rel="noopener noreferrer"} website.
 
 Leaflet requires all boundaries use the World Geodetic Service 1984 (WGS84) coordinate system. While making maps I've come across two main coordinate systems: WGS84 and North American Datum (1983). WGS84 uses the WGS84 ellipsoid and NAD83 uses the Geodetic Reference System (GRS80). From what I've gathered, the differences are slight, but leaflet requires WGS and the Census uses NAD83. As a result, we have to reproject the the data in order to make our map.
 
@@ -365,4 +365,4 @@ This line is very similar to the one above. I changed the name of the variable t
 
 ### 4. conclusion
 <hr>
-Once the shapefiles are downloaded - either using tigris() or by loading the shapefiles from the Census website - you can create the base map. I'll tackle making the base map in [part II](https://liz-muehlmann.github.io/notes/cartography-part-two"> part II </a> of this series.){:target="_blank" rel="noopener noreferrer"} of this series.
+Once the shapefiles are downloaded - either using tigris() or by loading the shapefiles from the Census website - you can create the base map. I'll tackle making the base map in [part II]("https://liz-muehlmann.github.io/notes/cartography-part-two"> part II </a> of this series.){:target="_blank" rel="noopener noreferrer"} of this series.
