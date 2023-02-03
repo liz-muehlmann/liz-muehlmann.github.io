@@ -9,7 +9,7 @@ title: cartography in R part two
 excerpt_separator: <!--more-->
 ---
 
-This is a continuation of my [previous post]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"} where I walked through how to download and modify shape data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa. 
+This is a continuation of my [previous post]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"} where I walked through how to download and modify shapefile data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa. 
 <!--more-->
 
 In this post, I'll go over how to use Leaflet to map the shapefile we made in the previous post. If you've come here from [part one]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"} of the series, you probably have the libraries and data loaded already. However, if you don't, be sure to load the libraries and shapefiles before moving to number two.
@@ -103,7 +103,7 @@ When you run *only* the first two lines, Leaflet will use its default styling. T
     caption="USA map with default leaflet styling"
 %}
 
-You can leave the base map like this if you want, but all additional data will be added as a layer *on top*</i>* of this map which can become distracting very quickly. I prefer to make my base maps as basic and unobtrusive as possible so the data I add on top of the base map is more prominent.
+You can leave the base map like this if you want, but all additional data will be added as a layer *on top* of this map which can become distracting very quickly. I prefer to make my base maps as basic and unobtrusive as possible so the data I add on top of the base map is more prominent.
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 

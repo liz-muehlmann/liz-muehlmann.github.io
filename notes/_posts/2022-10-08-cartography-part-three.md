@@ -157,7 +157,7 @@ Line 2 creates the list of US territories that I filter out in line 7. The <code
 
 <code>nps <- read_sf("path/to/file.shp")</code> loads the National Park data set to a variable called <code>nps</code> using the <code>read_sf()</code> function that is part of the *sf* package. You will need to change the file path so it reflects where you saved the data on your hard drive. 
 
-The <code> %>% </code> operator is part of the tidyverse package. It tells R to go to the next line and process the next command. It has to go at the end of a line, rather than the beginning. 
+The <code> %>% </code> operator is part of the tidyverse package. It tells R to go to the next line and process the next command. The <code>>%></code> has to go at the end of a line, rather than the beginning. 
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -186,7 +186,7 @@ The National Park data includes a lot of information about who created the data 
 * Shape__Are [the size of the park]
 * geometry
 
-<div class = "boxed"><i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> The column name must be <i>exact</i> for select() to work. For example, in the NPS data, the park area is stored the <i>Shape__Are</i> column - two underscores and no a in area - and I have to use that exact format when selecting the column.</div>
+<div class = "boxed"><i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> The column name must be <i>exact</i> for select() to work. For example, in the NPS data, the park area is stored the <i>Shape__Are</i> column - two underscores and no second a in area - and I have to use that exact format when selecting the column.</div>
 
 The *geometry* column is specific to shapefiles and it includes the coordinates of the shape. It will be kept automatically - unless you use the <code>st_drop_geometry()</code> function. I like to specifically select so I remember it's there. 
 
@@ -214,7 +214,7 @@ For example, if the STATE value in row 1 is CA, filter looks at it and goes "is 
 
 <code>mutate()</code> is part of the tidyverse package and it's extremely versatile. It is mainly used to create new variables or modify existing ones. 
 
-The NPS data set has 23 different types of National Parks listed (you can view all of them by running <code>levels(as.factor(nps$UNIT_TYPE))</code>). I know that in later posts, I'm going to color code the land by type (blue for rivers, green for national parks, etc) so I wanted to reduce the number of colors I would have to use. 
+The NPS data set has 23 different types of National Parks listed (you can view all of them by running <code>levels(as.factor(nps$UNIT_TYPE))</code>). I know that in later posts, I'm going to color code the land by type (blue for rivers, green for national parks, etc) so I wanted to reduce the number of colors I will have to use. 
 
 <code>mutate()</code>'s first argument, <code>type = </code> creates a new column called <code>type</code>. R will populate the newly created column with whatever comes after the first (singular) equal <code>=</code> sign. For example, I can put <code>type = NA</code> and every row in the column will say <code>NA</code>. 
 
@@ -235,7 +235,7 @@ Lines 30-37 use the same <code>mutate()</code> and <code>case_when</code> logic 
 
 Line 30 creates the new column, <code>visited</code> and uses <code>case_when</code> to look for the names of the parks that I've been to. If I have visited them, it adds <code>visited</code> to the column of the same name.
 
-The last line, <code>TRUE ~ "not_visited))</code>, acts as an else statement. For any park not listed above, it will put <code>not visited</code> in the <code>visited</code> column I created. 
+The last line, <code>TRUE ~ "not_visited"))</code>, acts as an else statement. For any park not listed above, it will put <code>not visited</code> in the <code>visited</code> column I created. 
 
 This feels like a very brute-force method of tracking which parks I've visited, but I haven't spend much time trying to find another way.
 
@@ -250,7 +250,7 @@ This feels like a very brute-force method of tracking which parks I've visited, 
 
 In [part I]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"}, when I made the base map, I moved Alaska and Hawaii so they were of similar size and closer to the continental USA. For the map to display the parks correctly, I have to shift them as well. 
 
-I went over these two lines in part II, so I won't go over them again here. If you want to read more about them, check out that post.
+I went over these two lines in [part II]({{site.url}}/notes/cartography-part-two){:target="_blank" rel="noopener noreferrer"}, so I won't go over them again here. If you want to read more about them, check out that post.
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -350,7 +350,7 @@ Since we're mapping the National Parks and not the states, we have to tell R whe
 20   fillOpacity = 1,
 {% endhighlight %}
 
-Define the color and transparency of the National Parks. In a future post, I am going to change the color of each type of public land, but for now, I'll make them all a nice sage green color <code>#354f52</code>. I also want to make the parks to be fully opaque. 
+Define the color and transparency of the National Parks. In a future post, I am going to change the color of each type of public land, but for now, I'll make them all a nice sage green color <code>#354f52</code>. I also want to make the parks fully opaque. 
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
