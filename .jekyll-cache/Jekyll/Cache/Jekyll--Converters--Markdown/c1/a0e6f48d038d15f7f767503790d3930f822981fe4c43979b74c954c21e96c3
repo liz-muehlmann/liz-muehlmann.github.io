@@ -1,10 +1,9 @@
-I"!<div class="container justify-content-center">
+I"!<div class="container justify-content-center">
   <div class="row">
-    <div class="col-2">
+    <div class="col-1">
     </div>
 
-    <div class="col-8">
-
+  <div class="col-10">
       
 
           <h3><a href="/notes/cartography-part-four">cartography in R part four</a></h3>
@@ -45,7 +44,7 @@
 
           <h3><a href="/notes/cartography-part-two">cartography in R part two</a></h3>
           <hr class="h-line" />
-          <p>This is a continuation of my <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">previous post</a> where I walked through how to download and modify shape data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa.</p>
+          <p>This is a continuation of my <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">previous post</a> where I walked through how to download and modify shapefile data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa.</p>
 
 
           
@@ -160,11 +159,11 @@ This area will not be a real blog, in the sense that it will probably not have r
 
       
 
-    </div>
+   </div>
   </div>
 
   <div class="row">
-    <div class="col-2">
+    <div class="col-1">
     </div>
 
 <!-- See all tags button -->

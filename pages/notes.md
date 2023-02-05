@@ -8,11 +8,10 @@ excerpt_separator: <!--more-->
 
 <div class = "container justify-content-center">
   <div class="row">
-    <div class= "col-2">
+    <div class= "col-1">
     </div>
 
-    <div class="col-8">
-
+  <div class="col-lg-auto">
       {% for post in site.posts %}
 
           <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -22,11 +21,11 @@ excerpt_separator: <!--more-->
           {% include readmore.html %}
       {% endfor %}
 
-    </div>
+   </div>
   </div>
 
   <div class = "row">
-    <div class= "col-2">
+    <div class= "col-1">
     </div>
 
 <!-- See all tags button -->

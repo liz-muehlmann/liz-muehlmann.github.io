@@ -1,4 +1,4 @@
-I"“\<p>This is a continuation of my <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">previous post</a> where I walked through how to download and modify shape data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa. 
+I"Œ\<p>This is a continuation of my <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">previous post</a> where I walked through how to download and modify shapefile data. I also showed how to shift Alaska and Hawaii so they are closer to the continental usa. 
 <!--more--></p>
 
 <p>In this post, Iâ€™ll go over how to use Leaflet to map the shapefile we made in the previous post. If youâ€™ve come here from <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part one</a> of the series, you probably have the libraries and data loaded already. However, if you donâ€™t, be sure to load the libraries and shapefiles before moving to number two.</p>
@@ -167,7 +167,7 @@
     <figcaption><span>USA map with default leaflet styling</span></figcaption>
 </figure>
 
-<p>You can leave the base map like this if you want, but all additional data will be added as a layer <em>on top</em>&lt;/i&gt;* of this map which can become distracting very quickly. I prefer to make my base maps as basic and unobtrusive as possible so the data I add on top of the base map is more prominent.</p>
+<p>You can leave the base map like this if you want, but all additional data will be added as a layer <em>on top</em> of this map which can become distracting very quickly. I prefer to make my base maps as basic and unobtrusive as possible so the data I add on top of the base map is more prominent.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
