@@ -1,4 +1,4 @@
-I"…,<div class="container justify-content-center">
+I"à3<div class="container justify-content-center">
   <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
@@ -13,7 +13,7 @@
             <li>
               <a href="#tutorial">
                 <strong>tutorial</strong>
-                <span class="taxonomy-count">8</span>
+                <span class="taxonomy-count">9</span>
               </a>
             </li>
           
@@ -24,23 +24,27 @@
             <li>
               <a href="#cartography">
                 <strong>cartography</strong>
-                <span class="taxonomy-count">4</span>
+                <span class="taxonomy-count">5</span>
               </a>
             </li>
           
             <li>
               <a href="#nps">
                 <strong>nps</strong>
-                <span class="taxonomy-count">4</span>
+                <span class="taxonomy-count">5</span>
               </a>
             </li>
           
             <li>
               <a href="#r">
                 <strong>r</strong>
-                <span class="taxonomy-count">4</span>
+                <span class="taxonomy-count">5</span>
               </a>
             </li>
+          
+        
+          
+          
           
             <li>
               <a href="#version-control">
@@ -67,6 +71,13 @@
             <li>
               <a href="#dvc">
                 <strong>dvc</strong>
+                <span class="taxonomy-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="#resources">
+                <strong>resources</strong>
                 <span class="taxonomy-count">1</span>
               </a>
             </li>
@@ -100,11 +111,15 @@
               
             
               
+            
+              
                 <div>
                   <ul class="taxonomy-list">
                     <li>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-four">cartography in R part four</a></strong></h5>
+                      
+                          <h5 class="post-title"><strong><a href="/notes/cartography-part-five">cartography in R part five</a></strong></h5>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-three">cartography in R part three</a></strong></h5>
                       
@@ -156,11 +171,15 @@
               
             
               
+            
+              
                 <div>
                   <ul class="taxonomy-list">
                     <li>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-four">cartography in R part four</a></strong></h5>
+                      
+                          <h5 class="post-title"><strong><a href="/notes/cartography-part-five">cartography in R part five</a></strong></h5>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-three">cartography in R part three</a></strong></h5>
                       
@@ -195,11 +214,15 @@
               
             
               
+            
+              
                 <div>
                   <ul class="taxonomy-list">
                     <li>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-four">cartography in R part four</a></strong></h5>
+                      
+                          <h5 class="post-title"><strong><a href="/notes/cartography-part-five">cartography in R part five</a></strong></h5>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-three">cartography in R part three</a></strong></h5>
                       
@@ -228,11 +251,15 @@
               
             
               
+            
+              
                 <div>
                   <ul class="taxonomy-list">
                     <li>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-four">cartography in R part four</a></strong></h5>
+                      
+                          <h5 class="post-title"><strong><a href="/notes/cartography-part-five">cartography in R part five</a></strong></h5>
                       
                           <h5 class="post-title"><strong><a href="/notes/cartography-part-three">cartography in R part three</a></strong></h5>
                       
@@ -251,8 +278,13 @@
             
           </section>
         
+      
+        
+        
           <section id="version-control" class="taxonomy-section">
             <h2>version control</h2>
+            
+              
             
               
             
@@ -293,6 +325,8 @@
         
           <section id="github" class="taxonomy-section">
             <h2>github</h2>
+            
+              
             
               
             
@@ -341,6 +375,8 @@
               
             
               
+            
+              
                 <div>
                   <ul class="taxonomy-list">
                     <li>
@@ -360,8 +396,43 @@
             
           </section>
         
+          <section id="resources" class="taxonomy-section">
+            <h2>resources</h2>
+            
+              
+                <div>
+                  <ul class="taxonomy-list">
+                    <li>
+                      
+                          <h5 class="post-title"><strong><a href="/notes/citation-manager">Citation Manager</a></strong></h5>
+                      
+                    </li>
+                  </ul>
+                </div>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </section>
+        
           <section id="welcome" class="taxonomy-section">
             <h2>welcome</h2>
+            
+              
             
               
                 <div>

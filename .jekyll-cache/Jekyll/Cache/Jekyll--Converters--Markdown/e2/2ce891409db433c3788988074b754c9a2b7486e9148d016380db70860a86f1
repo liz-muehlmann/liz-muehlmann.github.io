@@ -1,0 +1,180 @@
+I"�3<p>Welcome to part five of my <a href="http://localhost:4000/pages/tag-forest.html/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. In this post I’ll return to the maps created in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> and <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> to include a <a href="https://shiny.rstudio.com/" target="_blank" rel="noopener noreferrer">Shiny</a> information box and popups linking to posts about my adventures in the National Parks.</p>
+
+<!--more-->
+
+<h3 id="project-outline">project outline</h3>
+<hr />
+
+<p>I had to break the tutorial into different parts because it became unwieldy. I list the component parts below. The annotated version of the code can be found in this project’s repository in the folder called <a href="https://github.com/liz-muehlmann/nps" target="_blank" rel="noopener noreferrer">r files</a></p>
+
+<p><a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">I. cartography in r part one</a></p>
+<ul>
+  <li>install packages</li>
+  <li>download usa shapefile</li>
+  <li>shift alaska and hawaii</li>
+  <li>save shapefile</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">II. cartography in r part two</a></p>
+<ul>
+  <li>create usa base map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">III. cartography in r part three</a></p>
+<ul>
+  <li>download national park data</li>
+  <li>process national park data</li>
+  <li>shift alaska and hawaii national parks</li>
+  <li>save shapefile</li>
+  <li>add national parks to map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-four" target="_blank" rel="noopener noreferrer">IV. cartography in r part four </a></p>
+<ul>
+  <li>download state park data</li>
+  <li>process state park data</li>
+  <li>shift alaska and hawaii state parks</li>
+  <li>separate state park data</li>
+  <li>save state park data</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-five" target="_blank" rel="noopener noreferrer">V. cartography in r part five</a></p>
+<ul>
+  <li>add in shiny functionality</li>
+  <li>add markers to visited parks</li>
+  <li>save and embed map</li>
+</ul>
+
+<p><a href="http://localhost:4000/notes/cartography-part-six" target="_blank" rel="noopener noreferrer">VI. cartography in r part six</a></p>
+<ul>
+  <li>create individual state maps</li>
+  <li>add in shiny functionality</li>
+  <li>add markers to visited parks</li>
+  <li>save and embed maps</li>
+</ul>
+
+<h3 id="1-load-libraries">1. load libraries</h3>
+<hr />
+
+<p>Create a new file called <code>app.r</code> which we’ll use to build in the Shiny functionality. Keep in mind Shiny requires the filename to be <code>app</code>.</p>
+
+<div class="boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> I will give the entire codeblock first. I also include the individual line before describing what it does. I find this to be cleaner than including a bunch of comments in the code itself. If you want to copy and paste the code to your own file, you only need to copy the code block and not each individual line.</div>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span><span class="w">      </span><span class="c1"># useful data manipulation tools</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span><span class="w">             </span><span class="c1"># read and write shapefiles</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="n">tigris</span><span class="p">)</span><span class="w">         </span><span class="c1"># downloading shapefiles for Method 1</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="n">leaflet</span><span class="p">)</span><span class="w">        </span><span class="c1"># map creation</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="n">operator.tools</span><span class="p">)</span><span class="w"> </span><span class="c1"># not-in function</span><span class="w">
+    </span><span class="n">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span><span class="w">          </span><span class="c1"># interactivity</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I am not going to explain in detail what the packages in lines 1-5 do because I already covered it in <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part one</a>.</p>
+
+<ul>
+  <li>Shiny is an R-Studio package, which let’s “users interact with your data and your analysis” (from the Shiny website)[https://shiny.rstudio.com/]. The package let’s you create interactive web apps in R. The web apps can be hosted as stand-alone pages or can be embedded into R. And, according to the website, they can be modified and extended with CSS, HTML, and JavaScript.</li>
+</ul>
+
+<p>In a previous map I made I used labels to create a pop up which contained information about the number of newspapers in each county. In that map, I was only interested in showing the population and number of newspapers.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-35.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-35.jpg" alt="Image: Map showing information pop ups" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>Map showing information pop ups</span></figcaption>
+</figure>
+
+<p>In this map I want to display more information but since National and State Parks are close together using pop ups created a lot of overlap and quickly became unreadable. I want to move a lot of the basic information about park name and its size to a box in the corner and only use the pop ups to display a small photo of the park that leads to a blog about my adventure in the park.</p>
+
+<h3 id="2-load-data">2. load data</h3>
+<hr />
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## load data</span><span class="w">
+    </span><span class="n">usa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_sf</span><span class="p">(</span><span class="s2">"~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp"</span><span class="p">)</span><span class="w">
+    </span><span class="n">nps</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read_sf</span><span class="p">(</span><span class="s2">"~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Be sure to change <code>~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp</code> and <code>~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp</code> to reflect where you saved the shifted shapefiles.</p>
+
+<h3 id="3-the-complete-code">3. the complete code</h3>
+<hr />
+
+<p>The customization aspects of the map - using special colors, adding in Shiny functionality, etc - are all declared before the map widget call. That creates some difficulty in how to best present the code.</p>
+
+<p>First, I’ll give all the code then cover what’s different in each section. If you’re using the code we created in <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> be mindful of where the new lines appear so you can avoid any errors.</p>
+
+<h3 id="4-define-national-park-colors">4. define national park colors</h3>
+<hr />
+
+<p>I like to use different colors on my maps to indicate different things. In the map above, the warmer colors indicate less newspapers and the cooler colors indicate more newspapers with green being areas with the most newspapers.</p>
+
+<p>In this map, I want to use colors that reflect the land’s designation types. I want the rivers to show up blue, the parks to be green, and other areas to be colored as I dictate.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="w">    </span><span class="n">nps_color</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">colorFactor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"#B2AC88"</span><span class="p">,</span><span class="w"> </span><span class="c1"># national historical</span><span class="w">
+                            </span><span class="s2">"#F9F2CB"</span><span class="p">,</span><span class="w"> </span><span class="c1"># international historical       </span><span class="w">
+                            </span><span class="s2">"#99941A"</span><span class="p">,</span><span class="w"> </span><span class="c1"># military</span><span class="w">
+                            </span><span class="s2">"#006C5F"</span><span class="p">,</span><span class="w"> </span><span class="c1"># park</span><span class="w">
+                            </span><span class="s2">"#568762"</span><span class="p">,</span><span class="w"> </span><span class="c1"># preserves and rec areas</span><span class="w">
+                            </span><span class="s2">"#31B8E6"</span><span class="p">,</span><span class="w"> </span><span class="c1"># lakes and rivers</span><span class="w">
+                            </span><span class="s2">"#899B7C"</span><span class="p">,</span><span class="w"> </span><span class="c1"># trails</span><span class="w">
+                            </span><span class="s2">"#AFAC99"</span><span class="p">),</span><span class="w"> </span><span class="n">nps</span><span class="o">$</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="c1"># other</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Line 1 creates a variable which I’ll use later in the leaflet call. It makes the leaflet call cleaner and less cluttered, though I imagine you could declare the colors directly in the <code>addPolygons()</code> call.</p>
+
+<p><code>colorFactor()</code> is part of the <em>Leaflet</em> package. It assigns colors to factors (categories) - here the factors are the types of National Public Lands. It takes several arguments which you can read about on the <a href="https://search.r-project.org/CRAN/refmans/leaflet/html/colorNumeric.html" target="_blank">R website</a>.</p>
+
+<p>The first argument is the <em>palette.</em> This can be one of the palettes built into <a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html" target="_blank" rel="noopener noreferrer">R Color Brewer</a> or like here (the hex codes in lines 1-8), one that the user specifies.</p>
+
+<div class="boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i>
+<i>Note:</i>
+    A helpful tool specifically for picking map colors <a href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">Color Brewer 2</a>. I also use <a href="https://mycolor.space/">mycolor.space</a> to create palettes that I like.
+</div>
+
+<p><code>nps$type</code> is the <em>domain</em> of the data. It’s the categories that R will map the colors to. <code>colorFactor</code> requires categorical data.</p>
+
+<p>If you’re creating your own palette, the order you list the colors has to match the order of the domain. To easily check what order the domain is in run <code>levels(as.factor(nps$type))</code> in the terminal. This will return a list of values which you can use to map the colors.</p>
+
+<p>I include a comment of which colors will be mapped to which category so that I can easily change them if necessary.</p>
+
+<figure>
+    
+    <a href="/assets/notes-images/nps/nps-36.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/notes-images/nps/nps-36.jpg" alt="Image: List of National Land Categories" class="img-fluid mx-auto d-block" />
+    </a>
+    
+    <figcaption><span>List of National Land Categories</span></figcaption>
+</figure>
+
+<h3 id="5-create-information-box">5. create information box</h3>
+<hr />
+
+<p>Shiny apps have three components:</p>
+
+<ol>
+  <li>A <em>User-Interface</em> app (<code>ui</code>) which controls the “layout and appearance” of the app.</li>
+  <li>A server function which tells the computer how to create the app.</li>
+  <li>A call to the <code>shinyApp</code> function creates the Shiny objects using the first two components.</li>
+</ol>
+
+:ET

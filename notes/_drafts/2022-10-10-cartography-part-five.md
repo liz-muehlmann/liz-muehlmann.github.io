@@ -34,7 +34,7 @@ Create a new file called <code>app.r</code> which we'll use to build in the Shin
 
 I am not going to explain in detail what the packages in lines 1-5 do because I already covered it in [part one]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"}. 
 
-* Shiny is an R-Studio package, which let's "users interact with your data and your analysis" (from the Shiny website). The package let's you create interactive web apps in R. The web apps can be hosted as stand-alone pages or can be embedded into R. And, according to the website, they can be modified and extended with CSS, HTML, and JavaScript. 
+* Shiny is an R-Studio package, which let's "users interact with your data and your analysis" [(from the Shiny website)](https://shiny.rstudio.com/). The package let's you create interactive web apps in R. The web apps can be hosted as stand-alone pages or can be embedded elsewhere. And, according to the website, they can be modified and extended with CSS, HTML, and JavaScript. 
 
 In a previous map I made I used labels to create a pop up which contained information about the number of newspapers in each county. In that map, I was only interested in showing the population and number of newspapers. 
 
@@ -44,30 +44,33 @@ In a previous map I made I used labels to create a pop up which contained inform
     caption="Map showing information pop ups"
 %}
 
-In this map I want to display more information but since National and State Parks are close together using pop ups created a lot of overlap and quickly became unreadable. I want to move a lot of the basic information about park name and its size to a box in the corner and only use the pop ups to display a small photo of the park that leads to a blog about my adventure in the park. 
+In this map, I wanted to find a way to move the data from the pop up to a separate section of the map. In doing so, I could display more information in less space and wouldn't have to deal with pop ups that collided into each other when National and State Parks were close together. 
+
+I want to move a lot of the basic information about park name and its size to a box in the corner and only use the pop ups to display a small photo of the park that leads to a blog about my adventure in the park. 
 
 ### 2. load data
 <hr>
 
 {% highlight r linenos %}
     ## load data
-    usa <- read_sf("~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp")
-    nps <- read_sf("~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp")
+    usa <- as_Spatial(read_sf("~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp"))
+    nps <- as_Spatial(read_sf("~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp"))
 {% endhighlight %}
+
+
 
 Be sure to change <code>~/Documents/Github/nps/shapefiles/shifted/usa/usa.shp</code> and <code>~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp</code> to reflect where you saved the shifted shapefiles.
 
 ### 3. the complete code
 <hr>
 
-The customization aspects of the map - using special colors, adding in Shiny functionality, etc - are all declared before the map widget call. That creates some difficulty in how to best present the code. 
+The customization aspects of the map - using special colors, adding in Shiny functionality, etc - are all declared before Shiny is initialized. That creates some difficulty in how to best present the code. 
 
 First, I'll give all the code then cover what's different in each section. If you're using the code we created in [part III]({{site.url}}/notes/cartography-part-three){:target="_blank" rel="noopener noreferrer"} be mindful of where the new lines appear so you can avoid any errors.
 
 
-
-
-### 4. define national park colors
+### 4. calculate park area
+### 5. define national park colors
 <hr>
 
 I like to use different colors on my maps to indicate different things. In the map above, the warmer colors indicate less newspapers and the cooler colors indicate more newspapers with green being areas with the most newspapers. 
@@ -110,7 +113,7 @@ I include a comment of which colors will be mapped to which category so that I c
     caption="List of National Land Categories"
 %}
 
-### 5. create information box
+### 6. create information box
 <hr>
 
 Shiny apps have three components:

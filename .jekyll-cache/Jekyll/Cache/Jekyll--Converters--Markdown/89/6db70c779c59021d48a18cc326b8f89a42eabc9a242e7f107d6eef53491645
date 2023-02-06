@@ -1,4 +1,4 @@
-I"T�<p>This is part three of my <a href="http://localhost:4000/pages/tag-forest/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. If you are just finding this, I suggest taking a look at <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part I</a> and <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> first.</p>
+I"2�<p>This is part three of my <a href="http://localhost:4000/pages/tag-forest/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. If you are just finding this, I suggest taking a look at <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part I</a> and <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> first.</p>
 
 <p>In this post, I will download and process the National Park data. Once that’s done, I’ll add it to the base map I created in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a>.</p>
 
@@ -114,7 +114,7 @@
     <figcaption><span>NPS download page</span></figcaption>
 </figure>
 
-<p>The <em>nps boundary</em> link will take you to a map showing the national parks. On the left, there will be a <em>download</em> link on the left.</p>
+<p>The <em>nps boundary</em> link will take you to a map showing the national parks. On the left, there will be a <em>download</em> link.</p>
 
 <figure>
     
@@ -136,7 +136,7 @@
     <figcaption><span>download nps shapefile</span></figcaption>
 </figure>
 
-<p>Be sure to save the file somewhere on your hard drive that is easy to find. When it finishes downloading, be sure to unzip the file. There will be four files inside the folder. All of them need to be kept in the same location. Even though we’ll only load the <code>.shp</code> file, R uses the three others to create the necessary shapes.</p>
+<p>Be sure to save the file somewhere on your hard drive that is easy to find. When it finishes downloading, unzip the file. There will be four files inside the folder. All of them need to be kept in the same location. Although we’ll only load the <code>.shp</code> file, R uses the three others to create the necessary shapes.</p>
 
 <h3 id="4-process-national-park-data">4. process national park data</h3>
 <hr />
@@ -242,7 +242,9 @@
 
 <p>In <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part I</a> of this series I talked about how R has an <code>%in%</code> function, but not a <code>%!in%</code> function. Here’s where the latter function shines.</p>
 
-<p>The United States is still an empire with its associated territories and islands. In this project I am interested in the 50 states - without these other areas. As a result, I need to filter them out. Using base R’s <code>%in%</code> function I would have to create a variable that contains the postal abbreviations for all 50 states. That is annoying. Instead, I want to use the shorter list that only includes the US’ associated islands and territories. To do so, however, I need to use the operator tools’ <code>%!in%</code> function.</p>
+<p>The United States is still an empire with its associated territories and islands. In this project I am interested in the 50 states - without these other areas. As a result, I need to filter them out.</p>
+
+<p>If i were to use base R’s <code>%in%</code> function, I would have to create a variable that contains the postal abbreviations for all 50 states. That is annoying. Instead, I want to use the shorter list that only includes the US’ associated islands and territories. To do so, however, I need to use the operator tools’ <code>%!in%</code> function. This means I can create a list of 5 postal codes rather than 50 of them.</p>
 
 <p>Line 2 creates the list of US territories that I filter out in line 7. The <code>c()</code> function in R means combine or concatenate. Inside the parenthesis are the five postal codes for the American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, and the Virgin Islands.</p>
 
@@ -256,6 +258,8 @@
 
 <p><code>nps &lt;- read_sf("path/to/file.shp")</code> loads the National Park data set to a variable called <code>nps</code> using the <code>read_sf()</code> function that is part of the <em>sf</em> package. You will need to change the file path so it reflects where you saved the data on your hard drive.</p>
 
+<p>The filename <code>NPS_-_Land_Resources_Division_Boundary_and_Tract_Data_Service.shp</code> will be the same. If you need help locating the filepath <a href="https://setapp.com/how-to/how-to-find-the-path-of-a-file-in-mac" target="_blank" rel="noopener noreferrer">here is how to do it on a Mac</a> and <a href="https://www.laptopmag.com/articles/show-full-folder-path-file-explorer" target="_blank" rel="noopener noreferrer">here is how to do it on Windows</a>.</p>
+
 <p>The <code> %&gt;% </code> operator is part of the tidyverse package. It tells R to go to the next line and process the next command. The <code>&gt;%&gt;</code> has to go at the end of a line, rather than the beginning.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
@@ -266,7 +270,19 @@
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">6</span><span class="w">    </span><span class="n">select</span><span class="p">(</span><span class="n">STATE</span><span class="p">,</span><span class="w"> </span><span class="n">UNIT_TYPE</span><span class="p">,</span><span class="w"> </span><span class="n">PARKNAME</span><span class="p">,</span><span class="w"> </span><span class="n">Shape__Are</span><span class="p">,</span><span class="w"> </span><span class="n">geometry</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span></code></pre></figure>
 
-<p><code>select</code> is part of the tidyverse package. With it, we can select columns by their name rather than their associated number. Large data sets take more computing power because the computer has to iterate over more rows. Unfortunately, rendering maps also takes a lot of computing power so I like to discard any unnecessary columns to reduce the amount of effort my computer has to exert.</p>
+<p><code>select</code> is part of the tidyverse package. It’s useful because we can select columns by their names (e.g. <code>STATE</code>) rather than their column number (e.g. <code>STATE</code> is column 12 in the original data set).</p>
+
+<p>Each column in a data frame is automatically given an index number starting from 1 which can be used to select the column. For example, to select the <code>STATE</code> column by its number the code would be: <code> state_only &lt;- nps[,12]</code>.</p>
+
+<p>The format is fairly simple. We assign the data to a variable <code>state_only &lt;- </code>. Then R looks at the <code>nps</code> data set and picks out the data listed inside the square brackets. Inside the square brackets the value before the comma is the row number and the value after the comma is the column number. Here, I want all the rows for column 12 so I’ll leave the space before the comma empty.</p>
+
+<p>Another example, if I wanted to choose the NPS data from rows 5 and 6 in column 12 it would be: <code>nps[c(5,6),12]</code>. This will return two rows (5 &amp; 6) from one column (12)</p>
+
+<p>Since I’m not a computer, I like to use the names so when I return to the code later I know exactly what I’m selecting without having to run extra code. To use the names, I use <code>select</code> from the tidyverse package.</p>
+
+<p>If you want to learn more about selecting data <a href="https://sparkbyexamples.com/r-programming/how-to-select-columns-in-r/" target="_blank" rel="noopener noreferrer">here</a> is how you can select columns using different methods in R.</p>
+
+<p>The NPS data set has 23 columns, most of which I won’t use for this map. Select offers a way to pick out only the columns that I’ll need going forward. One reason for this is that large data sets take more computing power. The computer has to load more rows in more columns and then iterate over them. This causes the data processing and map rendering to be very, very slow.</p>
 
 <p>Deciding on which columns to keep will depend on the data you’re using and what you want to map (or analyze). I know for my project I want to include a few things:</p>
 <ul>
@@ -324,13 +340,17 @@
 
 <p>The NPS data set has 23 different types of National Parks listed (you can view all of them by running <code>levels(as.factor(nps$UNIT_TYPE))</code>). I know that in later posts, I’m going to color code the land by type (blue for rivers, green for national parks, etc) so I wanted to reduce the number of colors I will have to use.</p>
 
-<p><code>mutate()</code>’s first argument, <code>type = </code> creates a new column called <code>type</code>. R will populate the newly created column with whatever comes after the first (singular) equal <code>=</code> sign. For example, I can put <code>type = NA</code> and every row in the column will say <code>NA</code>.</p>
+<p><code>mutate()</code>’s first argument, <code>type = </code> creates a new column called <code>type</code>. R will populate the newly created column with whatever comes after the first (singular) equal <code>=</code> sign. For example, I can put <code>type = NA</code> and every row in the <code>type</code> column will say <code>NA</code>.</p>
 
-<p>Here, I am using the <code>case_when()</code> function, which is also part of the tidyverse. The logic of <code>case_when</code> is fairly straight forward. The first value is the name of the column you want R to look in (here: <code>UNIT_TYPE</code>). Next, is a conditional. Here I am looking for an exact match (<code>==</code>) to the string (words) inside the first set of quotation marks (in line 8: <code>"International Historic Site"</code>). The last part of the argument is what I want R to put in the <code>type</code> column when it finds a row where the <code>UNIT_TYPE</code> is <code>"International Historic Site"</code>.</p>
+<p>Here, I am using the <code>case_when()</code> function, which is also part of the tidyverse. The logic of <code>case_when</code> is fairly straight forward. The first value is the name of the column you want R to look in (here: <code>UNIT_TYPE</code>). Next, is a conditional. I am looking for an exact match (<code>==</code>) to the string (words) inside the first set of quotation marks (in line 8: <code>"International Historic Site"</code>).</p>
+
+<p>The last part of the argument (after the tilde <code>~</code>) is what I want R to put in the <code>type</code> column when it finds a row where the <code>UNIT_TYPE</code> is <code>"International Historic Site"</code>. I want to keep historic sites in their own category for my map, so in line 8 I am telling R “If it’s an <em>international historic site</em> originally, populate this new column with that information.”</p>
+
+<p>In lines 9-12 you can see how I use <code>case_when()</code> to reduce the number of park types. I combine Military Parks, Battlefields, and Battlefield Sites into one catch-all term “National Military or Battlefield”.</p>
 
 <p>In its general form, the format is <code>case_when(COLUMN_NAME == "original_value" ~ "new_value")</code></p>
 
-<p>Lines 9-29 do the same thing for the other park types. You can reduce the parks however you want or use all 23 types. Just remember that the value before the tilde <code>~</code> has to match the values found in the data exactly. For example, in line 24 I change the NPS data’s <em>National Trail Syste</em> value to be <em>National Trail</em>. Whomever created the data set did not spell <em>system</em> correctly, so for R to match the value I also have to omit the last letter in system.</p>
+<p>Lines 9-29 do the same thing for the other park types. You can reduce the parks however you want or use all 23 types. Just remember that the value before the tilde <code>~</code> has to match the values found in the data exactly. For example, in line 24 I change the NPS data’s <em>National Trail Syste</em> value to be <em>National Trail</em>. However the data was created, <em>System</em> in this case is missing the m.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -381,7 +401,7 @@
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">43</span><span class="w">  </span><span class="n">st_write</span><span class="p">(</span><span class="n">nps</span><span class="p">,</span><span class="w"> </span><span class="s2">"~/Documents/GitHub/nps/shapefiles/shifted/nps/nps.shp"</span><span class="p">)</span></code></pre></figure>
 
-<p>Strictly speaking, this line isn’t necessary. You can do all your data processing in the same file where you make your map, but I prefer to separate the steps into different files.</p>
+<p>Strictly speaking, you don’t need to save the changes to a new shapefile using this line. You can do all your data processing in the same file where you make your map, but I prefer to separate the steps into different files.</p>
 
 <p>As a result, I save the shifted data to my hard drive so it’s easier to load later. I usually have this line commented out (by placing <code>#</code> at the start of the line) after I save it the first time. I don’t want it to save every time I run the rest of the code.</p>
 
@@ -422,7 +442,7 @@
 32
 33
 34
-</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## create usa Base Map using leaflet()</span><span class="w">
+</pre></td><td class="code"><pre><span class="w">    </span><span class="c1">## add National Parks to USA Base Map using leaflet()</span><span class="w">
     </span><span class="n">map</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">leaflet</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
     </span><span class="n">addPolygons</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">states</span><span class="p">,</span><span class="w">
         </span><span class="n">smoothFactor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">,</span><span class="w">
@@ -476,6 +496,8 @@
 
 <p>Since we’re mapping the National Parks and not the states, we have to tell R where the data is located using <code>data = nps</code>.</p>
 
+<p><code>nps</code> is the variable name where the shape data is stored. It will change based on what you named your data.</p>
+
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
 <ul>
@@ -495,7 +517,7 @@
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">19</span><span class="w">   </span><span class="n">fillColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#354f52"</span><span class="p">,</span><span class="w">
 </span><span class="m">20</span><span class="w">   </span><span class="n">fillOpacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span></code></pre></figure>
 
-<p>Define the color and transparency of the National Parks. In a future post, I am going to change the color of each type of public land, but for now, I’ll make them all a nice sage green color <code>#354f52</code>. I also want to make the parks fully opaque.</p>
+<p>Define the color and transparency of the National Parks. In a future post, I am going to change the color of each type of public land, but for now, I’ll make them all a nice sage green color <code>#354f52</code>. I also want to make the parks fully opaque by setting the <code>fillOpacity=1</code>.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -510,7 +532,7 @@
 
 <p>The next four lines (21-24) define what kind of outline the National Parks will have. I detail each of these arguments in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> of this series.</p>
 
-<p>Briefly, I want there to be an outline to each park (<code>stroke = TRUE</code>) that’s thicker <code>weight = 1</code> than the outline used on the base map. I do not like the way it looks at full opacity, so I make it half-transparent (<code>opacity = 0.5</code>). Finally, I want the outline <code>color = "#354f52</code> to be the same color as the fill. This will matter more when I change the fill color of the parks later on.</p>
+<p>Briefly, I want there to be an outline to each park (<code>stroke = TRUE</code>) that’s thicker <code>weight = 1</code> than the outline used on the base map. I do not like the way it looks at full opacity, so I make it half-transparent (<code>opacity = 0.5</code>). Finally, I want the outline <code>color = "#354f52"</code> to be the same color as the fill. This will matter more when I change the fill color of the parks later on.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -527,7 +549,7 @@
 
 <p>I want to keep the mouseover behavior noticeable, but simple. To do so, I set the outline’s thickness to be <code>weight = 3</code>.  This will give the shape a nice border that differentiates it from the rest of the map.</p>
 
-<p><code>color = "#fff</code> sets the outline’s color on mouseover only. So, when inactive, the outline color will match the fill color, but on mouseover the outline color switches to white (<code>#fff</code>).</p>
+<p><code>color = "#fff"</code> sets the outline’s color on mouseover only. So, when inactive, the outline color will match the fill color, but on mouseover the outline color switches to white (<code>#fff</code>).</p>
 
 <div class="boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> When the hex code repeats (like, white - #ffffff, black - #000000, or grey #808080) you only need to include the first three characters. </div>
@@ -573,7 +595,7 @@
 
 <p>Next, we have to define the layers that are shown <em>on top</em> of the base group: <code>overlayGroups = "National Parks"</code>. Just like the base map, this is defined in the corresponding <code>addPolygons</code> call. Here, I called the layer <code>National Parks</code> in line 30.</p>
 
-<p>Finally, on the map I don’t want the layers to be collapsed, so I set <code>options = layersControlOptions(collapsed = FALSE)</code>. When <code>TRUE</code> the map will display an icon in the top right that, when clicked, will show the available layers.</p>
+<p>Finally, on the map I don’t want the layers to be collapsed, so I set <code>options = layersControlOptions(collapsed = FALSE)</code>. When <code>TRUE</code> the map will display an icon in the top right that, when clicked, will show the available layers (see image below).</p>
 
 <figure>
     
@@ -591,7 +613,5 @@
 
 <p>In the next <a href="http://localhost:4000/notes/cartography-part-four" target="_blank" rel="noopener noreferrer">part IV</a> post we’ll download and process the state park data before adding it to the map. <a href="http://localhost:4000/notes/cartography-part-five" target="_blank" rel="noopener noreferrer">Part V</a> of this series we’ll add <em>Shiny</em> functionality and some additional markers.</p>
 
-<iframe seamless="" src="/assets/notes-images/nps/maps/nps.html" width="100%" height="500"></iframe>
-<figcaption>Map showing US National Parks</figcaption>
-<p>&lt;/figure&gt;</p>
+<figure><iframe seamless="" src="/assets/notes-images/nps/maps/nps.html" width="100%" height="500"></iframe><figcaption>Map showing US National Parks</figcaption></figure>
 :ET

@@ -1,9 +1,9 @@
-I"!<div class="container justify-content-center">
+I"i*<div class="container justify-content-center">
   <div class="row">
     <div class="col-1">
     </div>
 
-  <div class="col-10">
+  <div class="col-lg-auto">
       
 
           <h3><a href="/notes/cartography-part-four">cartography in R part four</a></h3>
@@ -23,6 +23,23 @@
 
       
 
+          <h3><a href="/notes/cartography-part-five">cartography in R part five</a></h3>
+          <hr class="h-line" />
+          <p>Welcome to part five of my <a href="http://localhost:4000/pages/tag-forest.html/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. In this post I’ll return to the maps created in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> and <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> to include a <a href="https://shiny.rstudio.com/" target="_blank" rel="noopener noreferrer">Shiny</a> information box and popups linking to posts about my adventures in the National Parks.</p>
+
+
+
+          
+  <img src="/assets/resources/green-calendar.png" height="25px" width="25px" />
+  <time class="entry-time" datetime="2022-10-04T00:00:00-07:00">October 4, 2022</time> |
+
+
+
+<strong><a href="/notes/cartography-part-five">read more <img src="/assets/resources/Green-arrow-right.png" height="15px" width="15px" /></a></strong>
+<hr class="h-line" />
+
+      
+
           <h3><a href="/notes/cartography-part-three">cartography in R part three</a></h3>
           <hr class="h-line" />
           <p>This is part three of my <a href="http://localhost:4000/pages/tag-forest/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. If you are just finding this, I suggest taking a look at <a href="http://localhost:4000/notes/cartography-part-one" target="_blank" rel="noopener noreferrer">part I</a> and <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a> first.</p>
@@ -38,6 +55,27 @@
 
 
 <strong><a href="/notes/cartography-part-three">read more <img src="/assets/resources/Green-arrow-right.png" height="15px" width="15px" /></a></strong>
+<hr class="h-line" />
+
+      
+
+          <h3><a href="/notes/2022/09/21/converting-gdb-files.html">Converting Gdb Files</a></h3>
+          <hr class="h-line" />
+          <ol>
+  <li>download gdb data from the PAD-US Website:
+ https://www.sciencebase.gov/catalog/item/61794fc2d34ea58c3c6f9f69
+ under Attached Files download “PADUS3_0Geodatabase.zip”
+ Unzip the folder</li>
+</ol>
+
+
+          
+  <img src="/assets/resources/green-calendar.png" height="25px" width="25px" />
+  <time class="entry-time" datetime="2022-09-21T00:00:00-07:00">September 21, 2022</time> |
+
+
+
+<strong><a href="/notes/2022/09/21/converting-gdb-files.html">read more <img src="/assets/resources/Green-arrow-right.png" height="15px" width="15px" /></a></strong>
 <hr class="h-line" />
 
       
@@ -155,6 +193,22 @@ This area will not be a real blog, in the sense that it will probably not have r
 
 
 <strong><a href="/notes/hello">read more <img src="/assets/resources/Green-arrow-right.png" height="15px" width="15px" /></a></strong>
+<hr class="h-line" />
+
+      
+
+          <h3><a href="/notes/citation-manager">Citation Manager</a></h3>
+          <hr class="h-line" />
+          <p>GET A CITATION MANAGER.</p>
+
+
+          
+  <img src="/assets/resources/green-calendar.png" height="25px" width="25px" />
+  <time class="entry-time" datetime="2021-02-05T00:00:00-08:00">February 5, 2021</time> |
+
+
+
+<strong><a href="/notes/citation-manager">read more <img src="/assets/resources/Green-arrow-right.png" height="15px" width="15px" /></a></strong>
 <hr class="h-line" />
 
       

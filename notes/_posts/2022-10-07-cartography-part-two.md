@@ -26,7 +26,7 @@ In this post, I'll go over how to use Leaflet to map the shapefile we made in th
     library("leaflet")      # creates the map
 {% endhighlight %}
 
-I am not going to explain in detail what each of these packages do because I already covered it in [part one]({{site.url}}/notes/cartography-part-one   ){:target="_blank" rel="noopener noreferrer"}.
+I am not going to explain in detail what each of these packages do because I already covered it in [part one]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"}.
 
 ### 2. load data
 <hr>
@@ -93,7 +93,9 @@ This is the map we're going to create. It's a simple grey map and each state dar
 
 <code>addPolygons()</code> adds a layer to the map widget. Leaflet has different layer options, including <code>addTiles</code> and <code>addMarkers</code> which do different things. You can read about them on the [leaflet website](https://rstudio.github.io/leaflet/){:target="_blank" rel="noopener noreferrer"}. Since we're using a previously created shapefile, we'll add the shapefile to the map using <code>addPolygons()</code>.
 
-The first argument you need to specify after calling addPolygons is <code>data = [data-source]</code>. <code>[data-source]</code> is whatever variable your data is stored in. For me, it's called <code>states</code>. This is either the processed data from part I of this series or the saved shapefile loaded above under the section called *load data*.
+The first argument you need to specify after calling addPolygons is <code>data = [data-source]</code>. 
+
+<code>[data-source]</code> is whatever variable your data is stored in. For me, it's called <code>states</code>. This is either the processed data from part I of this series or the saved shapefile loaded above in the section called *load data*.
 
 When you run *only* the first two lines, Leaflet will use its default styling. The base color will be a light blue and the outlines of the states will be dark blue and fairly thick.
 
@@ -138,7 +140,9 @@ As you can see, the higher the <code>smoothFactor</code> the less coherent the U
 6    fillOpacity = 0.5,
 {% endhighlight %}
 
-<code>fillColor</code> refers to what color is on the inside of the polygons. Since I want a minimal base map, I usually set this value to be some shade of grey. If you want a different color, you only need to replace <code>#808080</code> with the corresponding hex code for the color you want. [Here](https://htmlcolorcodes.com/color-picker){:target="_blank" rel="noopener noreferrer"} is a useful hex color picker. If you have a hex value and you want the same color in a different shade, [this](https://javisperez.github.io/tailwindcolorshades/#/){:target="_blank" rel="noopener noreferrer"} is a useful site.
+<code>fillColor</code> refers to what color is on the inside of the polygons. Since I want a minimal base map, I usually set this value to be some shade of grey. If you want a different color, you only need to replace <code>#808080</code> with the corresponding hex code for the color you want. 
+
+[Here](https://htmlcolorcodes.com/color-picker){:target="_blank" rel="noopener noreferrer"} is a useful hex color picker. If you have a hex value and you want the same color in a different shade, [this](https://javisperez.github.io/tailwindcolorshades/#/){:target="_blank" rel="noopener noreferrer"} is a useful site.
 
 <code>fillOpacity</code> determines how transparent the color inside the shape should be. I set mine to be <code>0.5</code> because I like the way it looks. The number can be between 0 and 1 with 1 being fully opaque and 0 being fully transparent. 
 
@@ -169,7 +173,7 @@ The <code>opacity</code> property operates in the same way as fill opacity above
 
 <code>color = "#808080"</code> sets the color of the outline. I typically set it to be the same color as the fill color.
 
-If you want a static base map then lines 2-10 are all you need, as shown in the image below. I like to add some functionality to my base map so that the individual states become darker when they're hovered over. 
+If you want a static base map* then lines 2-10 are all you need, as shown in the image below. I like to add some functionality to my base map so that the individual states become darker when they're hovered over. 
 
 {%
     include figure.html
@@ -179,17 +183,23 @@ If you want a static base map then lines 2-10 are all you need, as shown in the 
 
 Lines 11-15 define the map's behavior when the mouse hovers over the shape. Most of the options are the same as the ones used on the base polygon shapes, so I won't go into them with much detail.
 
+* *static* in this case means that hovering over the map does not trigger any map behavior. Users can zoom on the map, but hovering over a state or park won't show a label or change color. A truly static map (like one with ggplot) is just an image of a map and has no zoom functionality. 
+
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
 * line 11:
 
 {% highlight r %}
-11    highlight = highlightOptions()
+11    highlight = highlightOptions(
 {% endhighlight %}
 
-<code>highlight = highlightOptions()</code> contains the mouseover specifications. The word before the equal sign has to be either <code>highlight</code> or <code>highlightOptions</code>. I am not sure why you have to declare *highlight* twice, but you do. 
+<code>highlight = highlightOptions()</code> contains the mouseover specifications. Here we're setting the *highlight* variable equal to the values in the <code>highlightOptions()</code> function call. 
 
-<code>highlightOptions()</code> is the actual function call. 
+<div class = "boxed">
+<i class="fa-regular fa-note-sticky fa-xl"></i>
+<i>Note:</i>
+Leaflet requires that the variable holding the <code>highlightOptions()</code> function call be named either <code>highlight</code> or <code>highlightOptions</code>. Naming anything else (e.g. <code>Hi_Opt = highlightOptions()</code>) will cause it to break.
+</div>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -201,7 +211,7 @@ Lines 11-15 define the map's behavior when the mouse hovers over the shape. Most
 14    fillOpacity = 0.7,
 {% endhighlight %}
 
-<code>weight</code>, <code>color</code>, and <code>fillOpacity</code> all operate in the same way as before, but whatever values you specify here will only show up when the mouse hovers over. 
+<code>weight</code>, <code>color</code>, and <code>fillOpacity</code> all operate in the same way as before, but whatever values you specify here will only show up when the mouse hovers over the polygon shape. Since we're defining the values for the states in this section, the values will only apply when a state is moused over. 
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -225,7 +235,9 @@ Since the base map has only one layer, this property doesn't affect anything.
 <code>group = "Base Map")</code> lets you group multiple layers together. This argument will come in handy as we add more information to the map. The base map is the default layer and is always visible - though, when you use map tiles you can define multiple base layers. All other layers will be on top of the base layer. When using different groups, you can define functionality that allows users to turn off certain layers. 
 
 ### 4. conclusion
-You've created your first base map! It's a boring flat, grey map, but it's the base we'll use when adding in the national and state park data. In [part III]({{site.url}}/notes/cartography-part-three){:target="_blank" rel="noopener noreferrer"} of this series we'll process and add in the National Parks.
+You've created your first base map! Go ahead and run your mouse over the map and you'll see the states turn a darker shade of grey. 
+
+The map is a fairly boring, grey map, but it's the base we'll use when adding in the national and state park data. In [part III]({{site.url}}/notes/cartography-part-three){:target="_blank" rel="noopener noreferrer"} of this series we'll process and add in the National Parks.
 
 <figure>
 <iframe seamless src="/assets/notes-images/nps/maps/usa.html" width="100%" 

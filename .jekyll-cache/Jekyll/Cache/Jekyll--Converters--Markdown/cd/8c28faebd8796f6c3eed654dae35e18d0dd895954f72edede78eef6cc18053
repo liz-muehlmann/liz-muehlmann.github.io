@@ -1,4 +1,4 @@
-I"<p>Welcome to part four of my <a href="http://localhost:4000/pages/tag-forest.html/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. In this post, we’ll download and process the state park data before adding it to the base map created in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a>.</p>
+I"<p>Welcome to part four of my <a href="http://localhost:4000/pages/tag-forest.html/#cartography" target="_blank" rel="noopener noreferrer">cartography in R</a> series. In this post, we’ll download and process the state park data before adding it to the base map created in <a href="http://localhost:4000/notes/cartography-part-two" target="_blank" rel="noopener noreferrer">part II</a>.</p>
 
 <!--more-->
 
@@ -159,7 +159,7 @@
     <figcaption><span>PAD-US Viewer</span></figcaption>
 </figure>
 
-<p>In the search bar on the left, type in <em>Valley of Fire</em> (1) and select it from under the <em>Official Place Names</em> (2) panel that appears after you start typing. The map will adjust to show the park and you can click <em>Done</em> (3).</p>
+<p>In the search bar on the left, (1) type in <em>Valley of Fire</em>, (2) select it from under the <em>Official Place Names</em>  panel that appears after you start typing, the map will adjust to show the park and (3) you can click <em>Done</em></p>
 
 <figure>
     
@@ -185,7 +185,7 @@
 
 <p>The purple-ish polygon on the map shows the geographic boundaries of the Valley of Fire State Park. This is what I want to see. Not all of the layers include the shape data for the state parks.</p>
 
-<p>For example, if I uncheck the <em>Fee Manager</em> layer and select the <em>Federal Fee Managers (Authoritative Data)</em> layer the polygon for the <em>Valley of Fire</em> disappears. This is because it is not federal land - it’s state land. Be careful when choosing the layers because not all of them contain the correct information.</p>
+<p>For example, if I uncheck the <em>Fee Manager</em> layer and select the <em>Federal Fee Managers (Authoritative Data)</em> layer the polygon for the <em>Valley of Fire</em> disappears. This is because the Valley of Fire is not federal land - it’s state land. Be careful when choosing the layers because not all of them contain the correct information.</p>
 
 <figure>
     
@@ -236,7 +236,7 @@ Clicking on an image will open it in a new tab.
 <ol>
   <li><em>Own_Type</em> designates who owns the land. For <em>Valley of Fire</em> it’s state owned land.</li>
   <li><em>Mang_Type</em> is the name of the agency that manages the land.</li>
-  <li><em>Mang_Name</em> is the type of agency that owns the land, here state.</li>
+  <li><em>Mang_Name</em> is the type of agency that owns the land.</li>
   <li><em>Des_Tp</em> is the designation type.</li>
   <li><em>Unit_Nm</em> is the land’s name.</li>
 </ol>
@@ -424,9 +424,9 @@ Clicking on an image will open it in a new tab.
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">5</span><span class="w">    </span><span class="n">filter</span><span class="p">(</span><span class="n">State_Nm</span><span class="w"> </span><span class="o">%!in%</span><span class="w"> </span><span class="n">territories</span><span class="w">  </span><span class="o">&amp;</span><span class="w">
 </span><span class="m">6</span><span class="w">           </span><span class="n">Own_Type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"STAT"</span><span class="p">)</span></code></pre></figure>
 
-<p>R and the Tidyverse’s <code>filter()</code> function allows you to combine conditions within one filter call by using or <code>|</code> or and <code>&amp;</code>.</p>
+<p>R and the Tidyverse’s <code>filter()</code> function allows you to combine conditions within one filter call by using and (<code>&amp;</code>) OR or (<code>|</code>).</p>
 
-<p>The logic in this line says filter the data for rows where the <em>State_Nm</em> is not in the <em>territories</em> list (discard all but the 50 states) <strong>and</strong> the <em>Own_Type</em> is <em>STAT</em>. For the row to be selected, <strong>both</strong> conditions must evaluate to true.</p>
+<p>The logic in this line says filter the data for rows where the <em>State_Nm</em> is not in <code>%!in%</code> the <em>territories</em> list (discard all but the 50 states) <strong>and</strong> (<code>&amp;</code>) the <em>Own_Type</em> is (<code>==</code>) <em>STAT</em>. For the row to be selected, <strong>both</strong> conditions must evaluate to true. This will keep only state parks from the 50 states.</p>
 
 <div class="boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i>
@@ -434,7 +434,7 @@ Clicking on an image will open it in a new tab.
 The data lists state ownership as <i>STAT</i>. I found this out the hard way by running the filter with "State" and it returning no data. You can check the different values in a single column by running <code>levels(as.factor(state_parks$Own_Type))</code>
 </div>
 
-<p>The unfiltered data set had 247,507 rows. After these the two conditions in this line the data set has 53,139 rows. That’s a significant reduction but still a substantial number of rows.</p>
+<p>The original unfiltered data set had 247,507 rows. After these the two conditions are met, the filtered data set has 53,139 rows. That’s a significant reduction but still a substantial number of rows.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -500,7 +500,9 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
-<p>*lines 18-20</p>
+<ul>
+  <li>lines 18-20</li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">18</span><span class="w">    </span><span class="n">filter</span><span class="p">(</span><span class="n">Loc_Ds</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"ACC"</span><span class="w"> </span><span class="o">&amp;</span><span class="w">
 </span><span class="m">19</span><span class="w">           </span><span class="n">Loc_Ds</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"Hunter Access"</span><span class="p">,</span><span class="w">
@@ -554,7 +556,7 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 <p>I went over the logic of using <code>mutate()</code> and <code>case_when()</code> in <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">Part III</a> of this series, so I won’t cover it again here.</p>
 
-<p>In its general form, the format is <code>case_when(COLUMN_NAME == "original_value" ~ "new_value")</code>. I only needed to change the values for <code>"Recreation Management Area</code>s, the rest I just populated the new column with the old values.</p>
+<p>In its general form, the format is <code>case_when(COLUMN_NAME == "original_value" ~ "new_value")</code>. I only needed to change the values for any <code>"Recreation Management Area"</code>, the rest I just populated the new column with the old values.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -572,14 +574,14 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 <p>Here is where I ran into some issues. In <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> of the series when I processed the National Park data I included a <code>mutate()</code> and <code>case_when()</code> call to mark whether I’ve visited the park or not. It’s not a very elegant solution since I have to modify each park individually, but it was passable since I’ve only been to a handful of National Parks. For the state parks, though, it is unwieldy.</p>
 
-<p>I had original wanted to drop the geometry and download the parks as a CSV, but even that was overwhelming.</p>
+<p>I had original wanted to drop the geometry and download the parks as a CSV, edit it using Excel or LibreCalc, then load and merge it with the geometry data, but even that was overwhelming. With approximately 50,000 rows it was a very large file. I know I could filter out states I haven’t visited to get than number down, but since I live in California there are still a lot of parks to get through.</p>
 
 <div class="boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> The code to drop the geometry and save some of the park data as csv can be found in the r files on <a href="https://github.com/liz-muehlmann/nps">this project's repo</a></div>
 
 <p>In the end, I decided to focus on the parks that I <em>know</em> I’ve visited <strong>and</strong> have taken photos at. I’ve visited many, many state parks, but until I have the photos to add to the markers (<a href="http://localhost:4000/notes/cartography-part-five" target="_blank" rel="noopener noreferrer">covered in part five</a>), I’m omitting them from this code. Hopefully in the mean time I’ll figure out a better way to keep track of the parks I’ve been to.</p>
 
-<p>The logic is the same as the National Park data. <code>mutate()</code> created a new column <code>type</code> and populated it by using <code>case_when()</code>.</p>
+<p>The logic is the same as the National Park data. <code>mutate()</code> created a new column <code>visited</code> and populated it by using <code>case_when()</code>.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -605,6 +607,8 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 <h3 id="7-divide-by-state">7. divide by state</h3>
 <hr />
 
+<p>I tried to map the base map, National Parks, and the state parks. It did not go well. R froze, my computer screamed, and chaos ensued. As a result, I had to rethink my map. I decided to separate the state parks by state, save them, and in <a href="http://localhost:4000/notes/cartography-part-six" target="_blank" rel="noopener noreferrer">part VI</a> of this never-ending series* I’ll create individual state maps. When you click on a state it’ll take you to a map that includes the state parks.</p>
+
 <div class="boxed">
 
 
@@ -620,11 +624,11 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 </div>
 
-<p>I tried to map the base map, National Parks, and the state parks. It did not go well. R froze, my computer screamed, and chaos ensued. As a result, I had to rethink my map. I decided to separate the state parks by state, save them, and in <a href="http://localhost:4000/notes/cartography-part-six" target="_blank" rel="noopener noreferrer">part VI</a> of this never-ending series* I’ll create individual state maps. When you click on a state it’ll take you to a map that includes the state parks.</p>
+<p>Unfortunately, this also means I need to separate the National Parks by state so they <em>also</em> appear on the individual maps. The logic will be the same so I am not going to update <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> to reflect that change. If you want to see that code it will be available on the <a href="https://github.com/liz-muehlmann/nps" target="_blank" rel="noopener noreferrer">project repo</a>.</p>
 
-<p>Unfortunately, this also means I need to separate the National Parks by state so they <em>also</em> appear on the individual maps. The logic will be the same so I am not going to update <a href="http://localhost:4000/notes/cartography-part-three" target="_blank" rel="noopener noreferrer">part III</a> to reflect that change. If you want to see that code it’s available on the <a href="https://github.com/liz-muehlmann/nps" target="_blank" rel="noopener noreferrer">project repo</a>].</p>
+<p>I don’t want to manually separate and save each state, so I’m going to use a loop! I hate loops.</p>
 
-<p>I don’t want to manually separate and save each state, so I’m going to use a loop! I hate loops. The logic is simple enough “as long as condition X is true, do something.” So simple, yet esvery time I’ve tried to learn a programming language I have struggled with loops. That’s pretty sad considering it’s like day 2 of any programming class. Day 1 is learning how to write “Hello World!”**</p>
+<p>The logic is simple enough “as long as condition X is true, do something.” So simple, yet every time I’ve tried to learn a programming language I have struggled with loops. That’s pretty sad considering it’s like day 2 of any programming class. Day 1 is learning how to write “Hello World!”**</p>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -646,13 +650,13 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">1</span><span class="w">    </span><span class="n">split_states</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">split</span><span class="p">(</span><span class="n">state_parks</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_parks</span><span class="o">$</span><span class="n">State_Nm</span><span class="p">)</span><span class="w"> </span></code></pre></figure>
 
-<p>The <code>split()</code> is part of base R. It takes quite a <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/split" target="_blank" rel="noopener noreferrer">few arguments</a>, most of which are optional.</p>
+<p>The <code>split()</code> function is part of base R. It takes quite a <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/split" target="_blank" rel="noopener noreferrer">few arguments</a>, most of which are optional.</p>
 
 <p>The first argument is the vector (or data frame) that you want to split into different groups. I want to split the <code>state_parks</code> data into its corresponding states, so it is listed first.</p>
 
 <p>The second argument <code> f = </code> is how you want the data split. <code>f</code> in this instance stands for factor. If we run <code>levels(as.factor(state_parks$State_Nm))</code> in the terminal, it will return a list of the 50 state abbreviations. That is what we’re telling R to do here.</p>
 
-<p>You can access an individual state using the <code>$</code> operator. <code>split_states$CA</code> will return the state park data for California.</p>
+<p>You can access an individual state using the <code>$</code> operator. For example, <code>split_states$CA</code> will return the state park data for California.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -662,7 +666,9 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">2</span><span class="w">    </span><span class="n">all_names</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">split_states</span><span class="p">)</span></code></pre></figure>
 
-<p><code>names</code> is also part of base R. It does what it sounds like - it gets the names of an object. Here, I want to get the names of each split data sets.</p>
+<p><code>names</code> is also part of base R. It does what it sounds like - it gets the names of an object. Here, I want to get the names of each split data set.</p>
+
+<p><code>names(split_states)</code> will return all 50 state abbreviations. I save it to the variable <code>all_names</code> which R will iterate over in the next section.</p>
 
 <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
 
@@ -677,21 +683,29 @@ I use the number of rows as a simple gut-check that the code is doing what I wan
 
 <p>The basic logic of a for loop is:<br />
     <code>for(x in y){ <br /> 
-    do something}</code></p>
+        do something}</code></p>
 
 <p>Inside the parenthesis is the condition that must evaluate to TRUE if the content in the curly braces is to run.</p>
 
-<p>In line 4, <code>for(name in all_names){</code> says as long as there’s a name in the list of all names, do whatever is inside the curly braces. <code>name</code> can be whatever you want. It’s a placeholder value. I can have it say <code>for(dogs in all_names){</code> it will still do the exact same thing. A lot of time you’ll see it as an <code>i</code> for item. I like to use more descriptive language because, again, for loops are my Achilles’ heel.</p>
+<p>In line 4, <code>for(name in all_names){</code> says as long as there’s a name in the list of all names, do whatever is inside the curly braces.</p>
+
+<p><code>name</code> can be whatever you want. It’s a placeholder value. I can have it say <code>for(dogs in all_names){</code> it will still do the exact same thing. A lot of time you’ll see it as an <code>i</code> for item. I like to use more descriptive language because, again, for loops are my Achilles’ heel.</p>
 
 <p>The <code>all_names</code> part is where ever you want R to look for the data. It will change based on your data set and variable naming conventions.</p>
 
 <p>In line 5, I save the split data sets.</p>
 
-<p><code>st_write()</code> is part of the <em>sf</em> package which allows us to create shapefiles. This can be any saving function (eg. write_csv() if you want to save CSVs). The function takes several arguments. In line 43 above I showed the basic structure:  st_write(data, path/to/file.shp). This is good if you only have one file, but since I’m saving them in a loop I don’t want all of the files to have the same name. R will error out after the first and tell you the file already exists.</p>
+<p>In line 43 above I showed the basic structure:  <code>st_write(data, path/to/file.shp)</code>. This is good if you only have one file, because R will save the data to whatever you call <code>file.shp</code>. If we used this format inside the for loop, R will try and save each state’s data using the same filename every time. Outside of R this might work. In R, however, it will cause an error and R will tell you the file’s already been saved.</p>
 
-<p>The first part <code>split_states[[name]]</code> is still telling R what data to save, but using an index instead of a specific data frame name. To access an index you use <code>data[[some-value]]</code> where <code>some-value</code> is the index location. In my code, R will take the <code>split_states</code> data and go alright the first index location in <code>[[name]]</code> is 1 and return whatever value is stored in that index (here, AK). It will then do that for every index location as it loops through the <code>split_states</code> data.</p>
+<p>To avoid crashing R, we’re going to select the data we want to save using its indexed position. Each state has numbered position in <code>all_names</code>. Alaska is in index position 1, Alabama is in index position 2, etc.</p>
 
-<p><code>paste0()</code> is also part of base R - it’s apparently faster than <code>paste()</code>. It concatenates (or links together) different pieces into one. I’m using it to create the filename. Within the <code>paste0</code> call anything within quotation marks is static. So every file will be saved to <code>"shapefiles/shifted/states/individual/"</code> and every file will have the extension <code>.shp</code>. What will change with each loop is the <code>name</code> of the file. One by one, R will loop through and save each file using the <code>name</code> it pulled from <code>all_names</code>.</p>
+<p>In the first part of the filename, <code>split_states[[name]]</code>, tells R what data to save by using an the indexed position instead of a specific data frame name (like <code>nps</code> when we did the national park data).</p>
+
+<p>For the state data, we’re telling R to save the stored in <code>split_states[[name]]</code>. R will take the <code>split_states</code> data and go alright the first index location in <code>[[name]]</code> is 1 and return whatever value is stored in that index (here, AK). It will then do that for every index location as it loops through the <code>split_states</code> data.</p>
+
+<p><code>paste0()</code> is also part of base R - it’s apparently faster than <code>paste()</code>. It concatenates (or links together) different pieces into one. I’m using it to create the filename.</p>
+
+<p>Within the <code>paste0</code> call anything within quotation marks will be the same each time it loops. So every file will be saved to <code>"shapefiles/shifted/states/individual/"</code> and every file will have the extension <code>.shp</code>. What will change with each loop is the <code>name</code> of the file. One by one, R will loop through and save each file using the <code>name</code> it pulled from <code>all_names</code>. Alaska will be saved as <code>AK.shp</code>, Alabama will be saved as <code>AL.shp</code>.</p>
 
 <p><code>st_write()</code> automatically creates the other three files that each “shapefile” needs. When the loop is done, you should have a folder of 200 files (50 states * 4 files each). Which is why I strongly recommend using <a href="https://www.dvc.org" target="_blank" rel="noopener noreferrer">DVC</a> if you’re doing any kind of version control.</p>
 
