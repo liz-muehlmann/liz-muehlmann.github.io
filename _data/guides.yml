@@ -1,3 +1,9 @@
+- guide_name: "2024 California"
+  election_type: "General"
+  level: "State"
+  last_update: "2025-06-18"
+  download: "2024_General_California.pdf"
+
 - guide_name: "2022 California"
   election_type: "General"
   level: "State"
