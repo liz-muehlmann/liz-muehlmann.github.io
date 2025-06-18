@@ -133,15 +133,15 @@ headname: Curriculum Vitae
                     </span>
                     <div class="content">
                     <p> <i>Ethics Center Fellowship </i>| $4,000<br/>
-                        University of California - Irvine <br/><br/>
+                        University of California - Irvine <br/><br/></p>
                     <p> <i>Brython Davis Fellowship </i>| $7,000<br/>
-                        University of California - Irvine <br/><br/>
+                        University of California - Irvine <br/><br/></p>
                     <p> <i>Jack W. Peltason Center for the Study of Democracy Fellow </i>| $1,500<br/>
-                        University of California - Irvine <br/><br/>
+                        University of California - Irvine <br/><br/></p>
                         <p> <i>Undergraduate Research Opportunities Program </i>| $11,000<br/>
-                        University of California - Irvine <br/><br/>
+                        University of California - Irvine <br/><br/></p>
                         <i>Diversity Recruitment Fellowship </i>| $7,500 <br/>
-                        University of California - Irvine <br/> <br/>
+                        University of California - Irvine <br/> <br/></p>
                         <i> Minority Serving Institution Enhancement </i>| $7,500 <br/>
                         University of California - Irvine </p>
                     </div>
