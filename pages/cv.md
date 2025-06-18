@@ -65,7 +65,7 @@ headname: Curriculum Vitae
                     <label name="tab" for="tab2" tabindex="-1" class="tab_lab" role="tab">
                     <h3>Presentations</h3>
                     </label>
-                    <input type="checkbox" class="tab" id="tab2" tabindex="0" />
+                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
                     <span class="open-close-icon">
                         <i class="fas fa-plus"></i>
                         <i class="fas fa-minus"></i>
@@ -101,7 +101,7 @@ headname: Curriculum Vitae
                     <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
                         <h3>Academic Awards</h3>
                     </label>
-                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <input type="checkbox" class="tab" id="tab4" tabindex="0" />
                     <span class="open-close-icon">
                         <i class="fas fa-plus"></i>
                         <i class="fas fa-minus"></i>
@@ -125,7 +125,7 @@ headname: Curriculum Vitae
                     <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
                         <h3>Scholarships & Funding</h3>
                     </label>
-                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <input type="checkbox" class="tab" id="tab5" tabindex="0" />
                     <span class="open-close-icon">
                         <i class="fas fa-plus"></i>
                         <i class="fas fa-minus"></i>
@@ -149,7 +149,7 @@ headname: Curriculum Vitae
                     <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
                         <h3>Professional Memberships</h3>
                     </label>
-                    <input type="checkbox" class="tab" id="tab3" tabindex="0" />
+                    <input type="checkbox" class="tab" id="tab6" tabindex="0" />
                     <span class="open-close-icon">
                         <i class="fas fa-plus"></i>
                         <i class="fas fa-minus"></i>
