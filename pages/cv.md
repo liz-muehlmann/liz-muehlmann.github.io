@@ -33,7 +33,7 @@ headname: Curriculum Vitae
                         <i>Citrus Community College - Glendora, California</i> | May 2009</p>
                     </div>
                 </li>
-                <li data-md-content="900"> 
+                <li data-md-content="1000"> 
                     <label name="tab" for="tab2" tabindex="-1" class="tab_lab" role="tab">
                     <h3>Research Positions</h3>
                     </label>
@@ -61,7 +61,7 @@ headname: Curriculum Vitae
                             </p>
                     </div>
                 </li>
-                <li data-md-content="900"> 
+                <li data-md-content="1000"> 
                     <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
                     <h3>Presentations</h3>
                     </label>
@@ -72,29 +72,30 @@ headname: Curriculum Vitae
                     </span>
                     <div class="content">
                         <p> <i>"News Deserts and the Threat to Democracy"</i><br>
-                        Midwestern Political Science Association<br>
-                        Spring 2022, Political Consequences of Media Consolidation<br><br>
-                             <i>"Local News Access and Political Participation"</i><br>
-                            Western Political Science Association<br>
-                            Spring 2022, Political Participation and Media in a New World<br><br>
-                            <i>"Transgender Rights and the Tyranny of the Majority"</i><br>
-                            Western Political Science Association<br>
-                            Spring 2022, Sexuality and Gender in the Law<br><br>
-                            <i>"Unions as a Counterbalance to Corporate Citizenship" </i><br>
-                            Midwest Political Science Association <br>
-                            Spring 2021, Tensions Between Law and Democracy<br><br>
-                            <i>"Corporate Citizenship and the Threat to Democracy: Unions as a Counterbalance"</i><br>
-                            Western Political Science Association <br>
-                            Spring 2021, Judicial Review, Litigation Reform, and Political Speech<br><br>
-                            <i>Featured Alumni Panel</i><br>
-                            California State Polytechnic University - Pomona<br>
-                            Fall 2018, World Philosophy Day<br><br>
-                            <i>“Union Security Fees, Campaign Finance, and the First Amendment"</i><br>
-                            California State Polytechnic University - Pomona<br>
-                            February 2018, Colloquium Speakers Series: Labor, Justice, and the Future of Work <br><br>
-                            <i>“Speech Rights in the Public Sector”</i><br>
-                            California State University - Fullerton<br>
-                            September 2016, California Teachers Association, Union Meeting</p>
+                                Midwestern Political Science Association<br>
+                                Spring 2022, Political Consequences of Media Consolidation<br><br></p>
+                        <p><i>"Local News Access and Political Participation"</i><br>
+                                Western Political Science Association<br>
+                                Spring 2022, Political Participation and Media in a New World<br><br></p>
+                        <p><i>"Transgender Rights and the Tyranny of the Majority"</i><br>
+                                Western Political Science Association<br>
+                                Spring 2022, Sexuality and Gender in the Law<br><br></p>
+                        <p><i>"Unions as a Counterbalance to Corporate Citizenship" </i><br>
+                                Midwest Political Science Association <br>
+                                Spring 2021, Tensions Between Law and Democracy<br><br></p>
+                        <p><i>"Corporate Citizenship and the Threat to Democracy: Unions as a  Counterbalance"</i><br>
+                                Western Political Science Association <br>
+                                Spring 2021, Judicial Review, Litigation Reform, and Political Speech<br><br></p>
+                        <p><i>Featured Alumni Panel</i><br>
+                                California State Polytechnic University - Pomona<br>
+                                Fall 2018, World Philosophy Day<br><br></p>
+                        <p><i>“Union Security Fees, Campaign Finance, and the First Amendment"</i><br>
+                                California State Polytechnic University - Pomona<br>
+                                February 2018, Colloquium Speakers Series: Labor, Justice, and the Future of Work <br><br></p>
+                        <p><i>“Speech Rights in the Public Sector”</i><br>
+                                California State University - Fullerton<br>
+                                September 2016, California Teachers Association, Union Meeting
+                        </p>
                     </div>
                 </li>
                 <li data-md-content="600">
