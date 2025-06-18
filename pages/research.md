@@ -5,6 +5,7 @@ headname: Research
 ---
 
 <div class="container">
+  <div class = "row">
     <div class="content-column-text col-lg">
       <h3>Summary:</h3>
       <hr class = "h-line"> 
@@ -16,8 +17,9 @@ headname: Research
           leveraging modern data sets and tools to pursue social welfare.
       </p>
     </div>
-  <div class="row">
-    <div class="col-lg">
+  </div>
+  <div class = "row">
+    <div class="content-column-text col-lg">
       <h3>Current Research:</h3>
       <hr class = "h-line">
       <p> 
