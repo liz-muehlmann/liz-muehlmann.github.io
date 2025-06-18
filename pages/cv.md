@@ -33,7 +33,7 @@ headname: Curriculum Vitae
                         <i>Citrus Community College - Glendora, California</i> | May 2009</p>
                     </div>
                 </li>
-                <li data-md-content="600"> 
+                <li data-md-content="900"> 
                     <label name="tab" for="tab2" tabindex="-1" class="tab_lab" role="tab">
                     <h3>Research Positions</h3>
                     </label>
@@ -51,8 +51,8 @@ headname: Curriculum Vitae
                             - Design and create interactive ArcGIS and QGIS maps that visually represent voter turnout, disaster exposure, and keyword use in local public meetings at the place, county, and state level<br>
                             - Cleaned transcript data from 103,350 local government meetings and used topic modeling to find common themes within the transcripts<br><br>
                             <i>Research Assistant | 2022</i> <br>
-                            University of California, Irvine</br>
-                            - Assisted Dr. Sara Wallace-Goodman on a project investigating citizenship and democratization</br>
+                            University of California, Irvine<br>
+                            - Assisted Dr. Sara Wallace-Goodman on a project investigating citizenship and democratization<br>
                             - Cleaned, merged, and created several visualizations using a nation’s historical immigration policy with electoral and liberal indices <br><br> 
                             <i>Research Assistant | 2021</i> <br>
                             University of California, Irvine <br>
@@ -61,7 +61,7 @@ headname: Curriculum Vitae
                             </p>
                     </div>
                 </li>
-                <li data-md-content="600"> 
+                <li data-md-content="900"> 
                     <label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">
                     <h3>Presentations</h3>
                     </label>
