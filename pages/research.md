@@ -10,14 +10,11 @@ headname: Research
       <h3>Summary:</h3>
       <hr class = "h-line"> 
       <p>        
-          Throughout both my academic and professional career, I have remained
-          steadfast in my dedication to making data accessible to people from a
-          diversity of backgrounds and worldviews in public, private, and
-          educational settings. I am deeply committed to helping people and
-          leveraging modern data sets and tools to pursue social welfare.
+        Throughout both my academic and professional career, I have remained steadfast in my dedicatiom to making data accessible to people from a diversity of backgrounds and worldviews in public, private, and educational settings. I am deeply committed to helping people and leveraging modern data sets and tools to pursue social welfare.
       </p>
     </div>
   </div>
+  
   <div class = "row">
     <div class="content-column-text col-lg">
       <h3>Current Research:</h3>
