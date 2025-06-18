@@ -60,7 +60,7 @@ headname: Curriculum Vitae
                             - Cleaned, merged, and created several visualizations using a nation’s historical immigration policy with electoral and liberal indices <br><br> 
                             <i>Research Assistant | 2021</i> <br>
                             University of California, Irvine <br>
-                            - Assisted Dr. Mary McThomas with legal research and analysis on transgender sports bans and the legal implications of the Supreme Court of the United States’ decision in <i>Bostock v Clayton</i>
+                            - Assisted Dr. Mary McThomas with legal research and analysis on transgender sports bans and the legal implications of the Supreme Court of the United States’ decision in <i>Bostock v Clayton</i><br>
                             - Co-presented Transgender Rights and the Tyranny of the Majority at the Western Political Science Association Conference in 2022<br>
                         </p>
                     </div>
