@@ -10,7 +10,7 @@ headname: Curriculum Vitae
         </div>
         <div class="col-11">
             <ul class="m-d expand-list">
-                <li data-md-content="800">
+                <li data-md-content="1000">
                     <label name="tab" for="tab1" tabindex="-1" class="tab_lab" role="tab">
                         <h3>Education</h3>
                     </label>
