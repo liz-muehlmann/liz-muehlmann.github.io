@@ -16,12 +16,11 @@ If you notice any errors, you feel like I’ve missed something, or you found th
 
 <h1>helpful resources</h1>
 <hr class = "h-line">
-1. Register to vote (Deadline May 23): <a href="https://registertovote.ca.gov/">https://registertovote.ca.gov/</a> 
-2. Check your registration status: <a href="https://voterstatus.sos.ca.gov/">https://voterstatus.sos.ca.gov/</a>
-3. Access the official voter guide: <a href="https://voterguide.sos.ca.gov/">https://voterguide.sos.ca.gov/</a> 
-4. Early voting & ballot drop off locations: <a href="https://caearlyvoting.sos.ca.gov/">https://caearlyvoting.sos.ca.gov/</a>
-5. Track your ballot: <a href="https://california.ballottrax.net/voter/">https://california.ballottrax.net/voter/</a>
-6. If you are in the Los Angeles, San Bernardino, Orange County area and need help getting to your polling place I will either find you resources or help you get there. I also offer to go with you to vote (and I will bring my two large German Shepherds) if you feel unsafe going to vote alone.
+1. Register to vote or check your voter status: <a href="https://www.voteamerica.org/register-to-vote/">https://www.voteamerica.org/register-to-vote/</a>
+2. Access the official voter guide: <a href="https://voterguide.sos.ca.gov/">https://voterguide.sos.ca.gov/</a> 
+3. Early voting & ballot drop off locations: <a href="https://caearlyvoting.sos.ca.gov/">https://caearlyvoting.sos.ca.gov/</a>
+4. Track your ballot: <a href="https://california.ballottrax.net/voter/">https://california.ballottrax.net/voter/</a>
+5. If you are in the Los Angeles, San Bernardino, Orange County area and need help getting to your polling place I will either find you resources or help you get there. I also offer to go with you to vote (and I will bring my large German Shepherd) if you feel unsafe going to vote alone.
 
 
 <h1>ballot guides</h1>
