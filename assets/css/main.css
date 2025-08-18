@@ -12,6 +12,11 @@ body {
   font-size: 18.5px;
   background-color: var(--background-color);
   color: var(--text-color);
+  padding-top: 10px;
+}
+
+.default-content {
+  padding-top: 20px;
 }
 
 .boxed {
@@ -46,30 +51,14 @@ figure > figcaption {
   text-align: center;
 }
 
-/* spacing */
-/* .tab0 {
-  margin-left: 25px;
-}
-
-.tab1 {
-  margin-left: 40px;
-}
-
-.tab2 {
-  margin-left: 60px;
-}
-
-.tab4 {
-  margin-left: 80px;
-}
-
-.tab5 {
-  margin-left: 100px;
-}
-
-.tab6 {
-  margin-left: 120px;
-} */
+body.dark-mode img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  
+body.dark-mode img:hover {
+    opacity: 1;
+  }
 
 /* election guides */
 .guides {
@@ -79,6 +68,7 @@ figure > figcaption {
 .last_update {
   font-size: 12px;
 }
+
 /* links */
 a {
   color: var(--link-color);
@@ -101,19 +91,25 @@ a:hover {
 }
 
 /* navigation bar */
-.uci-logo {
+
+.nav-logo {
     margin-right: 15px;
-    width: 80px;
     height: 40px;
+    width: 50px;
+    padding-left: 10px;
 }
 
 .nav-item {
   margin-top: 6px;
 }
 
+.day-night-icon {
+  padding-right: 10px;
+}
+
 /* masthead */
 .jumbotron {
-  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/resources/Sequoias.jpg");
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("/assets/site-resources/Sequoias.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -125,14 +121,16 @@ a:hover {
   text-align: center;
 }
 
-@media (max-width: 400px) {   /* adds margin to jumbotron small screens */
+/* adds margin to jumbotron small screens */
+@media (max-width: 400px) {   
     .jumbotron > .container {
         margin-top:100px;
         word-break: break-all;
     }
 }
 
-.minborder {    /* white box in header */
+ /* white box in header */
+.minborder {   
   min-height: 190px;
   display: inline-flex;
   flex-direction: column;
@@ -156,6 +154,15 @@ a:hover {
   text-align: center;
 }
 
+.footer-img > img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-img a {
+  text-decoration: none;
+}
+
 /* icons */
 .fas, .fa-regular, .fa-solid {
   color: #678778;
@@ -177,6 +184,7 @@ label > h3 {
   margin: 0;
   padding: 0;
 }
+
 .m-d.expand-list > li{
   list-style-type: none;
   padding: 15px 0;
@@ -184,14 +192,17 @@ label > h3 {
   position: relative;
   max-width: 80%;
 }
+
 .m-d label[class^="tab"]:hover{
   cursor: pointer;
 }
+
 .m-d input{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .m-d input[class^="tab"]{
   width: 100%;
   height: 40px;
@@ -199,12 +210,15 @@ label > h3 {
   left: 0;
   top: 0; 
 }
+
 .m-d input[class^="tab"]:hover{
 cursor: pointer;
 }
+
 .m-d label[class^="tab"]{
   font-weight: bold;
 }
+
 .m-d .content{
   height: auto;
   max-height: 0;
@@ -213,76 +227,94 @@ cursor: pointer;
   transform: translateY(20px);
   transition: all 180ms ease-in-out 0ms; 
 }
+
 .m-d li[data-md-content="100"] input[class^="tab"]:checked ~ .content{
   max-height: 100px;
   transition: all 150ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="200"] input[class^="tab"]:checked ~ .content{
   max-height: 200px;
   transition: all 200ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="300"] input[class^="tab"]:checked ~ .content{
   max-height: 300px;
   transition: all 250ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="400"] input[class^="tab"]:checked ~ .content{
   max-height: 400px;
   transition: all 250ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="500"] input[class^="tab"]:checked ~ .content{
   max-height: 500px;
   transition: all 250ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="600"] input[class^="tab"]:checked ~ .content{
   max-height: 600px;
   transition: all 250ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="700"] input[class^="tab"]:checked ~ .content{
   max-height: 700px;
   transition: all 300ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="800"] input[class^="tab"]:checked ~ .content{
   max-height: 800px;
   transition: all 300ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="900"] input[class^="tab"]:checked ~ .content{
   max-height: 900px;
   transition: all 300ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content="1000"] input[class^="tab"]:checked ~ .content{
   max-height: 1000px;
   transition: all 350ms ease-in-out 0ms;
 }
+
 .m-d li[data-md-content=""] input[class^="tab"]:checked ~ .content{
   max-height: 1000px;
   transition: all 250ms ease-in-out 0ms;
 }
+
 .m-d input[class^="tab"]:checked ~ .content{
   margin-bottom: 20px;
 }
+
 .m-d .open-close-icon{
   display: inline-block;
   position: absolute;
   right: 20px;
-  transform: translatey(2px);
+  transform: translate(2px);
 }
+
 .m-d .open-close-icon i{
   position: absolute;
   left: 0;
 }
+
 .m-d .open-close-icon .fa-minus{
   transform:rotate(-90deg);
   transition: transform 150ms ease-in-out 0ms;
 }
+
 .m-d input[class^="tab"]:checked ~ .open-close-icon .fa-minus{
   transform: rotate(0deg);
   transition: transform 150ms ease-in-out 0ms;
 }
+
 .m-d .open-close-icon .fa-plus{
   opacity: 1;
   transform:rotate(-90deg);
   transition: opacity 50ms linear 0ms, transform 150ms ease-in-out 0ms;
 }
+
 .m-d input[class^="tab"]:checked ~ .open-close-icon .fa-plus{
   opacity: 0;
   transform: rotate(0deg);
@@ -319,9 +351,10 @@ cursor: pointer;
 /* groups */
 .blockquote {
   font-size: 25px;
+  padding-top: 20px;
 }
 
-/* gitbub gist */
+/* github gist */
 body .gist .gist-file {
   margin-bottom: 0;
   border: 1px solid #adb5bd;
@@ -398,4 +431,92 @@ code, pre, .n {
 
 pre .lineno, .m {
   color: var(--text-color);
+}
+
+/* resource page */
+
+.card {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align:center;
+}
+
+/* tables */
+
+/* custom stripe colors */
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: var(--row-color);
+  color: var(--text-color) !important;
+  padding: 5px;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+  background-color: var(--background-color);
+  color: var(--text-color) !important;
+  padding: 5px;
+}
+
+/* table header/footer */
+table.table-striped.table-hover thead th {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+table.table-striped.table-hover tfoot td,
+div.dt-buttons > .btn {  
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* table pagination/buttons */
+.pagination .page-link {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: transparent;
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: var(--background-color);
+  color: var(--disabled-link);
+  border-color: transparent;
+}
+
+.pagination .page-item.active .page-link {
+   background-color: var(--background-color);
+   color: var(--link-color);
+   border-color: var(--link-color);
+ }
+
+
+.pagination .page-link:hover,
+div.dt-buttons > .btn:hover {
+    color: var(--link-color);
+    background-color: var(--background-color);
+    border-color: var(--link-hover) !important;
+}
+
+/* table select/search */
+select.form-select, select.form-select:focus {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.form-control, .form-control:focus {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+} 
+
+/* hide > indicator when screen is small */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+    display: none !important;
+}
+
+/* hide > indicator */
+td.dt-control:before {
+    display: none !important;
 }

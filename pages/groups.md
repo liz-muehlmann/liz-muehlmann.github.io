@@ -4,16 +4,15 @@ layout: default
 headname: Groups
 ---
 
-<!-- <div class = "container justify-content-center">
-  <div class="row">
-    <div class= "col-1">
-    </div>
+<figure class="text-center">
+  <blockquote class="blockquote">
+    <p>"It made a difference to that one."</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    The Star Thrower | <cite title="Source Title"><a href = "https://mrjakeparker.tumblr.com/post/87041680432/star-thrower-is-based-off-of-this-story-which-was">Mr. Jake Parker</a></cite> (my favorite version)
+  </figcaption>
+</figure>
 
-   <div class="col-10"> -->
-<blockquote class = "blockquote">It made a difference to that one.
-<footer class="blockquote-footer">The Star Thrower | <cite title="Source Title"><a href = "https://mrjakeparker.tumblr.com/post/87041680432/star-thrower-is-based-off-of-this-story-which-was">Mr. Jake Parker</a></cite> (my favorite version)</footer>
-</blockquote>
-      
 <p>
   I have a simple motto in life: Do what you can, where you are, with what you have. <br>
   As a result, I believe strongly in doing whatever is in my means to make the world a better place. Below are some groups that I have either founded or joined in order to help those around me.

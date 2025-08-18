@@ -1,6 +1,6 @@
 ---
 title: Liz Muehlmann
-layout: guides
+layout: default
 headname: Election Guides
 ---
 <h1>welcome</h1>
@@ -57,7 +57,8 @@ Click on a link to download the PDF. <br> <br> organization: filename | last upd
             {% if guide.type == type %} 
                 {% for guide in site.data.guides %}
                     {% if level == guide.level and guide.election_type == "Primary" %}
-                        <a href="{{site.url}}/assets/download/{{guide.download}}" target="_blank" rel="noopener noreferrer">
+                        <a href="{{site.url}}/assets/download/download_electionguides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
+                        
                         {{ guide.guide_name }}
                         </a> | <span class = "guides">{{guide.last_update}}</span><br>
                     {% endif %}
@@ -73,7 +74,7 @@ Click on a link to download the PDF. <br> <br> organization: filename | last upd
                     <h3 class="guides">{{level}}</h3>
                     {% for guide in site.data.guides %}
                         {% if guide.level == level and guide.election_type == "General" %}
-                            <a href="{{site.url}}/assets/download/{{guide.download}}" target="_blank" rel="noopener noreferrer">
+                            <a href="{{site.url}}/assets/download/download_electionguides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
                                 {{ guide.guide_name }}
                             </a> | <span class = "guides">{{guide.last_update}}</span><br>
                         {% endif %}
