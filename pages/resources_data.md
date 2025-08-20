@@ -20,21 +20,18 @@ I have also included other non-Political Science-related datasets that I've foun
 In the table below, you can use the categories dropdown to filter for a specific type of job board (e.g., aggregator, NGO, etc.). To clear your search select the <i>categories</i> option.
 </p>
 
-
-
-
 <h1>datasets</h1>
 <hr class = "h-line">
 <table id="resources-data" class="table table-striped table-hover" style="width:100%">
     <thead class = "table-header">
       <tr>
-        <th>more</th>
         <th>added</th>
         <th>name</th>
         <th>abbreviation</th>
         <th>topic</th>
         <th>free?</th>
         <th>description</th>
+        <th>notes</th>
       </tr>
     </thead>
     <tfoot>
@@ -47,7 +44,7 @@ In the table below, you can use the categories dropdown to filter for a specific
 <!-- data table options -->
 <script type="module">
     // import functions
-    import { toggle_notes, create_linked_name, create_dropdown_filter } from '/assets/javascript/table_functions.js';
+    import { create_linked_name, create_dropdown_filter} from '/assets/javascript/table_functions.js';
     import { get_table_config } from '/assets/javascript/table_config.js';
 
     // table id & data source
@@ -56,30 +53,20 @@ In the table below, you can use the categories dropdown to filter for a specific
 
     // column structure
     const columns = [
-      // this block is for if there's a notes column
-        {
-            className: 'dt-control details-control',
-            orderable: false,
-            data: null,
-            defaultContent: '',
-            searchable: false,
-            render: (data, type, row) => row.notes && row.notes.trim() !== '' ? '<i class="fa fa-plus" aria-hidden="true"></i>' : '',
-            width: "15px"
-        },
-        // change these per data set
         { data: 'added' },
         { data: 'name' },
         { data: 'abbreviation' },
         { data: 'topic' },
         { data: 'free?' },
         { data: 'description' },
+        { data: 'notes' }
     ];
 
     // column definitions
     const columnDefs = [
         { searchable: false, targets: 0 },
         {
-            targets: 2,
+            targets: 1,
             render: (data, type, row) => create_linked_name(data, type, row)
         }
     ];
@@ -87,14 +74,4 @@ In the table below, you can use the categories dropdown to filter for a specific
     // initialize the data table
     const table_config = get_table_config(columns, columnDefs, table_id, data_source);
     const table = new DataTable(table_id, table_config);
-
-    // toggle notes
-    table.on('click', 'tbody td.dt-control', function(e) {
-      let row = e.target; 
-      toggle_notes(row, table); 
-    });
-
-    table.on('init', function () {
-      create_dropdown_filter(table, 4); 
-    });
 </script>

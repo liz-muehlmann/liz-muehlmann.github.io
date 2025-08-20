@@ -24,11 +24,11 @@ In the table below, you can use the categories dropdown to filter for a specific
 <table id="resources-jobs" class="table table-striped table-hover" style="width:100%">
     <thead class = "table-header">
       <tr>
-        <th>more</th>
         <th>added</th>
         <th>name</th>
         <th>type</th>
         <th>description</th>
+        <th>notes</th>
       </tr>
     </thead>
     <tfoot>
@@ -41,7 +41,7 @@ In the table below, you can use the categories dropdown to filter for a specific
 <!-- data table options -->
 <script type="module"> 
     // import custom scripts
-    import { toggle_notes, create_linked_name, create_dropdown_filter } from '/assets/javascript/table_functions.js';
+    import { create_linked_name, create_dropdown_filter } from '/assets/javascript/table_functions.js';
     import { get_table_config } from '/assets/javascript/table_config.js';
 
     // import constants
@@ -50,33 +50,18 @@ In the table below, you can use the categories dropdown to filter for a specific
 
     // define column structure
     const columns = [
-        // use this section if the data includes notes
-        {
-            "className": 'dt-control details-control',
-            "orderable": false,
-            "data": null,
-            "defaultContent": '',
-            "render": function (data, type, row) {
-                let noteContent = row.notes || '';
-                if (noteContent.trim() !== '') {
-                    return '<i class="fa fa-plus" aria-hidden="true"></i>';
-                } else {
-                    return ''; 
-                }
-            },
-            width: "15px"
-        },
         // change per table
         { data: 'added' },
         { data: 'name' },
         { data: 'type' },
-        { data: 'description' }
+        { data: 'description' },
+        { data: 'notes' }
     ];
 
     // column to be linked
     const columnDefs = [
         {
-            targets: 2,  
+            targets: 1,  
             render: function(data, type, row) {
                 return create_linked_name(data, type, row);  
             }
@@ -89,13 +74,7 @@ In the table below, you can use the categories dropdown to filter for a specific
     // init dataTable
     let table = new DataTable(table_id, table_config);
 
-    // notes row toggle
-    table.on('click', 'tbody td.dt-control', function(e) {
-        let row = e.target;
-        toggle_notes(row, table);
-    });
-
     table.on('init', function () {
-        create_dropdown_filter(table, 3); 
+        create_dropdown_filter(table, 2); 
     });
 </script>

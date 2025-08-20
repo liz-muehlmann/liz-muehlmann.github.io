@@ -516,13 +516,17 @@ select.form-select:focus {
   border-color: var(--text-color);
 }
 
-/* hide > indicator when screen is small */
-table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
-  display: none !important;
+/* use font-awesome's plus/minus */
+table.dataTable.dtr-inline.collapsed > tbody > tr:not(.dtr-expanded) > td.dtr-control:before {
+  content: "\f067";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  border: none !important;
 }
 
-/* hide > indicator */
-td.dt-control:before {
-  display: none !important;
+table.dataTable.dtr-inline.collapsed > tbody > tr.dtr-expanded > td.dtr-control:before {
+  content: "\f068"; 
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  border: none !important;
 }

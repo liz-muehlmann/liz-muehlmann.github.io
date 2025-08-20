@@ -37,25 +37,6 @@ export function create_linked_name(data, type, row) {
   return `<a href="${link}" target="_blank">${name}</a>`;
 }
 
-export function toggle_notes(row, table) {
-    let tr = row.closest('tr');
-    let rowData = table.row(tr);
-
-    let noteContent = rowData.data().notes || '';
-
-    if (noteContent.trim() !== '') {
-        if (rowData.child.isShown()) {
-            rowData.child.hide();
-            $(tr).removeClass('shown');
-            $('i.fa', tr).removeClass('fa-minus').addClass('fa-plus');
-        } else {
-            rowData.child(`<div class="notes-content"><i>Notes: </i>${noteContent}</div>`).show();
-            $(tr).addClass('shown');
-            $('i.fa', tr).removeClass('fa-plus').addClass('fa-minus');
-        }
-    }
-}
-
 // create dropdown filter
 export function create_dropdown_filter(table, columnIndex) {
   const column = table.column(columnIndex);

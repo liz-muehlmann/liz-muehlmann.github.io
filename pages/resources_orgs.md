@@ -38,7 +38,7 @@ In the table below, you can use the categories dropdown to filter for a specific
 <!-- data table options -->
 <script type="module"> 
     // import custom scripts
-    import { toggle_notes, create_linked_name, create_dropdown_filter } from '/assets/javascript/table_functions.js';
+    import { create_linked_name, create_dropdown_filter } from '/assets/javascript/table_functions.js';
     import { get_table_config } from '/assets/javascript/table_config.js';
 
     // import constants
@@ -69,12 +69,6 @@ In the table below, you can use the categories dropdown to filter for a specific
     // init dataTable
     let table = new DataTable(table_id, table_config);
   
-    // notes row toggle
-    table.on('click', 'tbody td.dt-control', function(e) {
-        let row = e.target;
-        toggle_notes(row, table);
-    });
-
     table.on('init', function () {
         create_dropdown_filter(table, 2); 
     });

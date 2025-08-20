@@ -13,16 +13,6 @@ export function get_table_config(columns, extraColumnDefs = [], table_id, data_s
             }
         },
         // allow for different column configurations (set under table)
-        columns: columns,
-        // notes row creation
-        createdRow: function(row, data, dataIndex) {
-            if (data.notes && data.notes.trim() !== "") {
-                $(row).addClass('has-note');
-                $('td', row).first().addClass('dt-control');
-            } else {
-                $(row).removeClass('has-note');
-                $('td', row).first().removeClass('dt-control');
-            }
-        }
+        columns: columns
     };
 }
