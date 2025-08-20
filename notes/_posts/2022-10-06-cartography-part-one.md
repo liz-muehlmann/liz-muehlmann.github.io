@@ -168,7 +168,7 @@ Tigris can also download boundaries for counties, divisions, regions, tracts, bl
 
 Here we create the <code>us_states</code> variable, save the geographic data to it, move Alaska and Hawaii so they're beneath the continental US, and save the shifted shapefile.  
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 2:
 
@@ -188,7 +188,7 @@ If the <code>year</code> argument is omitted it will download the shapefile for 
 
 Finally, the <code> %>% </code> operator is part of the Tidyverse. It basically tells R "Hey! I'm not done, keep going to the next line!"
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 3:
 
@@ -202,7 +202,7 @@ They're mostly consecutive (Alaska is 01) but when they were conceived of in the
 
 This line of code uses the <code>filter()</code> function on the <code>STATEFP</code> variable downloaded using Tigris(). All it says is keep any row that has a FIPS of less than 57. This will keep only the 50 states and exclude the United States' <s>empire</s> associated territories.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 4-5:
 
@@ -219,7 +219,7 @@ When <code>preserve_area = FALSE</code> tigris will shrink Alaska's size and inc
 
 The <code>position</code> argument can either be <code>"below"</code> or <code>"outside"</code>. When it's <code>below</code>, both Alaska and Hawaii are moved to be below California. When it's <code>outside</code> then Alaska is moved to be near Washington and Hawaii is moved to be near California.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 Since I'm a born-theorist, I should warn you that messing with maps has inherent normative implications. The most common projection is Mercator which stretches the continents near the poles and squishes the ones near the equator.
 
@@ -237,7 +237,7 @@ I caution you to be careful when creating maps. Think through the implications o
 
 If you want to read more about map projections [this is a good post](https://geoawesomeness.com/best-map-projection/#:~:text=Gall%2DPeters,supremacy%20over%20non%2Dwhite%20nations.){:target="_blank" rel="noopener noreferrer"}. If you want to read more about metaphors, I suggest [Metaphors We Live By](https://press.uchicago.edu/ucp/books/book/chicago/M/bo3637992.html){:target="_blank" rel="noopener noreferrer"} by George Lakoff and Mark Johnson.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 6:
 
@@ -261,7 +261,7 @@ Briefly, <code>+proj=longlat</code> tells R to use project the code into longitu
 
 Essentially, you need to include line 6 before you create the map, but after you do any data manipulation. It might throw some warnings which you can just ignore.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 9
 
@@ -294,7 +294,7 @@ Running that line will save the four necessary files that R needs to load the ge
 
 That's it for method 1 using <code>tigris</code>. The next section, method 2, shows how to load and transform a previously downloaded shapefile.  If you used method 1, feel free to leave this post and go directly to mapping the shapefile in [part II]({{site.url}}/notes/cartography-part-two){:target="_blank" rel="noopener noreferrer"} of this series.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 ##### <u>method 2: using downloaded shapefiles</u>
 

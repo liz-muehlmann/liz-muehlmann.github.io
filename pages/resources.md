@@ -4,7 +4,7 @@ layout: default
 headname: Resources
 ---
 
-<div class = "row" style = "padding: 40px">
+<div class = "row">
 <h1>about these resources</h1>
 <hr class = "h-line">
 <p>Over the years, I've collected cool resources for a variety of different projects. I decided to compile them here in case they are useful to other people. </p>

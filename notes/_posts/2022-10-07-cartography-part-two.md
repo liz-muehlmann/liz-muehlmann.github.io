@@ -84,7 +84,7 @@ This is the map we're going to create. It's a simple grey map and each state dar
 
 <code>leaflet()</code> initializes the map widget. I save it to a variable called map (<code>map <-</code>) so I can run other code in the file without recreating the map each time. When you want to see the map, you can type <code>map</code> (or whatever you want to name your map) in the terminal and hit enter. R will display the map in the viewer.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 3:
 {% highlight r %}
@@ -107,7 +107,7 @@ When you run *only* the first two lines, Leaflet will use its default styling. T
 
 You can leave the base map like this if you want, but all additional data will be added as a layer *on top* of this map which can become distracting very quickly. I prefer to make my base maps as basic and unobtrusive as possible so the data I add on top of the base map is more prominent.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 4
 
@@ -131,7 +131,7 @@ As you can see, the higher the <code>smoothFactor</code> the less coherent the U
 <i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> Leaflet - all map programs, really - don't know that continents, countries, states, or any other land mass is a coherent set. It reads the shape data and spits out a map without regard to where things "should" be. It doesn't know California goes on the left or that Alaska is part of the United States. It's important to keep this in mind because each state's shape is rendered individually when using <code>addPolygons()</code>.
 </div>
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 5-6:
 
@@ -146,7 +146,7 @@ As you can see, the higher the <code>smoothFactor</code> the less coherent the U
 
 <code>fillOpacity</code> determines how transparent the color inside the shape should be. I set mine to be <code>0.5</code> because I like the way it looks. The number can be between 0 and 1 with 1 being fully opaque and 0 being fully transparent. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 7-10:
 
@@ -185,7 +185,7 @@ Lines 11-15 define the map's behavior when the mouse hovers over the shape. Most
 
 * *static* in this case means that hovering over the map does not trigger any map behavior. Users can zoom on the map, but hovering over a state or park won't show a label or change color. A truly static map (like one with ggplot) is just an image of a map and has no zoom functionality. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 11:
 
@@ -201,7 +201,7 @@ Lines 11-15 define the map's behavior when the mouse hovers over the shape. Most
 Leaflet requires that the variable holding the <code>highlightOptions()</code> function call be named either <code>highlight</code> or <code>highlightOptions</code>. Naming anything else (e.g. <code>Hi_Opt = highlightOptions()</code>) will cause it to break.
 </div>
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 12-14
 
@@ -213,7 +213,7 @@ Leaflet requires that the variable holding the <code>highlightOptions()</code> f
 
 <code>weight</code>, <code>color</code>, and <code>fillOpacity</code> all operate in the same way as before, but whatever values you specify here will only show up when the mouse hovers over the polygon shape. Since we're defining the values for the states in this section, the values will only apply when a state is moused over. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 15
 {% highlight r %}
@@ -224,7 +224,7 @@ Leaflet requires that the variable holding the <code>highlightOptions()</code> f
 
 Since the base map has only one layer, this property doesn't affect anything.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 16
 

@@ -150,7 +150,7 @@ If i were to use base R's <code>%in%</code> function, I would have to create a v
 
 Line 2 creates the list of US territories that I filter out in line 7. The <code>c()</code> function in R means combine or concatenate. Inside the parenthesis are the five postal codes for the American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, and the Virgin Islands. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 5
 {% highlight r %}
@@ -163,7 +163,7 @@ The filename <code>NPS_-_Land_Resources_Division_Boundary_and_Tract_Data_Service
 
 The <code> %>% </code> operator is part of the tidyverse package. It tells R to go to the next line and process the next command. The <code>>%></code> has to go at the end of a line, rather than the beginning. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 6
 {% highlight r %}
@@ -206,7 +206,7 @@ The National Park data includes a lot of information about who created the data 
 
 The *geometry* column is specific to shapefiles and it includes the coordinates of the shape. It will be kept automatically - unless you use the <code>st_drop_geometry()</code> function. I like to specifically select so I remember it's there. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 7
 {% highlight r %}
@@ -221,7 +221,7 @@ In line 7 I use the territories list I created in line 2 to filter out the Unite
 
 For example, if the STATE value in row 1 is CA, filter looks at it and goes "is CA NOT IN territories?" If that is TRUE, keep it because we want only the values that are NOT IN the territories list. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 8-29
 {% highlight r %}
@@ -244,7 +244,7 @@ In its general form, the format is <code>case_when(COLUMN_NAME == "original_valu
 
 Lines 9-29 do the same thing for the other park types. You can reduce the parks however you want or use all 23 types. Just remember that the value before the tilde <code>~</code> has to match the values found in the data exactly. For example, in line 24 I change the NPS data's *National Trail Syste* value to be *National Trail*. However the data was created, *System* in this case is missing the m.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 30-37
 {% highlight r %}
@@ -259,7 +259,7 @@ The last line, <code>TRUE ~ "not_visited"))</code>, acts as an else statement. F
 
 This feels like a very brute-force method of tracking which parks I've visited, but I haven't spend much time trying to find another way.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 38-39
 
@@ -272,7 +272,7 @@ In [part I]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noope
 
 I went over these two lines in [part II]({{site.url}}/notes/cartography-part-two){:target="_blank" rel="noopener noreferrer"}, so I won't go over them again here. If you want to read more about them, check out that post.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 40
 
@@ -284,7 +284,7 @@ The last line uses the <code>st_transform()</code> function from the *sf* packag
 
 I covered the WGS84 ellipsoid in [part I]({{site.url}}/notes/cartography-part-one){:target="_blank" rel="noopener noreferrer"}, if you want to read more about it.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 43
 
@@ -340,7 +340,7 @@ As a result, I save the shifted data to my hard drive so it's easier to load lat
 
 Lines 2-16 are identical to those in [part II]({{site.url}}/notes/cartography-part-two){:target="_blank" rel="noopener noreferrer"} where I created the base map. I am not going to cover these sections in detail, because I covered it previously. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 17
 {% highlight r  %}
@@ -353,7 +353,7 @@ Since we're mapping the National Parks and not the states, we have to tell R whe
 
 <code>nps</code> is the variable name where the shape data is stored. It will change based on what you named your data. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 18
 
@@ -363,7 +363,7 @@ Since we're mapping the National Parks and not the states, we have to tell R whe
 
 <code>smoothFactor()</code> determines how detailed the park boundaries should be. The lower the number, the more detailed the shape. The higher the number, the smoother the parks will render. I usually match this to whatever I set for the base map for consistency. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 19-20
 
@@ -374,7 +374,7 @@ Since we're mapping the National Parks and not the states, we have to tell R whe
 
 Define the color and transparency of the National Parks. In a future post, I am going to change the color of each type of public land, but for now, I'll make them all a nice sage green color <code>#354f52</code>. I also want to make the parks fully opaque by setting the <code>fillOpacity=1</code>.   
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 21-24
 
@@ -389,7 +389,7 @@ The next four lines (21-24) define what kind of outline the National Parks will 
 
 Briefly, I want there to be an outline to each park (<code>stroke = TRUE</code>) that's thicker <code>weight = 1</code> than the outline used on the base map. I do not like the way it looks at full opacity, so I make it half-transparent (<code>opacity = 0.5</code>). Finally, I want the outline <code>color = "#354f52"</code> to be the same color as the fill. This will matter more when I change the fill color of the parks later on.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 25-28
 
@@ -410,7 +410,7 @@ I want to keep the mouseover behavior noticeable, but simple. To do so, I set th
 <div class = "boxed">
 <i class="fa-regular fa-note-sticky fa-xl"></i> <i>Note:</i> When the hex code repeats (like, white - #ffffff, black - #000000, or grey #808080) you only need to include the first three characters. </div>
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 29
 
@@ -422,7 +422,7 @@ I want to keep the mouseover behavior noticeable, but simple. To do so, I set th
 
 When <code>FALSE</code> the shape will remain static.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 30
 
@@ -432,7 +432,7 @@ When <code>FALSE</code> the shape will remain static.
 
 Since Leaflet adds all new data to the top of the base map, I think it's useful to group the layers together. In the next block of code, we add in some layer functionality. For now, though, I want to add the National Parks to their own group so I can hide the National Parks if I want.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 31-34
 

@@ -1,15 +1,15 @@
 [data-bs-theme="light"] {
   --background-color: #fffafa;
+  --secondary-background: #f0f0f0;
   --text-color: #222;
   --disabled-link: #e4e4e4;
-  --row-color:#f0f0f0;
   --storage: #222;
   --constant: #44ee4e;
   --string: #3a9fbf;
   --keyword: #ff748c;
   --variable: #fdb265;
   --link-hover: #C5E8C4;
-  --link-color: #84a98c;
+  --link-color: #678388;
   --code-color: #526763;
   --code-bg: #f2f2f2;
   --code-nx: #917f52;
@@ -23,9 +23,9 @@
 
 [data-bs-theme="dark"] {
     --background-color: #2c2c2c;
-    --text-color: #f4f6f5;
+    --secondary-background: #222;
+    --inverted-text: #000;
     --disabled-link: #535353;
-    --row-color: #282828;
     --bg-card-body: #303030;
     --image-dimmer: brightness(.8) contrast(1.2);
     --storage: #fff;

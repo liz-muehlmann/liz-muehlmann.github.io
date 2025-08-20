@@ -271,7 +271,7 @@ Line 2 creates the list of US territories that I filter out in line 5.
 
 If you want to read more about this line visit [part III]({{site.url}}/notes/cartography-part-three){:target="_blank" rel="noopener noreferrer"} of the series.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 4
 {% highlight r  %}
@@ -284,7 +284,7 @@ Since we're working with a geopackage (instead of a shapefile) we have to load t
 
 The second argument <code>layer =</code> specifies which layer R should load. Here, I am selecting the layer *PADUS3_0Fee* layer because I know it contains the shape data from the state parks. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 5-6
 {% highlight r  %}
@@ -304,7 +304,7 @@ The data lists state ownership as <i>STAT</i>. I found this out the hard way by 
 
 The original unfiltered data set had 247,507 rows. After these the two conditions are met, the filtered data set has 53,139 rows. That's a significant reduction but still a substantial number of rows. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 7-15
 
@@ -350,7 +350,7 @@ This will leave me with 50,102 rows.
 I use the number of rows as a simple gut-check that the code is doing what I want it to. You can get the number of rows by running <code>nrow(state_parks)</code>
 </div>
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * Lines 16-17
 {% highlight r %}
@@ -364,7 +364,7 @@ The data has four types of access: Closed, Unknown, Open Access, and Restricted 
 
 This last filter brings the total number of state parks down to 49,719. I don't think I can reduce that number more without removing places that should be kept.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 
 * lines 18-20
@@ -376,7 +376,7 @@ This last filter brings the total number of state parks down to 49,719. I don't 
 
 Lines 18-20 have the same logic as lines 16-17 except here I want to filter out the Hunter Access areas and Boat Ramps. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * Line 21
 {% highlight r %}
@@ -397,7 +397,7 @@ I decided to keep:
 * GIS_Acres (park size)
 * SHAPE (geometry column)
  
- <center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 22-30
 {% highlight r  %}
@@ -420,7 +420,7 @@ I went over the logic of using <code>mutate()</code> and <code>case_when()</code
 
 In its general form, the format is <code>case_when(COLUMN_NAME == "original_value" ~ "new_value")</code>. I only needed to change the values for any <code>"Recreation Management Area"</code>, the rest I just populated the new column with the old values.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 31-37
 {% highlight r %}
@@ -444,7 +444,7 @@ In the end, I decided to focus on the parks that I *know* I've visited **and** h
 
 The logic is the same as the National Park data. <code>mutate()</code> created a new column <code>visited</code> and populated it by using <code>case_when()</code>. 
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 38-43
 {% highlight r %}
@@ -509,7 +509,7 @@ The second argument <code> f = </code> is how you want the data split. <code>f</
 
 You can access an individual state using the <code>$</code> operator. For example, <code>split_states$CA</code> will return the state park data for California.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * line 2
 
@@ -521,7 +521,7 @@ You can access an individual state using the <code>$</code> operator. For exampl
 
 <code>names(split_states)</code> will return all 50 state abbreviations. I save it to the variable <code>all_names</code> which R will iterate over in the next section.
 
-<center><i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i> <i class="fa-solid fa-paw"></i></center>
+{% include paw-border.html %}
 
 * lines 4-5
 

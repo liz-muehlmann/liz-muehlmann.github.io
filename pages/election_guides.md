@@ -50,7 +50,7 @@ Click on a link to download the PDF. <br> <br> organization: filename | last upd
 
 <div class="row">
     <div class="col">
-        <h3><center>primary</center></h3>
+        <h3 class="text-center">primary</h3>
         <hr class = "h-line"> 
         {% for level in all_levels %}
             <h3 class = "guides">{{level}}</h3>
@@ -67,7 +67,7 @@ Click on a link to download the PDF. <br> <br> organization: filename | last upd
         {% endfor %}
     </div>
     <div class="col">
-        <h3><center>general</center></h3>
+        <h3 class = "text-center">general</h3>
         <hr class = "h-line">
           {% if type == election_type %}
                 {% for level in all_levels %}
