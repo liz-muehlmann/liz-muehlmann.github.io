@@ -43,59 +43,52 @@ During presidential election years the <b>State</b> guides will also include inf
 <i>Note:</i>
 Click on a link to download the PDF. <br> <br> organization: filename | last updated  
 </div>
-
 {% assign all_levels = site.data.guides | map: "level" | uniq %}
 {% assign all_types = site.data.guides | map: "election_type" | uniq %}
-
+{% assign primary_guides = site.data.guides | where: "election_type", "Primary" %}
+{% assign general_guides = site.data.guides | where: "election_type", "General" %}
+{% assign special_guides = site.data.guides | where: "election_type", "Special" %}
 
 <div class="row">
     <div class="col">
-        <h3 class="text-center">primary</h3>
-        <hr class = "h-line"> 
+        <h3 class="text-center">Primary</h3>
+        <hr class="h-line">
         {% for level in all_levels %}
-            <h3 class = "guides">{{level}}</h3>
-            {% if guide.type == type %} 
-                {% for guide in site.data.guides %}
-                    {% if level == guide.level and guide.election_type == "Primary" %}
-                        <a href="{{site.url}}/assets/download/download_electionGuides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
-                        
-                        {{ guide.guide_name }}
-                        </a> | <span class = "guides">{{guide.last_update}}</span><br>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
+            <h3 class="guides">{{level}}</h3>
+            {% assign level_guides = primary_guides | where: "level", level %}
+            {% for guide in level_guides %}
+                <a href="{{site.url}}/assets/download/download_electionGuides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
+                    {{ guide.guide_name }}
+                </a> | <span class="guides">{{guide.last_update}}</span><br>
+            {% endfor %}
         {% endfor %}
     </div>
+
     <div class="col">
-        <h3 class = "text-center">general</h3>
-        <hr class = "h-line">
-          {% if type == election_type %}
-                {% for level in all_levels %}
-                    <h3 class="guides">{{level}}</h3>
-                    {% for guide in site.data.guides %}
-                        {% if guide.level == level and guide.election_type == "General" %}
-                            <a href="{{site.url}}/assets/download/download_electionGuides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
-                                {{ guide.guide_name }}
-                            </a> | <span class = "guides">{{guide.last_update}}</span><br>
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-            {% endif %}
+        <h3 class="text-center">General</h3>
+        <hr class="h-line">
+        {% for level in all_levels %}
+            <h3 class="guides">{{level}}</h3>
+            {% assign level_guides = general_guides | where: "level", level %}
+            {% for guide in level_guides %}
+                <a href="{{site.url}}/assets/download/download_electionGuides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
+                    {{ guide.guide_name }}
+                </a> | <span class="guides">{{guide.last_update}}</span><br>
+            {% endfor %}
+        {% endfor %}
     </div>
-        <div class="col">
-        <h3 class = "text-center">special</h3>
-        <hr class = "h-line">
-          {% if type == election_type %}
-                {% for level in all_levels %}
-                    <h3 class="guides">{{level}}</h3>
-                    {% for guide in site.data.guides %}
-                        {% if guide.level == level and guide.election_type == "Special" %}
-                            <a href="{{site.url}}/assets/download/download_electionGuides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
-                                {{ guide.guide_name }}
-                            </a> | <span class = "guides">{{guide.last_update}}</span><br>
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-            {% endif %}
+
+    <div class="col">
+        <h3 class="text-center">Special</h3>
+        <hr class="h-line">
+        {% for level in all_levels %}
+            <h3 class="guides">{{level}}</h3>
+            {% assign level_guides = special_guides | where: "level", level %}
+            {% for guide in level_guides %}
+                <a href="{{site.url}}/assets/download/download_electionGuides/{{guide.download}}" target="_blank" rel="noopener noreferrer">
+                    {{ guide.guide_name }}
+                </a> | <span class="guides">{{guide.last_update}}</span><br>
+            {% endfor %}
+        {% endfor %}
     </div>
 </div>

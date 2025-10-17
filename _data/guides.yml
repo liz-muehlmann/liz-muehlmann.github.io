@@ -40,3 +40,8 @@
   last_update: "2022-06-21"
   download: "2022_Primary_San Dimas.pdf"
   
+- guide_name: "2025 Special Election Guide"
+  download: "2025_Special_California.pdf"
+  election_type: "Special"
+  level: "State"
+  last_update: "2025-10-01"
