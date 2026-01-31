@@ -16,8 +16,6 @@ I have also included other non-Political Science-related datasets that I've foun
 <h1>categories</h1>
 <hr class = "h-line">
 <p><b><i>Note:</i></b> Categories are kept as broad as possible. For example, <i>politics</i> includes legislation, elections, war, public opinion, and more.
-<br/><br/>
-In the table below, you can use the categories dropdown to filter for a specific type of job board (e.g., aggregator, NGO, etc.). To clear your search select the <i>categories</i> option.
 </p>
 
 <h1>datasets</h1>
