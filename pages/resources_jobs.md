@@ -7,7 +7,7 @@ headname: Job Hunting
 <h1>about these resources</h1>
 <hr class = "h-line">
 
-<p>I found job hunting to be particularly soul-crushing. You're alone, applying to jobs you think you're a perfect match for only to be rejected to simply never hear back. It's an incredibly isolating experience. To cope, I started compiling a list of resources that I was using so that I could share them with other people. Most of the jobs are related to politics or <a href="https://buttondown.com/monteiro/archive/how-to-not-build-the-torment-nexus/">non-torture-nexus-building</a> tech, but there are some for climate, marketing, media, and philosophy. Anything I found helpful is included in the table.
+<p>I found job hunting to be particularly soul-crushing. You're alone, applying to jobs you think you're a perfect match for only to be rejected to simply never hear back. It's an incredibly isolating experience. To cope, I started compiling a list of resources that I was using so that I could share them with other people. Most of the jobs are related to politics or <a href="https://buttondown.com/monteiro/archive/how-to-not-build-the-torment-nexus/">non-torment-nexus-building</a> tech, but there are some for climate, marketing, media, and philosophy. Anything I found helpful is included in the table.
 <br/><br/>
 <b><i>Note:</i></b> Some rows have extra notes. Click on the + symbol to view and the - symbol to hide.
 </p>
