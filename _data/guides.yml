@@ -58,8 +58,8 @@
   last_update: "2026-05-31"
   download: "2026_Primary_Los Angeles County.pdf"
 
-  - guide_name: "2026 San Dimas"
+- guide_name: "2026 San Dimas"
   election_type: "Primary"
-  level: "County"
+  level: "Local"
   last_update: "2026-05-31"
   download: "2026_Primary_San Dimas.pdf"
