@@ -45,3 +45,15 @@
   election_type: "Special"
   level: "State"
   last_update: "2025-10-01"
+
+- guide_name: "2026 California"
+  election_type: "Primary"
+  level: "State"
+  last_update: "2026-05-31"
+  download: "2026_Primary_California.pdf"
+
+- guide_name: "2026 Los Angeles County"
+  election_type: "Primary"
+  level: "County"
+  last_update: "2026-05-31"
+  download: "2026_Primary_Los Angeles County.pdf"
